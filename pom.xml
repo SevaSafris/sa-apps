@@ -18,6 +18,7 @@
     <module>rxjava-2</module>
     <module>kafka</module>
     <module>asynchttpclient</module>
+    <module>spring-boot-kafka</module>
   </modules>
 
   <name>java-specialagent-apps</name>
@@ -26,38 +27,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <lightstep.version>0.15.0</lightstep.version>
-    <lightstep.okhttp.version>0.16.1</lightstep.okhttp.version>
   </properties>
 
-  <dependencies>
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.1</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <createDependencyReducedPom>false</createDependencyReducedPom>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
 </project>
