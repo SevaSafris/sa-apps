@@ -6,7 +6,11 @@ import okhttp3.Response;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    OkHttpClient client = new OkHttpClient();
+
+    final OkHttpClient client = new OkHttpClient.Builder().build();
+
+    // This one doesn't work:
+    // OkHttpClient client = new OkHttpClient();
 
     Request request = new Request.Builder()
         .url("https://www.google.com")
