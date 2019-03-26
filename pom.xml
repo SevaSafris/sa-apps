@@ -19,6 +19,7 @@
     <module>kafka</module>
     <module>asynchttpclient</module>
     <module>spring-boot-kafka</module>
+    <module>jdbc</module>
   </modules>
 
   <name>java-specialagent-apps</name>
