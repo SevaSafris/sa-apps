@@ -20,6 +20,7 @@
     <module>asynchttpclient</module>
     <module>spring-boot-kafka</module>
     <module>jdbc</module>
+    <module>okhttp</module>
   </modules>
 
   <name>java-specialagent-apps</name>
