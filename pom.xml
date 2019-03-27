@@ -21,6 +21,7 @@
     <module>spring-boot-kafka</module>
     <module>jdbc</module>
     <module>okhttp</module>
+    <module>mongo</module>
   </modules>
 
   <name>java-specialagent-apps</name>
