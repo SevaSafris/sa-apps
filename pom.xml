@@ -22,6 +22,7 @@
     <module>jdbc</module>
     <module>okhttp</module>
     <module>mongo</module>
+    <module>rabbitmq</module>
   </modules>
 
   <name>java-specialagent-apps</name>
