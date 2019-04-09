@@ -1,6 +1,6 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.0.0.jar
+specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.0.2.jar
 
 build:
 	mvn clean package -DskipTests
@@ -15,7 +15,7 @@ run:
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
-	    -Dspecialagent.tracer=lightstep \
+	    -Dsa.tracer=lightstep \
 		-cp target/asynchttpclient-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) asynchttpclient.App
 
 run-no-agent:
