@@ -23,6 +23,7 @@
     <module>okhttp</module>
     <module>mongo</module>
     <module>rabbitmq</module>
+    <module>thrift</module>
   </modules>
 
   <name>java-specialagent-apps</name>
