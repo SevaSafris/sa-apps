@@ -13,11 +13,11 @@
  */
 package thrift;
 
-import custom.Address;
-import custom.CustomService;
-import custom.User;
-import custom.UserWithAddress;
 import java.util.concurrent.TimeUnit;
+import thrift.generated.Address;
+import thrift.generated.CustomService;
+import thrift.generated.User;
+import thrift.generated.UserWithAddress;
 
 
 public class CustomHandler implements CustomService.Iface {

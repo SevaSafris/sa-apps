@@ -1,6 +1,5 @@
 package thrift;
 
-import custom.CustomService;
 import java.util.concurrent.TimeUnit;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.TProcessorFactory;
@@ -13,6 +12,7 @@ import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
+import thrift.generated.CustomService;
 
 public class App {
   private static final int port = 8883;
