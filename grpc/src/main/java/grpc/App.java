@@ -9,6 +9,7 @@ import io.opentracing.contrib.grpc.gen.GreeterGrpc;
 import io.opentracing.contrib.grpc.gen.GreeterGrpc.GreeterBlockingStub;
 import io.opentracing.contrib.grpc.gen.HelloReply;
 import io.opentracing.contrib.grpc.gen.HelloRequest;
+import java.util.concurrent.TimeUnit;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -28,6 +29,8 @@ public class App {
     System.out.println(message);
 
     server.shutdownNow();
+
+    TimeUnit.SECONDS.sleep(30);
   }
 
   private static class GreeterImpl extends GreeterGrpc.GreeterImplBase {
