@@ -24,6 +24,7 @@
     <module>mongo</module>
     <module>rabbitmq</module>
     <module>thrift</module>
+    <module>grpc</module>
   </modules>
 
   <name>java-specialagent-apps</name>
