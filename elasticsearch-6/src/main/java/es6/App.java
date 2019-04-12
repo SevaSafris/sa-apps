@@ -33,14 +33,14 @@ public class App {
 
   }
 
-  public static void restClient() throws IOException {
+  private static void restClient() throws IOException {
     RestClient restClient = RestClient.builder(
         new HttpHost("localhost", 9200, "http"))
         .build();
 
     HttpEntity entity = new NStringEntity(
         "{\n" +
-            "    \"user\" : \"kimchy\",\n" +
+            "    \"user\" : \"user\",\n" +
             "    \"post_date\" : \"2009-11-15T14:12:12\",\n" +
             "    \"message\" : \"trying out Elasticsearch\"\n" +
             "}", ContentType.APPLICATION_JSON);
@@ -68,7 +68,7 @@ public class App {
     restClient.close();
   }
 
-  public static void transportClient() throws Exception {
+  private static void transportClient() throws Exception {
 
     Settings settings = Settings.builder()
         .put("cluster.name", "elasticsearch_malafes").build();
@@ -80,7 +80,7 @@ public class App {
     IndexRequest indexRequest = new IndexRequest("twitter").type("tweet").id("1").
         source(jsonBuilder()
             .startObject()
-            .field("user", "kimchy")
+            .field("user", "user")
             .field("postDate", new Date())
             .field("message", "trying out Elasticsearch")
             .endObject()
