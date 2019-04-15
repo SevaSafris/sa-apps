@@ -26,6 +26,7 @@
     <module>thrift</module>
     <module>grpc</module>
     <module>jedis-2</module>
+    <module>spring-boot-rabbitmq</module>
   </modules>
 
   <name>java-specialagent-apps</name>
