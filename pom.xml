@@ -27,6 +27,7 @@
     <module>grpc</module>
     <module>jedis-2</module>
     <module>spring-boot-rabbitmq</module>
+    <module>jedis-3</module>
   </modules>
 
   <name>java-specialagent-apps</name>
