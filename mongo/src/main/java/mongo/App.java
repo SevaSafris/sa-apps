@@ -2,6 +2,7 @@ package mongo;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -31,14 +32,20 @@ public class App {
     TimeUnit.SECONDS.sleep(30);
   }
 
-  private static com.mongodb.client.MongoClient createClient() {
+
+  private static MongoClient createClient() {
+//    if(true) {
+//      return MongoClients.create();
+//    }
+
     final MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
         .applyConnectionString(new ConnectionString("mongodb://localhost:27017")).build();
 
     return MongoClients.create(mongoClientSettings);
 
-    // This one doesn't work:
-    //return MongoClients.create("mongodb://localhost:27017");
+
 
   }
+
+
 }

@@ -10,13 +10,13 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=mongo \
+	    -Dls.componentName=mongo-async \
 	    -Dls.collectorHost=collector.lightstep.com \
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
 	    -Dsa.tracer=lightstep \
-		-cp target/mongo-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) mongo.App
+		-cp target/mongo-async-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) mongoasync.App
 
 run-no-agent:
-	java -cp target/mongo-1.0-SNAPSHOT.jar mongo.App
+	java -cp target/mongo-async-1.0-SNAPSHOT.jar mongoasync.App

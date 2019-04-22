@@ -9,12 +9,12 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>mongo</artifactId>
+  <artifactId>mongo-async</artifactId>
 
   <dependencies>
     <dependency>
       <groupId>org.mongodb</groupId>
-      <artifactId>mongo-java-driver</artifactId>
+      <artifactId>mongodb-driver-async</artifactId>
       <version>3.10.1</version>
     </dependency>
   </dependencies>
@@ -39,6 +39,5 @@
       </plugin>
     </plugins>
   </build>
-
 
 </project>

@@ -28,6 +28,8 @@
     <module>jedis-2</module>
     <module>spring-boot-rabbitmq</module>
     <module>jedis-3</module>
+    <module>mongo-async</module>
+    <module>mongo-reactive</module>
   </modules>
 
   <name>java-specialagent-apps</name>
