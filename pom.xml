@@ -30,6 +30,7 @@
     <module>jedis-3</module>
     <module>mongo-async</module>
     <module>mongo-reactive</module>
+    <module>httpclient</module>
   </modules>
 
   <name>java-specialagent-apps</name>
