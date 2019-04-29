@@ -32,6 +32,7 @@
     <module>mongo-reactive</module>
     <module>httpclient</module>
     <module>spring-boot-elasticsearch</module>
+    <module>lettuce</module>
   </modules>
 
   <name>java-specialagent-apps</name>
