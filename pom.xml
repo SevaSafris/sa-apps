@@ -33,6 +33,8 @@
     <module>httpclient</module>
     <module>spring-boot-elasticsearch</module>
     <module>lettuce</module>
+    <module>spring-data-redis</module>
+    <module>spring-data-redis-2</module>
   </modules>
 
   <name>java-specialagent-apps</name>
