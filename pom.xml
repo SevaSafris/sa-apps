@@ -35,6 +35,7 @@
     <module>lettuce</module>
     <module>spring-data-redis</module>
     <module>spring-data-redis-2</module>
+    <module>solr</module>
   </modules>
 
   <name>java-specialagent-apps</name>
