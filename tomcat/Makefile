@@ -1,0 +1,25 @@
+.PHONY: build clean run
+
+specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.1.1-SNAPSHOT.jar
+
+build:
+	mvn clean package -DskipTests
+
+clean:
+	mvn clean
+
+run:
+	java \
+	    -Dls.componentName=tomcat \
+	    -Dls.collectorHost=collector.lightstep.com \
+	    -Dls.collectorProtocol=https \
+	    -Dls.collectorPort=443 \
+	    -Dls.accessToken=$(LS_TOKEN) \
+	    -Dsa.tracer=lightstep \
+      -Dsa.log.level=FINER \
+      -Dsa.log.events=ERROR,TRANSFORMATION \
+		-cp target/tomcat-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) tomcat.App
+
+run-no-agent:
+	java -cp target/tomcat-1.0-SNAPSHOT.jar tomcat.App
+
