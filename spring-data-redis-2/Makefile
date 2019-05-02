@@ -10,7 +10,7 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=spring-data-redis \
+	    -Dls.componentName=spring-data-redis-2 \
 	    -Dls.collectorHost=collector.lightstep.com \
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
