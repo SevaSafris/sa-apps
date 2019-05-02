@@ -16,7 +16,7 @@ run:
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
 	    -Dsa.tracer=mock \
-		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
+		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) boot.App
 
 run-no-agent:
-	java -cp target/spring-web-1.0-SNAPSHOT.jar org.springframework.boot.loader.JarLauncher
+	java -cp target/spring-web-1.0-SNAPSHOT.jar boot.App
