@@ -37,6 +37,7 @@
     <module>spring-data-redis-2</module>
     <module>solr</module>
     <module>spring-web</module>
+    <module>spring-webmvc</module>
     <module>spring-webflux</module>
   </modules>
 
