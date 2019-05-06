@@ -10,7 +10,7 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=spring-web \
+	    -Dls.componentName=spring-webmvc \
 	    -Dls.collectorHost=collector.lightstep.com \
         -Dls.collectorProtocol=https \
         -Dls.collectorPort=443 \

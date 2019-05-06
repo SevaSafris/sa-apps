@@ -15,7 +15,7 @@ run:
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
-	    -Dsa.tracer=mock \
+	    -Dsa.tracer=lightstep \
 		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) boot.App
 
 run-no-agent:
