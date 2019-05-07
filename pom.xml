@@ -36,6 +36,7 @@
     <module>lettuce</module>
     <module>spring-data-redis</module>
     <module>spring-data-redis-2</module>
+    <module>tomcat</module>
     <module>solr</module>
     <module>spring-web</module>
     <module>spring-webmvc</module>
