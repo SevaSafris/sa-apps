@@ -10,14 +10,14 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=aws \
+	    -Dls.componentName=hazelcast \
 	    -Dls.collectorHost=collector.lightstep.com \
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
 	    -Dsa.tracer=lightstep \
-		-cp target/aws-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) aws.App
+		-cp target/hazelcast-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) hazelcast.App
 
 run-no-agent:
-	java -cp target/aws-1.0-SNAPSHOT.jar aws.App
+	java -cp target/hazelcast-1.0-SNAPSHOT.jar hazelcast.App
 

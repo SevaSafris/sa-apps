@@ -10,14 +10,14 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=aws \
+	    -Dls.componentName=spymemcached \
 	    -Dls.collectorHost=collector.lightstep.com \
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
 	    -Dsa.tracer=lightstep \
-		-cp target/aws-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) aws.App
+		-cp target/spymemcached-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) spymemcached.App
 
 run-no-agent:
-	java -cp target/aws-1.0-SNAPSHOT.jar aws.App
+	java -cp target/spymemcached-1.0-SNAPSHOT.jar spymemcached.App
 

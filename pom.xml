@@ -42,6 +42,8 @@
     <module>spring-webmvc</module>
     <module>spring-webflux</module>
     <module>redisson</module>
+    <module>hazelcast</module>
+    <module>spymemcached</module>
   </modules>
 
   <name>java-specialagent-apps</name>
