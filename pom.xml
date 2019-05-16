@@ -44,6 +44,7 @@
     <module>redisson</module>
     <module>hazelcast</module>
     <module>spymemcached</module>
+    <module>jdbi</module>
   </modules>
 
   <name>java-specialagent-apps</name>
