@@ -45,6 +45,7 @@
     <module>hazelcast</module>
     <module>spymemcached</module>
     <module>jdbi</module>
+    <module>feign</module>
   </modules>
 
   <name>java-specialagent-apps</name>

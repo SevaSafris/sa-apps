@@ -10,14 +10,14 @@ clean:
 
 run:
 	java \
-	    -Dls.componentName=elasticsearch \
+	    -Dls.componentName=feign \
 	    -Dls.collectorHost=collector.lightstep.com \
 	    -Dls.collectorProtocol=https \
 	    -Dls.collectorPort=443 \
 	    -Dls.accessToken=$(LS_TOKEN) \
 	    -Dsa.tracer=lightstep \
-		-cp target/elasticsearch-6-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) es6.App
+		-cp target/feign-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) feign.App
 
 run-no-agent:
-	java -cp target/elasticsearch-6-1.0-SNAPSHOT.jar es6.App
+	java -cp target/feign-1.0-SNAPSHOT.jar feign.App
 
