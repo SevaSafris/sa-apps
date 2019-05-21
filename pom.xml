@@ -46,6 +46,7 @@
     <module>spymemcached</module>
     <module>jdbi</module>
     <module>feign</module>
+    <module>hystrix</module>
   </modules>
 
   <name>java-specialagent-apps</name>
