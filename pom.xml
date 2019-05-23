@@ -32,7 +32,6 @@
     <module>mongo-reactive</module>
     <module>httpclient</module>
     <module>spring-boot-elasticsearch</module>
-    <module>spring-boot-retry</module>
     <module>lettuce</module>
     <module>spring-data-redis</module>
     <module>spring-data-redis-2</module>

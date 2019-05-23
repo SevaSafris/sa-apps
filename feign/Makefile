@@ -18,6 +18,16 @@ run:
 		-Dsa.tracer=lightstep \
 		-cp target/feign-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) feign.App
 
+run-local:
+	java \
+		-Dls.componentName=feign \
+		-Dls.collectorHost=localhost \
+		-Dls.collectorProtocol=http \
+		-Dls.collectorPort=8360 \
+		-Dls.accessToken=${LS_LOCAL_TOKEN} \
+		-Dsa.tracer=lightstep \
+		-cp target/feign-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) feign.App
+
 run-solo:
 	java \
 		-Dsa.tracer=mock \
