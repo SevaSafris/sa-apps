@@ -46,6 +46,7 @@
     <module>jdbi</module>
     <module>feign</module>
     <module>hystrix</module>
+    <module>zuul</module>
   </modules>
 
   <name>java-specialagent-apps</name>
