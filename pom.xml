@@ -47,6 +47,7 @@
     <module>feign</module>
     <module>hystrix</module>
     <module>zuul</module>
+    <module>spring-websocket</module>
   </modules>
 
   <name>java-specialagent-apps</name>
