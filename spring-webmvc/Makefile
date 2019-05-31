@@ -22,6 +22,16 @@ run:
 		-Dsa.instrumentation.plugin.spring-messaging.enable=true \
 		-cp target/spring-webmvc-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
 
+run-local:
+	java \
+        -Dls.componentName=spring-webmvc \
+        -Dls.collectorHost=localhost \
+        -Dls.collectorProtocol=http \
+        -Dls.collectorPort=8360 \
+        -Dls.accessToken=${LS_LOCAL_TOKEN} \
+        -Dsa.tracer=lightstep \
+        -cp target/spring-webmvc-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
+
 run-solo:
 	java \
 		-Dsa.tracer=mock \
