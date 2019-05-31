@@ -48,6 +48,7 @@
     <module>hystrix</module>
     <module>zuul</module>
     <module>spring-websocket</module>
+    <module>spring-messaging</module>
   </modules>
 
   <name>java-specialagent-apps</name>
