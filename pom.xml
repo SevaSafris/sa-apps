@@ -49,6 +49,7 @@
     <module>zuul</module>
     <module>spring-websocket</module>
     <module>spring-messaging</module>
+    <module>spring-boot-jms</module>
   </modules>
 
   <name>java-specialagent-apps</name>
