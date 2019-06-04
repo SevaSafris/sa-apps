@@ -2,6 +2,7 @@ package boot;
 
 import io.opentracing.util.GlobalTracer;
 import javax.jms.ConnectionFactory;
+import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
@@ -19,13 +20,18 @@ import org.springframework.jms.support.converter.MessageType;
 public class App {
 
   @Bean
-  public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
+  public JmsListenerContainerFactory<?> myFactory(
       DefaultJmsListenerContainerFactoryConfigurer configurer) {
     DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
     // This provides all boot's default to this factory, including the message converter
-    configurer.configure(factory, connectionFactory);
+    configurer.configure(factory, connectionFactory());
     // You could still override some of Boot's default if necessary.
     return factory;
+  }
+
+  @Bean
+  public ConnectionFactory connectionFactory() {
+    return new ActiveMQConnectionFactory("tcp://localhost:61616");
   }
 
   @Bean // Serialize message content to json using TextMessage
