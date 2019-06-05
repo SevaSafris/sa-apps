@@ -21,8 +21,8 @@ import org.springframework.context.annotation.Bean;
 public class App {
   static final String topicExchangeName = "spring-boot-exchange";
 
-  static final String queueName = "spring-boot";
-  static final String queueName2 = "spring-boot-2";
+  static final String queueName = "queue-1";
+  static final String queueName2 = "queue-2";
 
   @Bean
   Queue queue() {
