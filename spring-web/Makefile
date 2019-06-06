@@ -3,6 +3,7 @@
 specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
 
 specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
+component_name := spring-web
 
 build:
 	mvn clean package -DskipTests
@@ -12,7 +13,7 @@ clean:
 
 run:
 	java \
-		-Dls.componentName=spring-web \
+		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=collector.lightstep.com \
 		-Dls.collectorProtocol=https \
 		-Dls.collectorPort=443 \
@@ -22,13 +23,13 @@ run:
 
 run-travis-test:
 	java \
-		-Dls.componentName=spring-web \
+		-Dls.componentName=${component_name} \
 		-Dsa.tracer=mock \
-		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) boot.App
+		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:${CURDIR}/../$(specialagent_jar) boot.App
 
 run-local:
 	java \
-        -Dls.componentName=spring-web \
+        -Dls.componentName=${component_name} \
         -Dls.collectorHost=localhost \
         -Dls.collectorProtocol=http \
         -Dls.collectorPort=8360 \
