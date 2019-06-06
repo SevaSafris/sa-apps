@@ -18,6 +18,12 @@ run:
 		-Dsa.tracer=lightstep \
 		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) boot.App
 
+run-test:
+	java \
+		-Dls.componentName=spring-web \
+		-Dsa.tracer=mock \
+		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) boot.App
+
 run-local:
 	java \
         -Dls.componentName=spring-web \

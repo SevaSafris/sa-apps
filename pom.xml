@@ -50,6 +50,7 @@
     <module>spring-websocket</module>
     <module>spring-messaging</module>
     <module>spring-boot-jms</module>
+    <module>spring-scheduling</module>
   </modules>
 
   <name>java-specialagent-apps</name>
