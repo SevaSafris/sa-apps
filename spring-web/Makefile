@@ -1,7 +1,6 @@
 .PHONY: build clean run
 
 specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
-
 specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
 component_name := spring-web
 component_jar := spring-web-1.0-SNAPSHOT.jar

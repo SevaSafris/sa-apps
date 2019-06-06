@@ -9,44 +9,44 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
+@EnableScheduling
+@EnableAsync
 public class App {
-
-  @Bean
-  public RestTemplate restTemplate() {
-    return new RestTemplate();
-  }
-
-  @Autowired
-  private RestTemplate restTemplate;
 
   public static void main(String[] args) {
     SpringApplication.run(App.class, args);
   }
 
+  @Autowired
+  private AsyncComponent asyncComponent;
 
-  @Scheduled(fixedDelay = 1000)
+
+  @Scheduled(fixedDelay = 30_000)
   public void scheduledTask() {
     final Span span = GlobalTracer.get().activeSpan();
     System.out.println("Active span: " + span);
+
+    if (span == null) {
+      System.err.println("No active span");
+      System.exit(-1);
+    }
   }
+
 
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
     return args -> {
 
-      final ResponseEntity<String> entity = restTemplate
-          .getForEntity("http://localhost:8080", String.class);
+      final String str = asyncComponent.async().get(5, TimeUnit.SECONDS);
+      System.out.println(str);
 
-      System.out.println(entity);
-
-      TimeUnit.SECONDS.sleep(30);
+      TimeUnit.SECONDS.sleep(10);
       System.exit(0);
-
     };
   }
 
