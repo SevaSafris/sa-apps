@@ -4,6 +4,7 @@ specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
 
 specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
 component_name := spring-web
+component_jar := spring-web-1.0-SNAPSHOT.jar
 
 build:
 	mvn clean package -DskipTests
@@ -19,13 +20,13 @@ run:
 		-Dls.collectorPort=443 \
 		-Dls.accessToken=$(LS_TOKEN) \
 		-Dsa.tracer=lightstep \
-		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar_path) boot.App
+		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) boot.App
 
 run-travis-test:
 	java \
 		-Dls.componentName=${component_name} \
 		-Dsa.tracer=mock \
-		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:${CURDIR}/../$(specialagent_jar) boot.App
+		-cp target/${component_jar} -javaagent:${CURDIR}/../$(specialagent_jar) boot.App
 
 run-local:
 	java \
@@ -35,7 +36,7 @@ run-local:
         -Dls.collectorPort=8360 \
         -Dls.accessToken=${LS_LOCAL_TOKEN} \
         -Dsa.tracer=lightstep \
-        -cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar_path) boot.App
+        -cp target/${component_jar} -javaagent:$(specialagent_jar_path) boot.App
 
 run-solo:
 	java \
@@ -44,7 +45,7 @@ run-solo:
 		-Dsa.tracer.plugins.enable=false \
 		-Dsa.instrumentation.plugins.enable=false \
 		-Dsa.instrumentation.plugin.spring-web.enable=true \
-		-cp target/spring-web-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar_path) boot.App
+		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) boot.App
 
 run-no-agent:
-	java -cp target/spring-web-1.0-SNAPSHOT.jar boot.App
+	java -cp target/${component_jar} boot.App
