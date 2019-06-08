@@ -3,6 +3,9 @@ package lettuce;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
+import io.lettuce.core.pubsub.RedisPubSubAdapter;
+import io.lettuce.core.pubsub.StatefulRedisPubSubConnection;
+import io.lettuce.core.pubsub.api.sync.RedisPubSubCommands;
 import java.util.concurrent.TimeUnit;
 
 public class App {
@@ -13,9 +16,16 @@ public class App {
     System.out.println(commands.set("key", "value"));
     System.out.println(commands.get("key"));
 
-    connection.close();
+    StatefulRedisPubSubConnection<String, String> pubSubConnection = client.connectPubSub();
+
+    pubSubConnection.addListener(new RedisPubSubAdapter<>());
+
+    RedisPubSubCommands<String, String> pubSubCommands = pubSubConnection.sync();
+    pubSubCommands.subscribe("channel");
+    commands.publish("channel", "msg");
+
 
     client.shutdown();
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 }
