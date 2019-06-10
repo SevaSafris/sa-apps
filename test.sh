@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+cd asynchttpclient
+echo "##############################################################################################"
+echo "asynchttpclient"
+make build run-travis-test || exit $?
+cd ..
+
 cd spring-web
 echo "##############################################################################################"
 echo "spring-web"

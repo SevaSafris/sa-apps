@@ -19,7 +19,7 @@ public class App {
     final Response response = client.executeRequest(request).get(10, TimeUnit.SECONDS);
     System.out.println(response.getStatusText());
 
-    Thread.sleep(30_000);
+    Thread.sleep(10_000);
 
     System.exit(0);
   }
