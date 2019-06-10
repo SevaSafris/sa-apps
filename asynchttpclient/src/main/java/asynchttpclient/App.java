@@ -1,6 +1,9 @@
 package asynchttpclient;
 
+import io.opentracing.Span;
+import io.opentracing.util.GlobalTracer;
 import java.util.concurrent.TimeUnit;
+import org.asynchttpclient.AsyncCompletionHandler;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.Request;
@@ -16,7 +19,20 @@ public class App {
         .setUrl("http://www.google.com")
         .build();
 
-    final Response response = client.executeRequest(request).get(10, TimeUnit.SECONDS);
+    final Response response = client.executeRequest(request,
+        new AsyncCompletionHandler<Response>() {
+          @Override
+          public Response onCompleted(Response response) {
+            Span span = GlobalTracer.get().activeSpan();
+            System.out.println("Active span: " + span);
+            if (span == null) {
+              System.err.println("Missing active span");
+              System.exit(-1);
+            }
+            return response;
+          }
+        }
+    ).get(10, TimeUnit.SECONDS);
     System.out.println(response.getStatusText());
 
     Thread.sleep(10_000);
