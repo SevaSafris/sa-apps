@@ -36,7 +36,7 @@ run-solo:
 		-Dsa.log.level=FINER \
 		-Dsa.tracer.plugins.enable=false \
 		-Dsa.instrumentation.plugins.enable=false \
-		-Dsa.instrumentation.plugin.feign.enable=true \
+		-Dsa.instrumentation.plugin.$(plugin_name).enable=true \
 		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) $(main_class)
 
 run-no-agent:
