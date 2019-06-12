@@ -10,7 +10,7 @@ public class App {
     test(new OkHttpClient.Builder().build());
     test(new OkHttpClient());
 
-    Thread.sleep(30_000);
+    Thread.sleep(10_000);
   }
 
   private static void test(OkHttpClient client) throws IOException {

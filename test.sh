@@ -36,6 +36,18 @@ echo "feign"
 make build run-travis-test || exit $?
 cd ..
 
+cd okhttp
+echo "##############################################################################################"
+echo "okhttp"
+make build run-travis-test || exit $?
+cd ..
+
+cd httpclient
+echo "##############################################################################################"
+echo "httpclient"
+make build run-travis-test || exit $?
+cd ..
+
 cd spring-web
 echo "##############################################################################################"
 echo "spring-web"
@@ -45,6 +57,12 @@ cd ..
 cd spring-scheduling
 echo "##############################################################################################"
 echo "spring-scheduling"
+make build run-travis-test || exit $?
+cd ..
+
+cd zuul
+echo "##############################################################################################"
+echo "zuul"
 make build run-travis-test || exit $?
 cd ..
 
