@@ -9,6 +9,6 @@ public class App {
     jedis.set("key", "value");
     System.out.println(jedis.get("key"));
 
-    TimeUnit.SECONDS.sleep(30L);
+    TimeUnit.SECONDS.sleep(10L);
   }
 }

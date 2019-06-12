@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+cd jedis-2
+echo "##############################################################################################"
+echo "jedis-2"
+make build run-travis-test || exit $?
+cd ..
+
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"

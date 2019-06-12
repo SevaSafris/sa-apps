@@ -1,31 +1,10 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.2.1-SNAPSHOT.jar
+specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
+specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
+component_name := jedis-2
+component_jar := jedis-2-1.0-SNAPSHOT.jar
+main_class := jedis2.App
+plugin_name := jedis
 
-build:
-	mvn clean package -DskipTests
-
-clean:
-	mvn clean
-
-run:
-	java \
-		-Dls.componentName=jedis-2 \
-		-Dls.collectorHost=collector.lightstep.com \
-		-Dls.collectorProtocol=https \
-		-Dls.collectorPort=443 \
-		-Dls.accessToken=$(LS_TOKEN) \
-		-Dsa.tracer=lightstep \
-		-cp target/jedis-2-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) jedis2.App
-
-run-solo:
-	java \
-		-Dsa.tracer=mock \
-		-Dsa.log.level=FINER \
-		-Dsa.tracer.plugins.enable=false \
-		-Dsa.instrumentation.plugins.enable=false \
-		-Dsa.instrumentation.plugin.jedis.enable=true \
-		-cp target/jedis-2-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) jedis2.App
-
-run-no-agent:
-	java -cp target/jedis-2-1.0-SNAPSHOT.jar jedis2.App
+include ../Makefile
