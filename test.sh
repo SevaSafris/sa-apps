@@ -18,6 +18,12 @@ echo "redisson"
 make build run-travis-test || exit $?
 cd ..
 
+cd lettuce
+echo "##############################################################################################"
+echo "lettuce"
+make build run-travis-test || exit $?
+cd ..
+
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"
