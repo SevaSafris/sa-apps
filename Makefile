@@ -1,6 +1,6 @@
 
 specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
-specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
+specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
 build:
 	mvn clean package -DskipTests
@@ -11,7 +11,7 @@ clean:
 run-travis-test:
 	java \
 		-Dsa.tracer=mock \
-		-javaagent:${CURDIR}/../$(specialagent_jar) -jar target/${component_jar}
+		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 
 run-local:
 	java \
