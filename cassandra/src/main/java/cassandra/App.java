@@ -3,6 +3,7 @@ package cassandra;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
+import java.util.concurrent.TimeUnit;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -11,21 +12,13 @@ public class App {
     Session session = cluster.connect();
     System.out.println(session);
 
-    long start = System.currentTimeMillis();
-    for (int i = 0; i < 10; i++) {
-      ResultSet resultSet = session.execute("select * from system.compaction_history");
-      System.out.println("rows: " + resultSet.all().size());
-    }
-    long end = System.currentTimeMillis();
-
-    double duration = (end - start) / 1000.0;
-    System.out.println("Duration: " + duration + " sec");
+    ResultSet resultSet = session.execute("select * from system.compaction_history");
+    System.out.println("rows: " + resultSet.all().size());
 
     session.close();
     cluster.close();
 
-    Thread.sleep(30_000L);
-
+    TimeUnit.SECONDS.sleep(10);
   }
 
 

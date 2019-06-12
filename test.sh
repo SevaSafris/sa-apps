@@ -6,6 +6,12 @@ echo "aws"
 make build run-travis-test || exit $?
 cd ..
 
+cd cassandra
+echo "##############################################################################################"
+echo "cassandra"
+make build run-travis-test || exit $?
+cd ..
+
 cd jedis-2
 echo "##############################################################################################"
 echo "jedis-2"
