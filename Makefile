@@ -10,7 +10,6 @@ clean:
 
 run-travis-test:
 	java \
-		-Dls.componentName=${component_name} \
 		-Dsa.tracer=mock \
 		-javaagent:${CURDIR}/../$(specialagent_jar) -jar target/${component_jar}
 
