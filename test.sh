@@ -12,9 +12,21 @@ echo "jedis-3"
 make build run-travis-test || exit $?
 cd ..
 
+cd redisson
+echo "##############################################################################################"
+echo "redisson"
+make build run-travis-test || exit $?
+cd ..
+
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"
+make build run-travis-test || exit $?
+cd ..
+
+cd feign
+echo "##############################################################################################"
+echo "feign"
 make build run-travis-test || exit $?
 cd ..
 
@@ -30,8 +42,3 @@ echo "spring-scheduling"
 make build run-travis-test || exit $?
 cd ..
 
-cd feign
-echo "##############################################################################################"
-echo "feign"
-make build run-travis-test || exit $?
-cd ..

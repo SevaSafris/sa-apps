@@ -1,3 +1,7 @@
+
+specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
+specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
+
 build:
 	mvn clean package -DskipTests
 
@@ -8,7 +12,7 @@ run-travis-test:
 	java \
 		-Dls.componentName=${component_name} \
 		-Dsa.tracer=mock \
-		-cp target/${component_jar} -javaagent:${CURDIR}/../$(specialagent_jar) $(main_class)
+		-javaagent:${CURDIR}/../$(specialagent_jar) -jar target/${component_jar}
 
 run-local:
 	java \
@@ -18,7 +22,7 @@ run-local:
 		-Dls.collectorPort=8360 \
 		-Dls.accessToken=${LS_LOCAL_TOKEN} \
 		-Dsa.tracer=lightstep \
-		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) $(main_class)
+		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 
 run:
 	java \
@@ -28,7 +32,7 @@ run:
 		-Dls.collectorPort=443 \
 		-Dls.accessToken=$(LS_TOKEN) \
 		-Dsa.tracer=lightstep \
-		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) $(main_class)
+		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 
 run-solo:
 	java \
@@ -37,7 +41,7 @@ run-solo:
 		-Dsa.tracer.plugins.enable=false \
 		-Dsa.instrumentation.plugins.enable=false \
 		-Dsa.instrumentation.plugin.$(plugin_name).enable=true \
-		-cp target/${component_jar} -javaagent:$(specialagent_jar_path) $(main_class)
+		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 
 run-no-agent:
-	java -cp target/${component_jar} $(main_class)
+	java -jar target/${component_jar}
