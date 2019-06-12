@@ -6,6 +6,12 @@ echo "jedis-2"
 make build run-travis-test || exit $?
 cd ..
 
+cd jedis-3
+echo "##############################################################################################"
+echo "jedis-3"
+make build run-travis-test || exit $?
+cd ..
+
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"
