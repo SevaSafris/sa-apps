@@ -12,22 +12,18 @@ import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 public class App {
   public static void main(String[] args) throws Exception {
     AmazonDynamoDB dbClient = buildClient();
 
-    long start = System.currentTimeMillis();
-    for (int i = 0; i < 100; i++) {
+    try {
       createTable(dbClient, "tableName-" + ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
+    } catch (Exception e) {
+      System.out.println("Exception: " + e.getMessage() + "\nLet's ignore it.");
     }
-    long end = System.currentTimeMillis();
-
-    double duration = (end - start) / 1000.0;
-    System.out.println("Duration: " + duration + " sec");
-    Thread.sleep(30_000L);
-
-
+    TimeUnit.SECONDS.sleep(10);
   }
 
   private static AmazonDynamoDB buildClient() {
