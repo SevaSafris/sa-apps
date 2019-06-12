@@ -1,6 +1,5 @@
 
-# specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
-specialagent_jar := opentracing-specialagent-1.2.0.jar
+specialagent_jar := opentracing-specialagent-1.2.1-SNAPSHOT.jar
 specialagent_jar_path := /Users/malafes/Downloads/${specialagent_jar}
 
 build:
