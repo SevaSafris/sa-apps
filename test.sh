@@ -18,3 +18,8 @@ echo "spring-scheduling"
 make build run-travis-test || exit $?
 cd ..
 
+cd feign
+echo "##############################################################################################"
+echo "feign"
+make build run-travis-test || exit $?
+cd ..
