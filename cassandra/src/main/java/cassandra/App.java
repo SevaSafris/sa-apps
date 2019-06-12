@@ -9,8 +9,13 @@ public class App {
   public static void main(String[] args) throws Exception {
 
     Cluster cluster = Cluster.builder().addContactPoints("127.0.0.1").withPort(9042).build();
-    Session session = cluster.connect();
-    System.out.println(session);
+    Session session;
+    try {
+      session = cluster.connect();
+    } catch (Exception e) {
+      System.err.println("Cannot connect, exiting.\n" + e.getMessage());
+      return;
+    }
 
     ResultSet resultSet = session.execute("select * from system.compaction_history");
     System.out.println("rows: " + resultSet.all().size());
