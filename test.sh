@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-cd aws
-echo "##############################################################################################"
-echo "aws"
-make build run-travis-test || exit $?
-cd ..
-
 cd cassandra
 echo "##############################################################################################"
 echo "cassandra"
+make build run-travis-test || exit $?
+cd ..
+
+cd aws
+echo "##############################################################################################"
+echo "aws"
 make build run-travis-test || exit $?
 cd ..
 
