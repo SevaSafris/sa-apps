@@ -1,6 +1,7 @@
 package jms;
 
 
+import java.util.concurrent.TimeUnit;
 import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Destination;
@@ -17,10 +18,7 @@ public class App {
   public static void main(String[] args) throws Exception {
     jms();
 
-    System.out.println("SLEEP STARTED");
-    Thread.sleep(30_000L);
-    System.out.println("SLEEP ENDED");
-
+    TimeUnit.SECONDS.sleep(10);
   }
 
   private static void jms() {
@@ -36,6 +34,8 @@ public class App {
         // Create a ConnectionFactory
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
             "tcp://localhost:61616");
+        connectionFactory.setUserName("artemis");
+        connectionFactory.setPassword("simetraehcapa");
 
         // Create a Connection
         Connection connection = connectionFactory.createConnection();
@@ -81,6 +81,8 @@ public class App {
         // Create a ConnectionFactory
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
             "tcp://localhost:61616");
+        connectionFactory.setUserName("artemis");
+        connectionFactory.setPassword("simetraehcapa");
 
         // Create a Connection
         Connection connection = connectionFactory.createConnection();

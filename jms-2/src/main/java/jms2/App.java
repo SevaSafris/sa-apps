@@ -1,6 +1,7 @@
 package jms2;
 
 
+import java.util.concurrent.TimeUnit;
 import javax.jms.Connection;
 import javax.jms.Destination;
 import javax.jms.JMSContext;
@@ -15,6 +16,9 @@ public class App {
 
     final ActiveMQJMSConnectionFactory connectionFactory =
         new ActiveMQJMSConnectionFactory("tcp://localhost:61616");
+    connectionFactory.setUser("artemis");
+    connectionFactory.setPassword("simetraehcapa");
+
     Connection connection = connectionFactory.createConnection();
     connection.start();
     JMSContext context = connectionFactory.createContext();
@@ -40,8 +44,7 @@ public class App {
     session.close();
     connection.close();
 
-    Thread.sleep(30_000);
-
+    TimeUnit.SECONDS.sleep(10);
   }
 
 }

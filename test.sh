@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+cd jms-1
+echo "##############################################################################################"
+echo "jms-1"
+docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
+make build run-travis-test || exit $?
+cd ..
+
+cd jms-2
+echo "##############################################################################################"
+echo "jms-2"
+make build run-travis-test || exit $?
+docker stop artemis
+cd ..
+
 cd jdbi
 echo "##############################################################################################"
 echo "jdbi"
