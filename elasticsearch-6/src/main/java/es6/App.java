@@ -76,7 +76,8 @@ public class App {
   private static void transportClient() throws Exception {
 
     Settings settings = Settings.builder()
-        .put("cluster.name", "elasticsearch").build();
+        .put("client.transport.ignore_cluster_name", true)
+        .build();
 
     TransportClient client = new PreBuiltTransportClient(settings)
         .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"),

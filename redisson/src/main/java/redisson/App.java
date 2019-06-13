@@ -11,7 +11,13 @@ public class App {
     Config config = new Config();
     config.useSingleServer().setAddress("redis://127.0.0.1:6379");
 
-    RedissonClient redissonClient = Redisson.create(config);
+    RedissonClient redissonClient = null;
+    try {
+      redissonClient = Redisson.create(config);
+    } catch (Throwable e) {
+      e.printStackTrace();
+      System.exit(-1);
+    }
 
     RMap<String, String> map = redissonClient.getMap("map");
 
