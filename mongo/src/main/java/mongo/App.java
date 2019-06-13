@@ -29,7 +29,7 @@ public class App {
 
     client.close();
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 
 
