@@ -11,7 +11,7 @@ public class App {
     //Class.forName(Driver.class.getName());
 
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test" +
-        "?createDatabaseIfNotExist=true&user=root&password=sql567"
+        "?createDatabaseIfNotExist=true&user=travis"
         + "&traceWithActiveSpanOnly=false");
     Statement stmt = conn.createStatement();
     ResultSet rs = stmt.executeQuery("show databases;");

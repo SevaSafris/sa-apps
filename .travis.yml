@@ -12,6 +12,7 @@ cache:
 services:
   - redis-server
   - cassandra
+  - mysql
   - docker
 
 install:
