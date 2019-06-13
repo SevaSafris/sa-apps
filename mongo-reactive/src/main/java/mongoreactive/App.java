@@ -40,7 +40,7 @@ public class App {
     latch.await(15, TimeUnit.SECONDS);
     mongoClient.close();
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
 
   }
 }
