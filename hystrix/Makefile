@@ -1,23 +1,9 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.1.3-SNAPSHOT.jar
+component_name := hystrix
+component_jar := hystrix-1.0-SNAPSHOT.jar
+plugin_name := hystrix
 
-build:
-	mvn clean package -DskipTests
+include ../Makefile
 
-clean:
-	mvn clean
-
-run:
-	java \
-	    -Dls.componentName=hystrix \
-	    -Dls.collectorHost=collector.lightstep.com \
-	    -Dls.collectorProtocol=https \
-	    -Dls.collectorPort=443 \
-	    -Dls.accessToken=$(LS_TOKEN) \
-	    -Dsa.tracer=lightstep \
-		-cp target/hystrix-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) hystrix.App
-
-run-no-agent:
-	java -cp target/hystrix-1.0-SNAPSHOT.jar hystrix.App
 
