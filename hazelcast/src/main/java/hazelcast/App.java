@@ -15,6 +15,6 @@ public class App {
 
     instance.shutdown();
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 }
