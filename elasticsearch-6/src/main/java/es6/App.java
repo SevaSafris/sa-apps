@@ -26,11 +26,16 @@ import org.elasticsearch.transport.client.PreBuiltTransportClient;
 public class App {
   public static void main(String[] args) throws Exception {
 
-    restClient();
-    transportClient();
+    try {
+      restClient();
+      transportClient();
+    } catch (Exception e) {
+      e.printStackTrace();
+      System.exit(-1);
+    }
 
-    Thread.sleep(30_000);
-
+    TimeUnit.SECONDS.sleep(10);
+    System.exit(0);
   }
 
   private static void restClient() throws IOException {
@@ -71,7 +76,7 @@ public class App {
   private static void transportClient() throws Exception {
 
     Settings settings = Settings.builder()
-        .put("cluster.name", "elasticsearch_malafes").build();
+        .put("cluster.name", "elasticsearch").build();
 
     TransportClient client = new PreBuiltTransportClient(settings)
         .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"),
@@ -104,6 +109,5 @@ public class App {
 
     latch.await(30, TimeUnit.SECONDS);
     client.close();
-
   }
 }

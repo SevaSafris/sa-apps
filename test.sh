@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+cd elasticsearch-6
+echo "##############################################################################################"
+echo "elasticsearch-6"
+make build run-travis-test || exit $?
+cd ..
+
 cd cassandra
 echo "##############################################################################################"
 echo "cassandra"
