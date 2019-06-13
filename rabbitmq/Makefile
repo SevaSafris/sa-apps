@@ -1,31 +1,7 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.2.1-SNAPSHOT.jar
+component_name := rabbitmq
+component_jar := rabbitmq-1.0-SNAPSHOT.jar
+plugin_name := rabbitmq-client
 
-build:
-	mvn clean package -DskipTests
-
-clean:
-	mvn clean
-
-run:
-	java \
-		-Dls.componentName=rabbitmq \
-		-Dls.collectorHost=collector.lightstep.com \
-		-Dls.collectorProtocol=https \
-		-Dls.collectorPort=443 \
-		-Dls.accessToken=$(LS_TOKEN) \
-		-Dsa.tracer=lightstep \
-		-cp target/rabbitmq-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) rabbitmq.App
-
-run-solo:
-	java \
-		-Dsa.tracer=mock \
-		-Dsa.log.level=FINER \
-		-Dsa.tracer.plugins.enable=false \
-		-Dsa.instrumentation.plugins.enable=false \
-		-Dsa.instrumentation.plugin.rabbitmq-client.enable=true \
-		-cp target/rabbitmq-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) rabbitmq.App
-
-run-no-agent:
-	java -cp target/rabbitmq-1.0-SNAPSHOT.jar rabbitmq.App
+include ../Makefile

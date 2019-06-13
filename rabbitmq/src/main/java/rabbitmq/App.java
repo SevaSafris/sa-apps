@@ -13,6 +13,10 @@ public class App {
   public static void main(String[] args) throws Exception {
 
     ConnectionFactory factory = new ConnectionFactory();
+    factory.setUsername("guest");
+    factory.setPassword("guest");
+    factory.setVirtualHost("/");
+
     Connection connection = factory.newConnection();
     Channel channel = connection.createChannel();
 
@@ -28,7 +32,7 @@ public class App {
     channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
     });
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
 
     channel.close();
     connection.close();

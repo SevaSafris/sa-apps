@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+cd rabbitmq
+echo "##############################################################################################"
+echo "rabbitmq"
+docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
+make build run-travis-test || exit $?
+cd ..
+
 cd mongo
 echo "##############################################################################################"
 echo "mongo"
