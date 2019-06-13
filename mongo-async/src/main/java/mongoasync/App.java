@@ -21,7 +21,7 @@ public class App {
     document.put("company", "Company");
     collection.insertOne(document, (result, t) -> System.out.println("result"));
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
 
     client.close();
 

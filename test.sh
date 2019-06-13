@@ -7,6 +7,13 @@ docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
 make build run-travis-test || exit $?
 cd ..
 
+cd mongo-async
+echo "##############################################################################################"
+echo "mongo-async"
+docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
+make build run-travis-test || exit $?
+cd ..
+
 cd kafka
 echo "##############################################################################################"
 echo "kafka"
