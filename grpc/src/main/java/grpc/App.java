@@ -30,7 +30,7 @@ public class App {
 
     server.shutdownNow();
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 
   private static class GreeterImpl extends GreeterGrpc.GreeterImplBase {
