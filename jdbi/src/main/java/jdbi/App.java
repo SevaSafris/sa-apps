@@ -7,7 +7,7 @@ import org.jdbi.v3.core.Jdbi;
 public class App {
   public static void main(String[] args) throws InterruptedException {
     final Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost/test" +
-        "?createDatabaseIfNotExist=true&user=root&password=sql567");
+        "?createDatabaseIfNotExist=true&user=travis");
 
     Handle handle = jdbi.open();
     handle.execute("CREATE TABLE accounts (id BIGINT AUTO_INCREMENT, PRIMARY KEY (id))");
@@ -15,6 +15,6 @@ public class App {
 
     handle.close();
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 }
