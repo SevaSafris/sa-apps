@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+cd kafka
+echo "##############################################################################################"
+echo "kafka"
+wget http://www-us.apache.org/dist/kafka/2.2.1/kafka_2.12-2.2.1.tgz
+tar xzf kafka_2.12-2.2.1.tgz
+kafka_2.12-2.2.1/bin/zookeeper-server-start.sh -daemon kafka_2.12-2.2.1/config/zookeeper.properties
+sleep 5
+kafka_2.12-2.2.1/bin/kafka-server-start.sh -daemon kafka_2.12-2.2.1/config/server.properties
+sleep 5
+make build run-travis-test || exit $?
+cd ..
+
 cd jms-1
 echo "##############################################################################################"
 echo "jms-1"

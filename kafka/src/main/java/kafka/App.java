@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -39,7 +40,8 @@ public class App {
     createConsumer();
     producer.close();
 
-    Thread.sleep(30_000);
+    TimeUnit.SECONDS.sleep(10);
+    System.exit(0);
   }
 
   private static Producer<Long, String> createProducer() {
