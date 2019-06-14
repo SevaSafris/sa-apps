@@ -199,9 +199,27 @@ echo "spring-web"
 make build run-travis-test || exit $?
 cd ..
 
+cd spring-webmvc
+echo "##############################################################################################"
+echo "spring-webmvc"
+make build run-travis-test || exit $?
+cd ..
+
+cd spring-webflux
+echo "##############################################################################################"
+echo "spring-webflux"
+make build run-travis-test || exit $?
+cd ..
+
 cd spring-scheduling
 echo "##############################################################################################"
 echo "spring-scheduling"
+make build run-travis-test || exit $?
+cd ..
+
+cd spring-messaging
+echo "##############################################################################################"
+echo "spring-messaging"
 make build run-travis-test || exit $?
 cd ..
 
