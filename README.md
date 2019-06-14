@@ -19,7 +19,8 @@
     ```  
 1. Modify [Makefile](./Makefile) by changing `specialagent_jar` variable to correct value of downloaded Special Agent jar 
 1. Setup LS
-    - If you use local instance of LS then export token as `LS_LOCAL_TOKEN` variable.
+    - If you use [Developer Mode](https://docs.lightstep.com/docs/developer-mode) (local instance of LS) 
+    then export token as `LS_LOCAL_TOKEN` variable.
     E.g.:
     ```bash
     export LS_LOCAL_TOKEN=bla-bla-bla
@@ -39,11 +40,11 @@
    make
    ```
 1. Run module with Special Agent jar
-   - For local LS:
+   - For Developer Mode:
    ```bash
    make run-local
    ```   
-   - For remote LS:
+   - For regular mode:
    ```bash
    make run
    ```
