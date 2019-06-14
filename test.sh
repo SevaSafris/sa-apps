@@ -93,6 +93,12 @@ docker pull docker.elastic.co/elasticsearch/elasticsearch:6.6.1
 docker run --name es6 -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.6.1
 sleep 10
 make build run-travis-test || exit $?
+cd ..
+
+cd spring-boot-elasticsearch
+echo "##############################################################################################"
+echo "spring-boot-elasticsearch"
+make build run-travis-test || exit $?
 docker stop es6
 cd ..
 
