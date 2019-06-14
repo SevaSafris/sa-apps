@@ -10,6 +10,7 @@ import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
@@ -52,6 +53,15 @@ public class App {
     container.setQueueNames(queueName);
     container.setMessageListener(listenerAdapter);
     return container;
+  }
+
+  @Bean
+  public ConnectionFactory connectionFactory() {
+    final CachingConnectionFactory factory = new CachingConnectionFactory("localhost");
+    factory.setUsername("guest");
+    factory.setPassword("guest");
+    factory.setVirtualHost("/");
+    return factory;
   }
 
   @Bean

@@ -12,6 +12,12 @@ echo "rabbitmq"
 make build run-travis-test || exit $?
 cd ..
 
+cd spring-boot-rabbitmq
+echo "##############################################################################################"
+echo "spring-boot-rabbitmq"
+make build run-travis-test || exit $?
+cd ..
+
 cd mongo
 echo "##############################################################################################"
 echo "mongo"
