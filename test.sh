@@ -235,3 +235,14 @@ echo "zuul"
 make build run-travis-test || exit $?
 cd ..
 
+cd spymemcached/
+echo "##############################################################################################"
+echo "spymemcached/"
+make build run-travis-test || exit $?
+cd ..
+
+cd thrift
+echo "##############################################################################################"
+echo "thrift"
+make build run-travis-test || exit $?
+cd ..
