@@ -144,6 +144,13 @@ echo "jedis-3"
 make build run-travis-test || exit $?
 cd ..
 
+cd lettuce
+echo "##############################################################################################"
+echo "lettuce"
+make build run-travis-test || exit $?
+cd ..
+
+
 cd spring-data-redis
 echo "##############################################################################################"
 echo "spring-data-redis"
@@ -159,12 +166,6 @@ cd ..
 cd redisson
 echo "##############################################################################################"
 echo "redisson"
-make build run-travis-test || exit $?
-cd ..
-
-cd lettuce
-echo "##############################################################################################"
-echo "lettuce"
 make build run-travis-test || exit $?
 cd ..
 
