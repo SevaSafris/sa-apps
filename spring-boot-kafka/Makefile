@@ -1,41 +1,7 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.2.1-SNAPSHOT.jar
+component_name := spring-boot-kafka
+component_jar := spring-boot-kafka-1.0-SNAPSHOT.jar
+plugin_name := kafka-client
 
-build:
-	mvn clean package -DskipTests
-
-clean:
-	mvn clean
-
-run:
-	java \
-		-Dls.componentName=spring-boot-kafka \
-		-Dls.collectorHost=collector.lightstep.com \
-		-Dls.collectorProtocol=https \
-		-Dls.collectorPort=443 \
-		-Dls.accessToken=$(LS_TOKEN) \
-		-Dsa.tracer=lightstep \
-		-cp target/spring-boot-kafka-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
-
-run-local:
-	java \
-		-Dls.componentName=spring-boot-kafka \
-		-Dls.collectorHost=localhost \
-		-Dls.collectorProtocol=http \
-		-Dls.collectorPort=8360 \
-		-Dls.accessToken=${LS_LOCAL_TOKEN} \
-		-Dsa.tracer=lightstep \
-		-cp target/spring-boot-kafka-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
-
-run-solo:
-	java \
-		-Dsa.tracer=mock \
-		-Dsa.log.level=FINER \
-		-Dsa.tracer.plugins.enable=false \
-		-Dsa.instrumentation.plugins.enable=false \
-		-Dsa.instrumentation.plugin.kafka-client.enable=true \
-		-cp target/spring-boot-kafka-1.0-SNAPSHOT.jar -javaagent:$(specialagent_jar) org.springframework.boot.loader.JarLauncher
-
-run-no-agent:
-	java -cp target/spring-boot-kafka-1.0-SNAPSHOT.jar org.springframework.boot.loader.JarLauncher
+include ../Makefile

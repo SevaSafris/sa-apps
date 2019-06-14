@@ -42,6 +42,12 @@ sleep 5
 make build run-travis-test || exit $?
 cd ..
 
+cd spring-boot-kafka
+echo "##############################################################################################"
+echo "spring-boot-kafka"
+make build run-travis-test || exit $?
+cd ..
+
 cd jms-1
 echo "##############################################################################################"
 echo "jms-1"
