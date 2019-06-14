@@ -53,6 +53,12 @@ cd jms-2
 echo "##############################################################################################"
 echo "jms-2"
 make build run-travis-test || exit $?
+cd ..
+
+cd spring-boot-jms
+echo "##############################################################################################"
+echo "spring-boot-jms"
+make build run-travis-test || exit $?
 docker stop artemis
 cd ..
 

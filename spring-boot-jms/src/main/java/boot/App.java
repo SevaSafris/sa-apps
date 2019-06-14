@@ -11,6 +11,7 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
+import org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
@@ -31,7 +32,15 @@ public class App {
 
   @Bean
   public ConnectionFactory connectionFactory() {
-    return new ActiveMQConnectionFactory("tcp://localhost:61616");
+    final ConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
+
+    final UserCredentialsConnectionFactoryAdapter adapter =
+        new UserCredentialsConnectionFactoryAdapter();
+    adapter.setTargetConnectionFactory(factory);
+    adapter.setUsername("artemis");
+    adapter.setPassword("simetraehcapa");
+
+    return adapter;
   }
 
   @Bean // Serialize message content to json using TextMessage
