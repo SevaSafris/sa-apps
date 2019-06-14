@@ -18,7 +18,7 @@ public class App implements CommandLineRunner {
     ValueOperations<String, String> ops = this.template.opsForValue();
     ops.set("key", "value");
     System.out.println("value=" + ops.get("key"));
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 
   public static void main(String[] args) {
