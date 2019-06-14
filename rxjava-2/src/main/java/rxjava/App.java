@@ -3,7 +3,7 @@ package rxjava;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
+import java.util.concurrent.TimeUnit;
 
 public class App {
 
@@ -37,14 +37,9 @@ public class App {
         });
 
     Observable.just("Hello", "World")
-        .subscribe(new Consumer<String>() {
-          @Override
-          public void accept(String s) {
-            System.out.println(s);
-          }
-        });
+        .subscribe(System.out::println);
 
-    Thread.sleep(30_000L);
+    TimeUnit.SECONDS.sleep(10);
 
   }
 
