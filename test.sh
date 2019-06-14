@@ -223,6 +223,12 @@ echo "spring-messaging"
 make build run-travis-test || exit $?
 cd ..
 
+cd spring--websocket
+echo "##############################################################################################"
+echo "spring--websocket"
+make build run-travis-test || exit $?
+cd ..
+
 cd zuul
 echo "##############################################################################################"
 echo "zuul"
