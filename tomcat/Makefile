@@ -1,6 +1,6 @@
 .PHONY: build clean run
 
-specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.2.1-SNAPSHOT.jar
+specialagent_jar := /Users/malafes/Downloads/opentracing-specialagent-1.3.3-SNAPSHOT.jar
 
 build:
 	mvn clean package -DskipTests
