@@ -163,12 +163,6 @@ echo "spring-data-redis-2"
 make build run-travis-test || exit $?
 cd ..
 
-cd redisson
-echo "##############################################################################################"
-echo "redisson"
-make build run-travis-test || exit $?
-cd ..
-
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"
@@ -244,5 +238,12 @@ cd ..
 cd thrift
 echo "##############################################################################################"
 echo "thrift"
+make build run-travis-test || exit $?
+cd ..
+
+
+cd redisson
+echo "##############################################################################################"
+echo "redisson"
 make build run-travis-test || exit $?
 cd ..
