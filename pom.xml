@@ -51,6 +51,7 @@
     <module>spring-messaging</module>
     <module>spring-boot-jms</module>
     <module>spring-scheduling</module>
+    <module>concurrent</module>
   </modules>
 
   <name>java-specialagent-apps</name>
