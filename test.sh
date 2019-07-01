@@ -211,22 +211,28 @@ echo "spring-scheduling"
 make build run-travis-test || exit $?
 cd ..
 
-cd spring-messaging
+cd spring-websocket
 echo "##############################################################################################"
-echo "spring-messaging"
-make build run-travis-test || exit $?
-cd ..
-
-cd spring--websocket
-echo "##############################################################################################"
-echo "spring--websocket"
+echo "spring-websocket"
 make build run-travis-test || exit $?
 cd ..
 
 cd zuul
 echo "##############################################################################################"
-echo "zuul"
-make build run-travis-test || exit $?
+echo "zuul-spring-cloud-greenwich"
+make build-spring-cloud-greenwich run-travis-test || exit $?
+cd ..
+
+cd zuul
+echo "##############################################################################################"
+echo "zuul-spring-cloud-finchley"
+make build-spring-cloud-finchley run-travis-test || exit $?
+cd ..
+
+cd zuul
+echo "##############################################################################################"
+echo "zuul-spring-cloud-edgware"
+make build-spring-cloud-edgware run-travis-test || exit $?
 cd ..
 
 cd spymemcached/
@@ -245,5 +251,11 @@ cd ..
 cd redisson
 echo "##############################################################################################"
 echo "redisson"
+make build run-travis-test || exit $?
+cd ..
+
+cd spring-messaging
+echo "##############################################################################################"
+echo "spring-messaging"
 make build run-travis-test || exit $?
 cd ..
