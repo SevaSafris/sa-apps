@@ -199,9 +199,12 @@ done
 cd ..
 
 cd spring-webmvc
-echo "##############################################################################################"
-echo "spring-webmvc"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-webmvc-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd spring-webflux

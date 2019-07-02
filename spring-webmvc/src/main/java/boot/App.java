@@ -28,13 +28,12 @@ public class App {
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
     return args -> {
-
       final ResponseEntity<String> entity = restTemplate
           .getForEntity("http://localhost:8080", String.class);
 
       System.out.println(entity);
 
-      TimeUnit.SECONDS.sleep(30);
+      TimeUnit.SECONDS.sleep(10);
       System.exit(0);
 
     };
