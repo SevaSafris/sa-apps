@@ -1,10 +1,5 @@
 package zuul;
 
-import io.opentracing.mock.MockSpan;
-import io.opentracing.mock.MockTracer;
-import io.opentracing.tag.Tags;
-import io.opentracing.util.GlobalTracer;
-import java.lang.reflect.Field;
 import java.util.concurrent.TimeUnit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +8,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import util.Util;
 
 @EnableZuulProxy
 @SpringBootApplication
@@ -34,38 +30,9 @@ public class App {
       System.out.println(entity.getStatusCode());
 
       TimeUnit.SECONDS.sleep(10);
-      checkZuulSpan();
+      Util.checkSpan("zuul", 4);
 
       System.exit(0);
     };
   }
-
-  private static void checkZuulSpan() throws Exception {
-    final Field field = GlobalTracer.get().getClass().getDeclaredField("tracer");
-    field.setAccessible(true);
-    final Object ob = field.get(GlobalTracer.get());
-    MockTracer tracer;
-    if (ob instanceof MockTracer) {
-      tracer = (MockTracer) ob;
-    } else {
-      return;
-    }
-    boolean found = false;
-    for (MockSpan span : tracer.finishedSpans()) {
-      if (span.tags().get(Tags.COMPONENT.getKey()).equals("zuul")) {
-        found = true;
-        System.out.println("Found zuul span");
-        break;
-      }
-    }
-    if (!found) {
-      throw new RuntimeException("Zuul span not found");
-    }
-
-    if (tracer.finishedSpans().size() != 4) {
-      throw new RuntimeException(tracer.finishedSpans().size() +
-          " spans instead of 4");
-    }
-  }
-
 }

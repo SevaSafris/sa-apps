@@ -3,6 +3,7 @@ package boot;
 import java.util.concurrent.TimeUnit;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import util.Util;
 
 public class App {
 
@@ -12,9 +13,10 @@ public class App {
         .getForEntity("http://www.google.com", String.class);
 
     System.out.println(entity.getStatusCode());
-
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-spring-rest-template", 1);
   }
+
 
 }
 
