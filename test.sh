@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+spring_clouds=( spring-cloud-greenwich spring-cloud-finchley spring-cloud-edgware )
+
 cd rxjava-2
 echo "##############################################################################################"
 echo "rxjava-2"
@@ -188,9 +190,12 @@ make build run-travis-test || exit $?
 cd ..
 
 cd spring-web
-echo "##############################################################################################"
-echo "spring-web"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-web-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd spring-webmvc
@@ -218,21 +223,12 @@ make build run-travis-test || exit $?
 cd ..
 
 cd zuul
-echo "##############################################################################################"
-echo "zuul-spring-cloud-greenwich"
-make build-spring-cloud-greenwich run-travis-test || exit $?
-cd ..
-
-cd zuul
-echo "##############################################################################################"
-echo "zuul-spring-cloud-finchley"
-make build-spring-cloud-finchley run-travis-test || exit $?
-cd ..
-
-cd zuul
-echo "##############################################################################################"
-echo "zuul-spring-cloud-edgware"
-make build-spring-cloud-edgware run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "zuul-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd spymemcached/
