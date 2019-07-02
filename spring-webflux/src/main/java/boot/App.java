@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.WebClient;
+import util.Util;
 
 @SpringBootApplication
 public class App {
@@ -18,7 +19,6 @@ public class App {
   @Bean
   public CommandLineRunner commandLineRunner() {
     return args -> {
-
       final WebClient client = WebClient.builder().baseUrl("http://localhost:8080")
           .build();
 
@@ -27,6 +27,7 @@ public class App {
       System.out.println(response.bodyToMono(String.class).block());
 
       TimeUnit.SECONDS.sleep(30);
+      Util.checkSpan("java-spring-webclient", 1);
       System.exit(0);
     };
   }

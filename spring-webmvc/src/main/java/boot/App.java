@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+import util.Util;
 
 @SpringBootApplication
 public class App {
@@ -34,6 +35,7 @@ public class App {
       System.out.println(entity);
 
       TimeUnit.SECONDS.sleep(10);
+      Util.checkSpan("java-web-servlet", 2);
       System.exit(0);
 
     };

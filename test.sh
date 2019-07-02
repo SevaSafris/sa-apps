@@ -208,9 +208,12 @@ done
 cd ..
 
 cd spring-webflux
-echo "##############################################################################################"
-echo "spring-webflux"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-webflux-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd spring-scheduling
