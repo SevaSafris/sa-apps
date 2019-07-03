@@ -1,9 +1,7 @@
 package boot;
 
 import com.rabbitmq.client.Channel;
-import io.opentracing.Tracer;
 import io.opentracing.util.GlobalTracer;
-import java.util.Map.Entry;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Message;
@@ -69,21 +67,23 @@ public class App {
     return new MessageListenerAdapter(receiver, "receiveMessage") {
       @Override
       public void onMessage(Message message, Channel channel) throws Exception {
-        for (Entry<String, Object> entry : message.getMessageProperties().getHeaders()
-            .entrySet()) {
-          System.out.println(entry.getKey() + ":" + entry.getValue());
+        if (GlobalTracer.get().activeSpan() == null) {
+          System.err.println("Missing active span");
+          System.exit(-1);
         }
-        final Tracer tracer = GlobalTracer.get();
-        System.out.println(tracer.scopeManager().active());
-        System.out.println("onMessage START");
+        System.out.println("Active span: " + GlobalTracer.get().activeSpan());
         super.onMessage(message, channel);
-        System.out.println("onMessage End");
       }
     };
   }
 
   @RabbitListener(queues = queueName2)
   public void listen(String message) {
+    if (GlobalTracer.get().activeSpan() == null) {
+      System.err.println("Missing active span");
+      System.exit(-1);
+    }
+    System.out.println("Active span: " + GlobalTracer.get().activeSpan());
     System.out.println("Received <" + message + ">");
   }
 

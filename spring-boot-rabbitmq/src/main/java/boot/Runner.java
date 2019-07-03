@@ -24,7 +24,7 @@ public class Runner implements CommandLineRunner {
     System.out.println("Sending message to Queue 2...");
     rabbitTemplate.convertAndSend(App.queueName2, "Message for Queue 2");
 
-    TimeUnit.SECONDS.sleep(30);
+    TimeUnit.SECONDS.sleep(10);
   }
 
 }
