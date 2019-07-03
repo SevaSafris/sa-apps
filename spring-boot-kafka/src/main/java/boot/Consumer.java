@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Consumer {
 
-  @KafkaListener(topics = "users", groupId = "group_id")
+  @KafkaListener(topics = "users")
   @SendTo("reply")
   public String consume(String message) {
     System.out.println(String.format("1. #### -> Consumed message -> %s", message));
@@ -20,7 +20,7 @@ public class Consumer {
     return message.toUpperCase();
   }
 
-  @KafkaListener(topics = "reply", groupId = "group_id")
+  @KafkaListener(topics = "reply")
   public void consume2(String message) {
     System.out.println(String.format("2. #### -> Consumed message -> %s", message));
     if (GlobalTracer.get().activeSpan() == null) {
