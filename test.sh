@@ -155,15 +155,12 @@ cd ..
 
 
 cd spring-data-redis
-echo "##############################################################################################"
-echo "spring-data-redis"
-make build run-travis-test || exit $?
-cd ..
-
-cd spring-data-redis-2
-echo "##############################################################################################"
-echo "spring-data-redis-2"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-data-redis-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd asynchttpclient
@@ -227,9 +224,12 @@ done
 cd ..
 
 cd spring-websocket
-echo "##############################################################################################"
-echo "spring-websocket"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-websocket-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd zuul
@@ -261,7 +261,10 @@ make build run-travis-test || exit $?
 cd ..
 
 cd spring-messaging
-echo "##############################################################################################"
-echo "spring-messaging"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-messaging-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
