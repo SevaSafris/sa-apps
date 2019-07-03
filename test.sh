@@ -225,9 +225,12 @@ done
 cd ..
 
 cd spring-scheduling
-echo "##############################################################################################"
-echo "spring-scheduling"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-scheduling-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd spring-websocket
