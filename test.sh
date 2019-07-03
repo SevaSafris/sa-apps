@@ -123,13 +123,6 @@ sleep 10
 make build run-travis-test || exit $?
 cd ..
 
-cd spring-boot-elasticsearch
-echo "##############################################################################################"
-echo "spring-boot-elasticsearch"
-make build run-travis-test || exit $?
-docker stop es6
-cd ..
-
 cd cassandra
 echo "##############################################################################################"
 echo "cassandra"
