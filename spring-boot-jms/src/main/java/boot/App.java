@@ -54,6 +54,10 @@ public class App {
   @JmsListener(destination = "mailbox", containerFactory = "myFactory")
   public void receiveMessage(String message) {
     System.out.println("Received <" + message + ">");
+    if (GlobalTracer.get().activeSpan() == null) {
+      System.err.println("No active span");
+      System.exit(-1);
+    }
     System.out.println("Active span: " + GlobalTracer.get().activeSpan());
   }
 

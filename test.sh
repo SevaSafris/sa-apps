@@ -73,10 +73,12 @@ make build run-travis-test || exit $?
 cd ..
 
 cd spring-boot-jms
-echo "##############################################################################################"
-echo "spring-boot-jms"
-make build run-travis-test || exit $?
-docker stop artemis
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-boot-jms-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd jdbi
