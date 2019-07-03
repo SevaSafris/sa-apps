@@ -51,9 +51,12 @@ make build run-travis-test || exit $?
 cd ..
 
 cd spring-boot-kafka
-echo "##############################################################################################"
-echo "spring-boot-kafka"
-make build run-travis-test || exit $?
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-boot-kafka-${spring_cloud}"
+	make build-${spring_cloud} run-travis-test || exit $?
+done
 cd ..
 
 cd jms-1

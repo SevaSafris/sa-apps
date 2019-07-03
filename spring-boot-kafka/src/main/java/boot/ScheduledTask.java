@@ -18,7 +18,7 @@ public class ScheduledTask {
   public void task() {
     producer.sendMessage("Message " + counter);
     counter++;
-    if (counter == 5) {
+    if (counter == 3) {
       System.exit(0);
     }
   }
