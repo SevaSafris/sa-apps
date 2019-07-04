@@ -38,16 +38,16 @@ public class App {
       }
       System.out.println(new File(".").getAbsolutePath());
 
-      ctx.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
-          ".*/[^/]*jstl.*\\.jar$");
-
-      org.eclipse.jetty.webapp.Configuration.ClassList classlist = org.eclipse.jetty.webapp.Configuration.ClassList
-          .setServerDefault(server);
-      classlist.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration",
-          "org.eclipse.jetty.plus.webapp.EnvConfiguration",
-          "org.eclipse.jetty.plus.webapp.PlusConfiguration");
-      classlist.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration",
-          "org.eclipse.jetty.annotations.AnnotationConfiguration");
+//      ctx.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",
+//          ".*/[^/]*jstl.*\\.jar$");
+//
+//      org.eclipse.jetty.webapp.Configuration.ClassList classlist = org.eclipse.jetty.webapp.Configuration.ClassList
+//          .setServerDefault(server);
+//      classlist.addAfter("org.eclipse.jetty.webapp.FragmentConfiguration",
+//          "org.eclipse.jetty.plus.webapp.EnvConfiguration",
+//          "org.eclipse.jetty.plus.webapp.PlusConfiguration");
+//      classlist.addBefore("org.eclipse.jetty.webapp.JettyWebXmlConfiguration",
+//          "org.eclipse.jetty.annotations.AnnotationConfiguration");
 
       server.setHandler(ctx);
       server.start();

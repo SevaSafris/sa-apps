@@ -12,15 +12,15 @@
 
 	<context:component-scan base-package="spring3" />
 
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/views/jsp/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
+<!--	<bean-->
+<!--		class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
+<!--		<property name="prefix">-->
+<!--			<value>/WEB-INF/views/jsp/</value>-->
+<!--		</property>-->
+<!--		<property name="suffix">-->
+<!--			<value>.jsp</value>-->
+<!--		</property>-->
+<!--	</bean>-->
 
 	<mvc:annotation-driven />
 	

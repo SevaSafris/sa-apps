@@ -14,8 +14,11 @@
   <properties>
     <spring.version>3.0.7.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
-    <version.jetty>9.2.15.v20160210</version.jetty>
-<!--    <version.jetty>8.2.0.v20160908</version.jetty>-->
+<!--    <version.jetty>9.2.15.v20160210</version.jetty>-->
+    <version.jetty>8.2.0.v20160908</version.jetty>
+
+    <maven.compiler.target>1.6</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
   </properties>
 
   <dependencies>
@@ -44,11 +47,11 @@
       <artifactId>jetty-annotations</artifactId>
       <version>${version.jetty}</version>
     </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty</groupId>
-      <artifactId>apache-jsp</artifactId>
-      <version>${version.jetty}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.eclipse.jetty</groupId>-->
+<!--      <artifactId>apache-jsp</artifactId>-->
+<!--      <version>${version.jetty}</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
@@ -71,6 +74,16 @@
           </execution>
         </executions>
         <configuration>
+          <filters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/*.SF</exclude>
+                <exclude>META-INF/*.DSA</exclude>
+                <exclude>META-INF/*.RSA</exclude>
+              </excludes>
+            </filter>
+          </filters>
           <createDependencyReducedPom>false</createDependencyReducedPom>
           <transformers>
             <transformer
