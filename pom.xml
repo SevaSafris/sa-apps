@@ -31,10 +31,8 @@
     <module>mongo-async</module>
     <module>mongo-reactive</module>
     <module>httpclient</module>
-    <module>spring-boot-elasticsearch</module>
     <module>lettuce</module>
     <module>spring-data-redis</module>
-    <module>spring-data-redis-2</module>
     <module>tomcat</module>
     <module>solr</module>
     <module>spring-web</module>
@@ -52,6 +50,7 @@
     <module>spring-boot-jms</module>
     <module>spring-scheduling</module>
     <module>concurrent</module>
+    <module>spring-3</module>
   </modules>
 
   <name>java-specialagent-apps</name>
