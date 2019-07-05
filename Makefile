@@ -21,7 +21,7 @@ build-spring-cloud-edgware:
 clean:
 	mvn clean
 
-run-travis-test:
+run-mocktracer-test:
 	java \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
