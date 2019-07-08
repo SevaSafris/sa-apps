@@ -27,7 +27,8 @@ public class Util {
       }
     }
     if (!found) {
-      throw new RuntimeException(component + " span not found");
+      System.err.println(component + " span not found");
+      System.exit(-1);
     }
 
     if (tracer.finishedSpans().size() != spanCount) {
