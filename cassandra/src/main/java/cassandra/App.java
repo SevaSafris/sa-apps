@@ -4,6 +4,7 @@ import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
 import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -24,6 +25,8 @@ public class App {
     cluster.close();
 
     TimeUnit.SECONDS.sleep(10);
+
+    Util.checkSpan("java-cassandra", 1);
   }
 
 
