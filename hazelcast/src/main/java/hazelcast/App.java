@@ -4,10 +4,10 @@ import com.hazelcast.config.Config;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
-import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
     HazelcastInstance instance = Hazelcast.newHazelcastInstance(new Config());
     final IMap<String, String> map = instance.getMap("map");
     map.put("key", "value");
@@ -15,6 +15,6 @@ public class App {
 
     instance.shutdown();
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-hazelcast", 2);
   }
 }
