@@ -52,6 +52,7 @@
     <module>spring-scheduling</module>
     <module>concurrent</module>
     <module>spring-3</module>
+    <module>jax-rs</module>
   </modules>
 
   <name>java-specialagent-apps</name>
