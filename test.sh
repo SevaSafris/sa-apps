@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-spring_clouds=( spring-cloud-greenwich spring-cloud-finchley spring-cloud-edgware )
+# spring_clouds=( spring-cloud-greenwich spring-cloud-finchley spring-cloud-edgware )
+
+spring_clouds=( spring-cloud-greenwich )
 
 cd rxjava-2
 echo "##############################################################################################"
