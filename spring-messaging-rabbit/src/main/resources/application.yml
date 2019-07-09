@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: testDestination
+          group: testGroup
+        output:
+          destination: testDestination
+

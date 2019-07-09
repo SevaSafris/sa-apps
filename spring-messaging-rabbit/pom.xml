@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-messaging</artifactId>
+  <artifactId>spring-messaging-rabbit</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>
@@ -18,7 +18,7 @@
   <dependencies>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-stream-binder-kafka</artifactId>
+      <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
     </dependency>
   </dependencies>
 

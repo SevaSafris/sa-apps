@@ -28,7 +28,7 @@ public class Receiver {
 
   @StreamListener(Sink.INPUT)
   public void receive(String message) {
-    if(GlobalTracer.get().activeSpan() == null) {
+    if (GlobalTracer.get().activeSpan() == null) {
       System.err.println("No active span");
       System.exit(-1);
     }

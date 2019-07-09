@@ -47,6 +47,7 @@
     <module>zuul</module>
     <module>spring-websocket</module>
     <module>spring-messaging</module>
+    <module>spring-messaging-rabbit</module>
     <module>spring-boot-jms</module>
     <module>spring-scheduling</module>
     <module>concurrent</module>

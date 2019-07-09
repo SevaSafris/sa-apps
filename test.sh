@@ -268,3 +268,12 @@ do
 	make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
+
+cd spring-messaging-rabbit
+for spring_cloud in "${spring_clouds[@]}"
+do
+  echo "##############################################################################################"
+  echo "spring-messaging-rabbit-${spring_cloud}"
+	make build-${spring_cloud} run-mocktracer-test || exit $?
+done
+cd ..

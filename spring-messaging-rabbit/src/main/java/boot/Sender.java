@@ -14,29 +14,30 @@
 
 package boot;
 
-import io.opentracing.util.GlobalTracer;
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
+import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.Message;
 
-@EnableBinding(Sink.class)
-public class Receiver {
+/**
+ * @author <a href="mailto:gytis@redhat.com">Gytis Trikleris</a>
+ */
+@EnableBinding(Source.class)
+public class Sender {
 
-  private final List<String> receivedMessages = new ArrayList<>();
+  private final Source source;
 
-  @StreamListener(Sink.INPUT)
-  public void receive(String message) {
-    if(GlobalTracer.get().activeSpan() == null) {
-      System.err.println("No active span");
-      System.exit(-1);
-    }
-    receivedMessages.add(message);
+  @Autowired
+  public Sender(Source source) {
+    this.source = source;
   }
 
-  public List<String> getReceivedMessages() {
-    return receivedMessages;
+  public void send(String payload) {
+    Message message = MessageBuilder.withPayload(payload)
+        .build();
+    source.output()
+        .send(message);
   }
 
 }
