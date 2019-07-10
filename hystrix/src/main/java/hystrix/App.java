@@ -8,10 +8,10 @@ import feign.RequestLine;
 import feign.Retryer;
 import feign.Target;
 import feign.hystrix.HystrixFeign;
-import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
     Feign feign = HystrixFeign.builder()
         .retryer(new Retryer.Default(100, SECONDS.toMillis(1), 2))
         .build();
@@ -23,7 +23,7 @@ public class App {
     final String res = entity.get();
     System.out.println(res == null);
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("feign", 1);
   }
 
   private interface StringEntityRequest {
