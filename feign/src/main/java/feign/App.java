@@ -16,7 +16,6 @@ public class App {
     final String res = entity.get();
     System.out.println(res == null);
 
-    TimeUnit.SECONDS.sleep(2);
     Util.checkSpan("feign", 2);
   }
 
