@@ -24,8 +24,6 @@ public class App {
     session.close();
     cluster.close();
 
-    TimeUnit.SECONDS.sleep(10);
-
     Util.checkSpan("java-cassandra", 1);
   }
 

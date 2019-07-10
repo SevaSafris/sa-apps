@@ -13,6 +13,7 @@ import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -21,9 +22,9 @@ public class App {
     try {
       createTable(dbClient, "tableName-" + ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
     } catch (Exception e) {
-      System.out.println("Exception: " + e.getMessage() + "\nLet's ignore it.");
+      System.out.println("Exception: " + e.getMessage() + "\nIgnoring.");
     }
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-aws-sdk", 1);
   }
 
   private static AmazonDynamoDB buildClient() {

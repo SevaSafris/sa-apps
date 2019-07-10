@@ -3,9 +3,10 @@ package feign;
 
 import feign.okhttp.OkHttpClient;
 import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
 
     Feign feign = getClient();
 
@@ -15,8 +16,8 @@ public class App {
     final String res = entity.get();
     System.out.println(res == null);
 
-    TimeUnit.SECONDS.sleep(10);
-
+    TimeUnit.SECONDS.sleep(2);
+    Util.checkSpan("feign", 2);
   }
 
   private static Feign getClient() {

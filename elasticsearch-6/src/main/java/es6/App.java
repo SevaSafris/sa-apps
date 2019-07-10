@@ -22,6 +22,7 @@ import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -34,7 +35,7 @@ public class App {
       System.exit(-1);
     }
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-elasticsearch", 3);
     System.exit(0);
   }
 

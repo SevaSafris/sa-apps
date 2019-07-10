@@ -10,6 +10,7 @@ import org.asynchttpclient.Request;
 import org.asynchttpclient.RequestBuilder;
 import org.asynchttpclient.Response;
 import org.asynchttpclient.util.HttpConstants;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -35,7 +36,7 @@ public class App {
     ).get(10, TimeUnit.SECONDS);
     System.out.println(response.getStatusText());
 
-    Thread.sleep(10_000);
+    Util.checkSpan("java-asynchttpclient", 1);
 
     System.exit(0);
   }
