@@ -39,7 +39,6 @@ public class Util {
       System.err.println(tracer.finishedSpans().size() + " spans instead of " + spanCount);
       System.exit(-1);
     }
-
   }
 
 }

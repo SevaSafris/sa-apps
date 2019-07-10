@@ -40,7 +40,6 @@ public class Util {
       System.exit(-1);
     }
 
-    System.out.println("Spans: " + tracer.finishedSpans());
   }
 
 }
