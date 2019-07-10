@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,7 +25,6 @@ public class App {
 
       System.out.println(response.bodyToMono(String.class).block());
 
-      TimeUnit.SECONDS.sleep(30);
       Util.checkSpan("java-spring-webclient", 1);
       System.exit(0);
     };

@@ -1,6 +1,5 @@
 package zuul;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,7 +28,6 @@ public class App {
       }
       System.out.println(entity.getStatusCode());
 
-      TimeUnit.SECONDS.sleep(10);
       Util.checkSpan("zuul", 4);
 
       System.exit(0);

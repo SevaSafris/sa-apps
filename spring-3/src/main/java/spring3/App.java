@@ -1,7 +1,6 @@
 package spring3;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,6 @@ public class App {
 
     server.stop();
 
-    TimeUnit.SECONDS.sleep(10);
     Util.checkSpan("java-web-servlet", 2);
   }
 

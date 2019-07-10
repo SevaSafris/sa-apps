@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -34,7 +33,6 @@ public class App {
 
       System.out.println(entity);
 
-      TimeUnit.SECONDS.sleep(10);
       Util.checkSpan("java-web-servlet", 2);
       System.exit(0);
 

@@ -6,7 +6,7 @@ import io.lettuce.core.api.sync.RedisCommands;
 import io.lettuce.core.pubsub.RedisPubSubAdapter;
 import io.lettuce.core.pubsub.StatefulRedisPubSubConnection;
 import io.lettuce.core.pubsub.api.sync.RedisPubSubCommands;
-import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -24,8 +24,7 @@ public class App {
     pubSubCommands.subscribe("channel");
     commands.publish("channel", "msg");
 
-
     client.shutdown();
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-redis", 6);
   }
 }

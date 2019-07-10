@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +18,7 @@ public class App implements CommandLineRunner {
     ValueOperations<String, String> ops = this.template.opsForValue();
     ops.set("key", "value");
     System.out.println("value=" + ops.get("key"));
-    TimeUnit.SECONDS.sleep(10);
+
     Util.checkSpan("java-redis", 2);
   }
 
