@@ -4,6 +4,12 @@
 
 spring_clouds=( spring-cloud-greenwich )
 
+cd concurrent
+echo "##############################################################################################"
+echo "concurrent"
+make build run-mocktracer-test || exit $?
+cd ..
+
 cd rxjava-2
 echo "##############################################################################################"
 echo "rxjava-2"
