@@ -14,9 +14,9 @@
   <properties>
     <spring.version>3.0.7.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
-   <version.jetty>9.2.15.v20160210</version.jetty> <!-- Servlet API 3.1 -->
-<!--    <version.jetty>8.2.0.v20160908</version.jetty>--> <!-- Servlet API 3.0 -->
-    <!-- <version.jetty>7.6.21.v20160908</version.jetty> --> <!-- Servlet API 2.5 -->
+    <!--version.jetty>9.2.15.v20160210</version.jetty--> <!-- Servlet API 3.1 -->
+    <!--version.jetty>8.2.0.v20160908</version.jetty--> <!-- Servlet API 3.0 -->
+    <version.jetty>7.6.21.v20160908</version.jetty> <!-- Servlet API 2.5 -->
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.source>1.6</maven.compiler.source>
   </properties>
@@ -47,11 +47,11 @@
       <artifactId>jetty-annotations</artifactId>
       <version>${version.jetty}</version>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.eclipse.jetty</groupId>-->
-<!--      <artifactId>apache-jsp</artifactId>-->
-<!--      <version>${version.jetty}</version>-->
-<!--    </dependency>-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.eclipse.jetty</groupId>-->
+    <!--      <artifactId>apache-jsp</artifactId>-->
+    <!--      <version>${version.jetty}</version>-->
+    <!--    </dependency>-->
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
@@ -90,10 +90,12 @@
               implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
               <mainClass>spring3.App</mainClass>
             </transformer>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+            <transformer
+              implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
               <resource>META-INF/spring.handlers</resource>
             </transformer>
-            <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+            <transformer
+              implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
               <resource>META-INF/spring.schemas</resource>
             </transformer>
           </transformers>
