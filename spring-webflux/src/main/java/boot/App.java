@@ -25,7 +25,10 @@ public class App {
 
       System.out.println(response.bodyToMono(String.class).block());
 
-      Util.checkSpan("java-spring-webclient", 1);
+      // java-spring-webflux
+      // java-web-servlet
+      // java-spring-webclient
+      Util.checkSpan("java-spring-webclient", 3);
       System.exit(0);
     };
   }
