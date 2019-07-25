@@ -17,8 +17,8 @@ public class App {
         .build();
 
     StringEntityRequest
-        entity = feign.<StringEntityRequest>newInstance(
-        new Target.HardCodedTarget(StringEntityRequest.class,
+        entity = feign.newInstance(
+        new Target.HardCodedTarget<>(StringEntityRequest.class,
             "http://www.google.com"));
     final String res = entity.get();
     System.out.println(res == null);
