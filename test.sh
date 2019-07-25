@@ -104,11 +104,12 @@ echo "jdbc"
 make build run-mocktracer-test || exit $?
 cd ..
 
-cd hystrix
-echo "##############################################################################################"
-echo "hystrix"
-make build run-mocktracer-test || exit $?
-cd ..
+# TODO
+#cd hystrix
+#echo "##############################################################################################"
+#echo "hystrix"
+#make build run-mocktracer-test || exit $?
+#cd ..
 
 cd hazelcast
 echo "##############################################################################################"
