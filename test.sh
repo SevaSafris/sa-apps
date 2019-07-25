@@ -104,13 +104,6 @@ echo "jdbc"
 make build run-mocktracer-test || exit $?
 cd ..
 
-# TODO
-#cd hystrix
-#echo "##############################################################################################"
-#echo "hystrix"
-#make build run-mocktracer-test || exit $?
-#cd ..
-
 cd hazelcast
 echo "##############################################################################################"
 echo "hazelcast"
@@ -286,3 +279,10 @@ do
 	make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
+
+# TODO
+#cd hystrix
+#echo "##############################################################################################"
+#echo "hystrix"
+#make build run-mocktracer-test || exit $?
+#cd ..

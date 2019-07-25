@@ -25,6 +25,7 @@ public class App {
     commands.publish("channel", "msg");
 
     client.shutdown();
+    Thread.sleep(5_000); // sleep to wait for 6 spans
     Util.checkSpan("java-redis", 6);
   }
 }
