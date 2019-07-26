@@ -53,6 +53,7 @@ public class App {
       stompSession.subscribe(SUBSCRIBE_GREETINGS_ENDPOINT, new GreetingStompFrameHandler());
       stompSession.send(SEND_HELLO_MESSAGE_ENDPOINT, "Hello");
 
+      TimeUnit.SECONDS.sleep(5); // sleep to wait for websocket span
       Util.checkSpan("websocket", 6);
 
       System.exit(0);
