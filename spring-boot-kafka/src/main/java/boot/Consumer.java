@@ -14,7 +14,7 @@ public class Consumer {
     System.out.println(String.format("1. #### -> Consumed message -> %s", message));
     if (GlobalTracer.get().activeSpan() == null) {
       System.err.println("No active span");
-      if(App.IS_KAFKA_VERSION_SUPPORTED) {
+      if (App.IS_KAFKA_VERSION_SUPPORTED) {
         System.exit(-1);
       }
     }
@@ -27,7 +27,7 @@ public class Consumer {
     System.out.println(String.format("2. #### -> Consumed message -> %s", message));
     if (GlobalTracer.get().activeSpan() == null) {
       System.err.println("No active span");
-      if(App.IS_KAFKA_VERSION_SUPPORTED) {
+      if (App.IS_KAFKA_VERSION_SUPPORTED) {
         System.exit(-1);
       }
     }

@@ -14,7 +14,8 @@ public class App {
   public static void main(String[] args) throws InterruptedException {
     MongoClient mongoClient = MongoClients.create();
     CountDownLatch latch = new CountDownLatch(1);
-    final MongoCollection<Document> collection = mongoClient.getDatabase("MyDB").getCollection("MyCollection");
+    final MongoCollection<Document> collection = mongoClient.getDatabase("MyDB")
+        .getCollection("MyCollection");
     final Document myDocument = new Document("name", "MyDocument");
     collection.insertOne(myDocument).subscribe(new Subscriber<Success>() {
       @Override

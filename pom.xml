@@ -33,8 +33,6 @@
     <module>httpclient</module>
     <module>lettuce</module>
     <module>spring-data-redis</module>
-    <module>tomcat</module>
-    <module>solr</module>
     <module>spring-web</module>
     <module>spring-webmvc</module>
     <module>spring-webflux</module>

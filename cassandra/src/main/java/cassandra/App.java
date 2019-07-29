@@ -3,7 +3,6 @@ package cassandra;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
-import java.util.concurrent.TimeUnit;
 import util.Util;
 
 public class App {

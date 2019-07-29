@@ -2,7 +2,7 @@
 
 # spring_clouds=( spring-cloud-greenwich spring-cloud-finchley spring-cloud-edgware )
 
-spring_clouds=( spring-cloud-greenwich )
+spring_clouds=(spring-cloud-greenwich)
 
 cd concurrent
 echo "##############################################################################################"
@@ -23,11 +23,10 @@ make build run-mocktracer-test || exit $?
 cd ..
 
 cd spring-boot-rabbitmq
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-boot-rabbitmq-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -62,11 +61,10 @@ make build run-mocktracer-test || exit $?
 cd ..
 
 cd spring-boot-kafka
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-boot-kafka-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -84,11 +82,10 @@ make build run-mocktracer-test || exit $?
 cd ..
 
 cd spring-boot-jms
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-boot-jms-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -155,13 +152,11 @@ echo "lettuce"
 make build run-mocktracer-test || exit $?
 cd ..
 
-
 cd spring-data-redis
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-data-redis-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -184,56 +179,50 @@ make build run-mocktracer-test || exit $?
 cd ..
 
 cd spring-web
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-web-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd spring-webmvc
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-webmvc-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd spring-webflux
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-webflux-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd spring-scheduling
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-scheduling-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd spring-websocket
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-websocket-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd zuul
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "zuul-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -250,20 +239,18 @@ make build run-mocktracer-test || exit $?
 cd ..
 
 cd spring-messaging
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-messaging-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
 cd spring-messaging-rabbit
-for spring_cloud in "${spring_clouds[@]}"
-do
+for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-messaging-rabbit-${spring_cloud}"
-	make build-${spring_cloud} run-mocktracer-test || exit $?
+  make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..
 
@@ -273,16 +260,14 @@ echo "redisson"
 make build run-mocktracer-test || exit $?
 cd ..
 
-# TODO: failing
-#cd feign
-#echo "##############################################################################################"
-#echo "feign"
-#make build run-mocktracer-test || exit $?
-#cd ..
+cd feign
+echo "##############################################################################################"
+echo "feign"
+make build run-mocktracer-test || exit $?
+cd ..
 
-# TODO: failing
-#cd hystrix
-#echo "##############################################################################################"
-#echo "hystrix"
-#make build run-mocktracer-test || exit $?
-#cd ..
+cd hystrix
+echo "##############################################################################################"
+echo "hystrix"
+make build run-mocktracer-test || exit $?
+cd ..

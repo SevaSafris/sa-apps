@@ -27,7 +27,7 @@ public class Util {
       if (span.tags().get(Tags.COMPONENT.getKey()).equals(component)) {
         found = true;
         System.out.println("Found " + component + " span");
-        break;
+
       }
     }
     if (!found) {

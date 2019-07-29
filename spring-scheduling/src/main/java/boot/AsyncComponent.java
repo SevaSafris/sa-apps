@@ -14,7 +14,7 @@ public class AsyncComponent {
   public Future<String> async() {
     final Span span = GlobalTracer.get().activeSpan();
     System.out.println("Active span: " + span);
-    if(span == null) {
+    if (span == null) {
       System.err.println("No active span");
       System.exit(-1);
     }
