@@ -32,6 +32,7 @@
     <module>mongo-async</module>
     <module>mongo-reactive</module>
     <module>httpclient</module>
+    <module>httpclient-4.2.5</module>
     <module>lettuce</module>
     <module>spring-data-redis</module>
     <module>spring-web</module>
