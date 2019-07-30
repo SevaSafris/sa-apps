@@ -1,7 +1,7 @@
 
 # Modify 'specialagent_jar' variable to point to correct specialagent jar:
-# specialagent_jar := opentracing-specialagent-1.3.3.jar
-specialagent_jar := opentracing-specialagent-1.3.4-SNAPSHOT.jar
+specialagent_jar := opentracing-specialagent-1.3.3.jar
+# specialagent_jar := opentracing-specialagent-1.3.4-SNAPSHOT.jar
 
 
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
