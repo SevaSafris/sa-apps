@@ -10,8 +10,6 @@ echo "httpclient-4.2.5"
 make build run-mocktracer-test || exit $?
 cd ..
 
-exit 0
-
 cd concurrent
 echo "##############################################################################################"
 echo "concurrent"
