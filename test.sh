@@ -122,6 +122,12 @@ sleep 10
 make build run-mocktracer-test || exit $?
 cd ..
 
+cd elasticsearch-7
+echo "##############################################################################################"
+echo "elasticsearch-7"
+make build run-mocktracer-test || exit $?
+cd ..
+
 cd cassandra
 echo "##############################################################################################"
 echo "cassandra"

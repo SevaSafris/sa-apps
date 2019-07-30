@@ -15,6 +15,7 @@
     <module>aws</module>
     <module>cassandra</module>
     <module>elasticsearch-6</module>
+    <module>elasticsearch-7</module>
     <module>rxjava-2</module>
     <module>kafka</module>
     <module>asynchttpclient</module>
