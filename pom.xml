@@ -13,6 +13,7 @@
     <module>jms-1</module>
     <module>jms-2</module>
     <module>aws</module>
+    <module>aws-2</module>
     <module>cassandra</module>
     <module>elasticsearch-6</module>
     <module>elasticsearch-7</module>
