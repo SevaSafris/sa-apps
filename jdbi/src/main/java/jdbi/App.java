@@ -5,7 +5,9 @@ import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
 
 public class App {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
+    Class.forName("com.mysql.cj.jdbc.Driver");
+
     final Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost/test" +
         "?createDatabaseIfNotExist=true&user=travis");
 
