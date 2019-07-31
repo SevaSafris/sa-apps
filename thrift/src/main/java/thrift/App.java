@@ -1,5 +1,6 @@
 package thrift;
 
+import java.util.concurrent.TimeUnit;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.TProcessorFactory;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -32,6 +33,7 @@ public class App {
 
     server.stop();
 
+    TimeUnit.SECONDS.sleep(10); // wait for spans
     Util.checkSpan("java-thrift", 2);
     System.exit(0);
 
