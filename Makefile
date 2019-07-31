@@ -23,6 +23,7 @@ clean:
 
 run-mocktracer-test:
 	java \
+		${ADD_JAVA_MOD} \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 
