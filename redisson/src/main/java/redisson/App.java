@@ -1,13 +1,13 @@
 package redisson;
 
-import java.util.concurrent.TimeUnit;
 import org.redisson.Redisson;
 import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
+import util.Util;
 
 public class App {
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
     Config config = new Config();
     config.useSingleServer().setAddress("redis://127.0.0.1:6379");
 
@@ -26,6 +26,6 @@ public class App {
 
     redissonClient.shutdown();
 
-    TimeUnit.SECONDS.sleep(30);
+    Util.checkSpan("java-redis", 2);
   }
 }

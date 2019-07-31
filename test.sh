@@ -5,11 +5,9 @@
 spring_clouds=(spring-cloud-greenwich)
 
 java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
-if  [[ ${java_version} == 11* ]] ;
-then
-    export ADD_JAVA_MOD="--add-reads java.base=java.logging"
+if [[ ${java_version} == 11* ]]; then
+  export ADD_JAVA_MOD="--add-reads java.base=java.logging"
 fi
-
 
 cd httpclient-4.2.5
 echo "##############################################################################################"
@@ -136,15 +134,14 @@ make build run-mocktracer-test || exit $?
 docker stop es6
 cd ..
 
-#TODO: uncomment after PR merged
-#cd elasticsearch-7
-#echo "##############################################################################################"
-#echo "elasticsearch-7"
-#docker pull docker.elastic.co/elasticsearch/elasticsearch:7.2.0
-#docker run --name es7 -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.2.0
-#make build run-mocktracer-test || exit $?
-#docker stop es7
-#cd ..
+cd elasticsearch-7
+echo "##############################################################################################"
+echo "elasticsearch-7"
+docker pull docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+docker run --name es7 -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+make build run-mocktracer-test || exit $?
+docker stop es7
+cd ..
 
 cd cassandra
 echo "##############################################################################################"

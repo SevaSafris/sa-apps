@@ -1,8 +1,8 @@
 package spymemcached;
 
 import java.net.InetSocketAddress;
-import java.util.concurrent.TimeUnit;
 import net.spy.memcached.MemcachedClient;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -14,6 +14,6 @@ public class App {
 
     client.shutdown();
 
-    TimeUnit.SECONDS.sleep(30);
+    Util.checkSpan("java-memcached", 2);
   }
 }

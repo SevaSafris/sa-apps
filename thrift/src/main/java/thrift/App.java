@@ -1,6 +1,5 @@
 package thrift;
 
-import java.util.concurrent.TimeUnit;
 import org.apache.thrift.TProcessor;
 import org.apache.thrift.TProcessorFactory;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -13,6 +12,7 @@ import org.apache.thrift.transport.TServerTransport;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
 import thrift.generated.CustomService;
+import util.Util;
 
 public class App {
   private static final int port = 8883;
@@ -32,7 +32,7 @@ public class App {
 
     server.stop();
 
-    TimeUnit.SECONDS.sleep(30);
+    Util.checkSpan("java-thrift", 2);
     System.exit(0);
 
 

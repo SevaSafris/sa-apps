@@ -7,6 +7,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import util.Util;
 
 @SpringBootApplication
 public class App {
@@ -31,7 +32,7 @@ public class App {
       }
 
       System.out.println("Received: " + receiver.getReceivedMessages());
-      TimeUnit.SECONDS.sleep(10);
+      Util.checkSpan("spring-messaging", 5);
       System.exit(0);
 
     };

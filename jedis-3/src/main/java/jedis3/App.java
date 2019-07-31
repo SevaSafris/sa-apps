@@ -1,7 +1,7 @@
 package jedis3;
 
-import java.util.concurrent.TimeUnit;
 import redis.clients.jedis.Jedis;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
@@ -9,6 +9,6 @@ public class App {
     jedis.set("key", "value");
     System.out.println(jedis.get("key"));
 
-    TimeUnit.SECONDS.sleep(10L);
+    Util.checkSpan("java-redis", 2);
   }
 }

@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
+import util.Util;
 
 @SpringBootApplication
 @EnableScheduling
@@ -45,7 +46,7 @@ public class App {
       final String str = asyncComponent.async().get(5, TimeUnit.SECONDS);
       System.out.println(str);
 
-      TimeUnit.SECONDS.sleep(10);
+      Util.checkSpan("spring-scheduled", 2);
       System.exit(0);
     };
   }
