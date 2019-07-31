@@ -4,16 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    Class.forName("org.h2.Driver");
 
-    //Class.forName(Driver.class.getName());
-
-    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test" +
-        "?createDatabaseIfNotExist=true&user=travis"
-        + "&traceWithActiveSpanOnly=false");
+    Connection conn = DriverManager.getConnection("jdbc:h2:mem:jdbc");
     Statement stmt = conn.createStatement();
     ResultSet rs = stmt.executeQuery("show databases;");
 
@@ -24,6 +21,6 @@ public class App {
     stmt.close();
     conn.close();
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-jdbc", 2);
   }
 }

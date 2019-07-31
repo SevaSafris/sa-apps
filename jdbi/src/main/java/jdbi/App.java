@@ -1,15 +1,14 @@
 package jdbi;
 
-import java.util.concurrent.TimeUnit;
 import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    Class.forName("com.mysql.cj.jdbc.Driver");
+    Class.forName("org.h2.Driver");
 
-    final Jdbi jdbi = Jdbi.create("jdbc:mysql://localhost/test" +
-        "?createDatabaseIfNotExist=true&user=travis");
+    final Jdbi jdbi = Jdbi.create("jdbc:h2:mem:jdbc");
 
     Handle handle = jdbi.open();
     handle.execute("CREATE TABLE accounts (id BIGINT AUTO_INCREMENT, PRIMARY KEY (id))");
@@ -17,6 +16,6 @@ public class App {
 
     handle.close();
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-jdbc", 3);
   }
 }
