@@ -229,6 +229,18 @@ for spring_cloud in "${spring_clouds[@]}"; do
 done
 cd ..
 
+cd spring-3
+echo "##############################################################################################"
+echo "spring-3"
+make build run-mocktracer-test || exit $?
+cd ..
+
+cd spring-4
+echo "##############################################################################################"
+echo "spring-4"
+make build run-mocktracer-test || exit $?
+cd ..
+
 cd spring-scheduling
 for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
