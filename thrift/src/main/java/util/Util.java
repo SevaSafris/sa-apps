@@ -1,6 +1,7 @@
 package util;
 
 import io.opentracing.mock.MockSpan;
+import io.opentracing.mock.MockSpan.LogEntry;
 import io.opentracing.mock.MockTracer;
 import io.opentracing.tag.Tags;
 import io.opentracing.util.GlobalTracer;
@@ -23,11 +24,10 @@ public class Util {
     boolean found = false;
     System.out.println("Spans: " + tracer.finishedSpans());
     for (MockSpan span : tracer.finishedSpans()) {
-      System.out.println("Span component: " + span.tags().get(Tags.COMPONENT.getKey()));
+      printSpan(span);
       if (span.tags().get(Tags.COMPONENT.getKey()).equals(component)) {
         found = true;
         System.out.println("Found " + component + " span");
-
       }
     }
     if (!found) {
@@ -41,4 +41,13 @@ public class Util {
     }
   }
 
+  private static void printSpan(MockSpan span) {
+    System.out.println("Span: " + span);
+    System.out.println("\tComponent: " + span.tags().get(Tags.COMPONENT.getKey()));
+    System.out.println("\tTags: " + span.tags());
+    System.out.println("\tLogs: ");
+    for (LogEntry logEntry : span.logEntries()) {
+      System.out.println("\t" + logEntry.fields());
+    }
+  }
 }
