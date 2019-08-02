@@ -155,12 +155,11 @@ echo "aws"
 make build run-mocktracer-test || exit $?
 cd ..
 
-#TODO: uncomment whe fixed
-#cd aws-2
-#echo "##############################################################################################"
-#echo "aws-2"
-#make build run-mocktracer-test || exit $?
-#cd ..
+cd aws-2
+echo "##############################################################################################"
+echo "aws-2"
+make build run-mocktracer-test || exit $?
+cd ..
 
 cd jedis-2
 echo "##############################################################################################"
