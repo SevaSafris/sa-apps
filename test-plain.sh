@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# spring_clouds=( spring-cloud-greenwich spring-cloud-finchley spring-cloud-edgware )
-
-spring_clouds=(spring-cloud-greenwich)
 
 java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
 if [[ ${java_version} == 11* ]]; then
@@ -31,14 +28,6 @@ cd rabbitmq
 echo "##############################################################################################"
 echo "rabbitmq"
 make build run-mocktracer-test || exit $?
-cd ..
-
-cd spring-boot-rabbitmq
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-boot-rabbitmq-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
 cd ..
 
 cd mongo
@@ -71,14 +60,6 @@ sleep 5
 make build run-mocktracer-test || exit $?
 cd ..
 
-cd spring-boot-kafka
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-boot-kafka-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
 cd jms-1
 echo "##############################################################################################"
 echo "jms-1"
@@ -90,14 +71,6 @@ cd jms-2
 echo "##############################################################################################"
 echo "jms-2"
 make build run-mocktracer-test || exit $?
-cd ..
-
-cd spring-boot-jms
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-boot-jms-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
 cd ..
 
 cd jdbi
@@ -179,14 +152,6 @@ echo "lettuce"
 make build run-mocktracer-test || exit $?
 cd ..
 
-cd spring-data-redis
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-data-redis-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
 cd asynchttpclient
 echo "##############################################################################################"
 echo "asynchttpclient"
@@ -205,65 +170,6 @@ echo "httpclient"
 make build run-mocktracer-test || exit $?
 cd ..
 
-cd spring-web
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-web-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-webmvc
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-webmvc-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-webflux
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-webflux-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-3
-echo "##############################################################################################"
-echo "spring-3"
-make build run-mocktracer-test || exit $?
-cd ..
-
-cd spring-4
-echo "##############################################################################################"
-echo "spring-4"
-make build run-mocktracer-test || exit $?
-cd ..
-
-cd spring-scheduling
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-scheduling-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-websocket
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-websocket-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd zuul
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "zuul-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
 
 cd spymemcached/
 echo "##############################################################################################"
@@ -277,21 +183,6 @@ echo "thrift"
 make build run-mocktracer-test || exit $?
 cd ..
 
-cd spring-messaging
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-messaging-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-messaging-rabbit
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-messaging-rabbit-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
 
 cd redisson
 echo "##############################################################################################"
