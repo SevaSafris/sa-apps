@@ -7,16 +7,16 @@ specialagent_jar := opentracing-specialagent-1.3.4-SNAPSHOT.jar
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
 build:
-	mvn clean package -DskipTests
+	mvn clean package -q -DskipTests
 
 build-spring-cloud-greenwich:
-	mvn clean package -DskipTests -Dspring.boot.version=2.1.6.RELEASE -Dspring.cloud.version=Greenwich.SR2
+	mvn clean package -q -DskipTests -Dspring.boot.version=2.1.6.RELEASE -Dspring.cloud.version=Greenwich.SR2
 
 build-spring-cloud-finchley:
-	mvn clean package -DskipTests -Dspring.boot.version=2.0.9.RELEASE -Dspring.cloud.version=Finchley.SR4
+	mvn clean package -q -DskipTests -Dspring.boot.version=2.0.9.RELEASE -Dspring.cloud.version=Finchley.SR4
 
 build-spring-cloud-edgware:
-	mvn clean package -DskipTests -Dspring.boot.version=1.5.21.RELEASE -Dspring.cloud.version=Edgware.SR6
+	mvn clean package -q -DskipTests -Dspring.boot.version=1.5.21.RELEASE -Dspring.cloud.version=Edgware.SR6
 
 clean:
 	mvn clean
