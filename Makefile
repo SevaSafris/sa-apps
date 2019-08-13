@@ -6,17 +6,19 @@ specialagent_jar := opentracing-specialagent-1.3.5-SNAPSHOT.jar
 
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
+build_command = mvn clean package -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+
 build:
-	mvn clean package -DskipTests
+	${build_command}
 
 build-spring-cloud-greenwich:
-	mvn clean package -DskipTests -Dspring.boot.version=2.1.6.RELEASE -Dspring.cloud.version=Greenwich.SR2
+	${build_command} -Dspring.boot.version=2.1.6.RELEASE -Dspring.cloud.version=Greenwich.SR2
 
 build-spring-cloud-finchley:
-	mvn clean package -DskipTests -Dspring.boot.version=2.0.9.RELEASE -Dspring.cloud.version=Finchley.SR4
+	${build_command} -Dspring.boot.version=2.0.9.RELEASE -Dspring.cloud.version=Finchley.SR4
 
 build-spring-cloud-edgware:
-	mvn clean package -DskipTests -Dspring.boot.version=1.5.21.RELEASE -Dspring.cloud.version=Edgware.SR6
+	${build_command} -Dspring.boot.version=1.5.21.RELEASE -Dspring.cloud.version=Edgware.SR6
 
 clean:
 	mvn clean
