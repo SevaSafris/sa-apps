@@ -4,10 +4,13 @@
 
 spring_clouds=(spring-cloud-greenwich)
 
-java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
-if [[ ${java_version} == 11* ]]; then
-  export ADD_JAVA_MOD="--add-reads java.base=java.logging"
-fi
+cd spring-websocket
+for spring_cloud in "${spring_clouds[@]}"; do
+  echo "##############################################################################################"
+  echo "spring-websocket-${spring_cloud}"
+  make build-${spring_cloud} run-mocktracer-test || exit $?
+done
+cd ..
 
 cd spring-boot-rabbitmq
 for spring_cloud in "${spring_clouds[@]}"; do
@@ -92,14 +95,6 @@ cd spring-scheduling
 for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"
   echo "spring-scheduling-${spring_cloud}"
-  make build-${spring_cloud} run-mocktracer-test || exit $?
-done
-cd ..
-
-cd spring-websocket
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-websocket-${spring_cloud}"
   make build-${spring_cloud} run-mocktracer-test || exit $?
 done
 cd ..

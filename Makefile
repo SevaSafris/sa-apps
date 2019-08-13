@@ -1,7 +1,7 @@
 
 # Modify 'specialagent_jar' variable to point to correct specialagent jar:
 # specialagent_jar := opentracing-specialagent-1.3.3.jar
-specialagent_jar := opentracing-specialagent-1.3.4-SNAPSHOT.jar
+specialagent_jar := opentracing-specialagent-1.3.5-SNAPSHOT.jar
 
 
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
@@ -23,7 +23,6 @@ clean:
 
 run-mocktracer-test:
 	java \
-		${ADD_JAVA_MOD} \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
 

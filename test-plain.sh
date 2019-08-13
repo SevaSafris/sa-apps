@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-
-java_version=$(java -version 2>&1 | awk -F '"' '/version/ {print $2}')
-if [[ ${java_version} == 11* ]]; then
-  export ADD_JAVA_MOD="--add-reads java.base=java.logging"
-fi
-
 cd httpclient-4.2.5
 echo "##############################################################################################"
 echo "httpclient-4.2.5"
