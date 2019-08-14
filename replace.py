@@ -2,7 +2,7 @@ import os
 
 import shutil
 
-src = "./asynchttpclient/src/main/java/util/Util.java"
+src = "./grpc/src/main/java/util/Util.java"
 
 for root, dirs, files in os.walk("."):
   for file in files:

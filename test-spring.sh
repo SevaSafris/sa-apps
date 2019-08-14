@@ -85,6 +85,12 @@ echo "spring-3"
 make build run-mocktracer-test || exit $?
 cd ..
 
+cd spring-3-servlet-2.5
+echo "##############################################################################################"
+echo "spring-3-servlet-2.5"
+make build run-mocktracer-test || exit $?
+cd ..
+
 cd spring-4
 echo "##############################################################################################"
 echo "spring-4"

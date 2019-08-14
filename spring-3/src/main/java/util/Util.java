@@ -25,7 +25,7 @@ public class Util {
     System.out.println("Spans: " + tracer.finishedSpans());
     for (MockSpan span : tracer.finishedSpans()) {
       printSpan(span);
-      if (span.tags().get(Tags.COMPONENT.getKey()).equals(component)) {
+      if (component.equals(span.tags().get(Tags.COMPONENT.getKey()))) {
         found = true;
         System.out.println("Found " + component + " span");
       }
