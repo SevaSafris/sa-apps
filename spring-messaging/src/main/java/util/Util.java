@@ -31,12 +31,12 @@ public class Util {
       }
     }
     if (!found) {
-      System.err.println(component + " span not found");
+      System.err.println("ERROR: " + component + " span not found");
       System.exit(-1);
     }
 
     if (tracer.finishedSpans().size() != spanCount) {
-      System.err.println(tracer.finishedSpans().size() + " spans instead of " + spanCount);
+      System.err.println("ERROR: " + tracer.finishedSpans().size() + " spans instead of " + spanCount);
       System.exit(-1);
     }
   }
