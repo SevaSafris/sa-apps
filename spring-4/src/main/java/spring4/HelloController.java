@@ -14,6 +14,10 @@ public class HelloController {
   @ResponseBody
   public String printWelcome(ModelMap model) {
     System.out.println("Active Span: " + GlobalTracer.get().activeSpan());
+    if (GlobalTracer.get().activeSpan() == null) {
+      System.err.println("ERROR: no active span");
+      System.exit(-1);
+    }
     return "hello";
   }
 
