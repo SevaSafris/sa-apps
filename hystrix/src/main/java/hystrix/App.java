@@ -12,6 +12,8 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    System.setProperty("hystrix.command.default.execution.timeout.enabled", "false");
+
     Feign feign = HystrixFeign.builder()
         .retryer(new Retryer.Default(100, SECONDS.toMillis(1), 2))
         .build();
