@@ -13,9 +13,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.github.openfeign</groupId>
-      <artifactId>feign-hystrix</artifactId>
-      <version>10.2.3</version>
+      <groupId>com.netflix.hystrix</groupId>
+      <artifactId>hystrix-core</artifactId>
+      <version>1.5.18</version>
     </dependency>
   </dependencies>
 

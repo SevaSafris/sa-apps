@@ -1,38 +1,46 @@
 package hystrix;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
-import feign.Feign;
-import feign.Headers;
-import feign.RequestLine;
-import feign.Retryer;
-import feign.Target;
-import feign.hystrix.HystrixFeign;
+import com.netflix.hystrix.HystrixCommand;
+import com.netflix.hystrix.HystrixCommandGroupKey;
+import io.opentracing.Scope;
+import io.opentracing.Span;
+import io.opentracing.tag.Tags;
+import io.opentracing.util.GlobalTracer;
 import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    // Disabled timeout because somehow SA introduces latency in request execution
-    // especially when url starts with 'https' like 'https://www.google.com'
-    System.setProperty("hystrix.command.default.execution.timeout.enabled", "false");
+    final Span parent = GlobalTracer.get().buildSpan("parent")
+        .withTag(Tags.COMPONENT, "hystrix")
+        .start();
+    try (Scope ignored = GlobalTracer.get().activateSpan(parent)) {
+      final String res = new HystrixTestCommand().execute();
+      if (!res.equalsIgnoreCase("test")) {
+        System.err.println("ERROR: failed hystrix res: " + res);
+        System.exit(-1);
+      }
+    } finally {
+      parent.finish();
+    }
 
-    Feign feign = HystrixFeign.builder()
-        .retryer(new Retryer.Default(100, SECONDS.toMillis(1), 2))
-        .build();
-
-    StringEntityRequest
-        entity = feign.newInstance(
-        new Target.HardCodedTarget<>(StringEntityRequest.class,
-            "http://www.google.com"));
-    final String res = entity.get();
-    System.out.println(res == null);
-
-    Util.checkSpan("feign", 1);
+    Util.checkSpan("hystrix", 1);
   }
 
-  private interface StringEntityRequest {
-    @RequestLine("GET")
-    @Headers("Content-Type: application/json")
-    String get();
+  private static class HystrixTestCommand extends HystrixCommand<String> {
+
+    HystrixTestCommand() {
+      super(HystrixCommandGroupKey.Factory.asKey("ExampleGroup"));
+    }
+
+    @Override
+    protected String run() {
+      System.out.println("Active span: " + GlobalTracer.get().activeSpan());
+      if (GlobalTracer.get().activeSpan() == null) {
+        System.err.println("ERROR: no active span");
+        System.exit(-1);
+      }
+
+      return "test";
+    }
   }
 }
