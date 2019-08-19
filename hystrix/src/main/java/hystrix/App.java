@@ -12,6 +12,8 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    // Disabled timeout because somehow SA introduces latency in request execution
+    // especially when url starts with 'https' like 'https://www.google.com'
     System.setProperty("hystrix.command.default.execution.timeout.enabled", "false");
 
     Feign feign = HystrixFeign.builder()
