@@ -1,6 +1,6 @@
 
 # Modify 'specialagent_jar' variable to point to correct specialagent jar:
-# specialagent_jar := opentracing-specialagent-1.3.3.jar
+# specialagent_jar := opentracing-specialagent-1.3.4.jar
 specialagent_jar := opentracing-specialagent-1.3.5-SNAPSHOT.jar
 
 
