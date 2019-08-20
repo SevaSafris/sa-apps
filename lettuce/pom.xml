@@ -17,6 +17,11 @@
       <artifactId>lettuce-core</artifactId>
       <version>5.1.6.RELEASE</version>
     </dependency>
+    <dependency>
+      <groupId>com.github.kstyrc</groupId>
+      <artifactId>embedded-redis</artifactId>
+      <version>0.6</version>
+    </dependency>
   </dependencies>
 
   <build>
