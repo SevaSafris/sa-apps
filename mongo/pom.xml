@@ -17,6 +17,11 @@
       <artifactId>mongo-java-driver</artifactId>
       <version>3.10.1</version>
     </dependency>
+    <dependency>
+      <groupId>de.bwaldvogel</groupId>
+      <artifactId>mongo-java-server</artifactId>
+      <version>1.14.0</version>
+    </dependency>
   </dependencies>
 
   <build>

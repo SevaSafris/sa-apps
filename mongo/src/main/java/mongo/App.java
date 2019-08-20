@@ -1,20 +1,34 @@
 package mongo;
 
-import com.mongodb.ConnectionString;
+import com.mongodb.Block;
 import com.mongodb.MongoClientSettings;
-import com.mongodb.client.MongoClient;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import java.util.concurrent.TimeUnit;
+import com.mongodb.connection.ClusterSettings;
+import com.mongodb.connection.ClusterSettings.Builder;
+import de.bwaldvogel.mongo.MongoServer;
+import de.bwaldvogel.mongo.backend.memory.MemoryBackend;
+import java.net.InetSocketAddress;
+import java.util.Arrays;
 import org.bson.Document;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    final com.mongodb.client.MongoClient client = createClient();
+    final MongoServer server = new MongoServer(new MemoryBackend());
+    final InetSocketAddress serverAddress = server.bind();
 
-    // This one doesn't work:
-    // MongoClient mongoClient = new MongoClient("localhost", 27017);
+    final MongoClientSettings mongoSettings = MongoClientSettings.builder()
+        .applyToClusterSettings(new Block<Builder>() {
+          @Override
+          public void apply(final ClusterSettings.Builder builder) {
+            builder.hosts(Arrays.asList(new ServerAddress(serverAddress)));
+          }
+        }).build();
+
+    final com.mongodb.client.MongoClient client = MongoClients.create(mongoSettings);
 
     MongoDatabase database = client.getDatabase("myMongoDb");
     if (database.getCollection("customers") == null) {
@@ -28,23 +42,8 @@ public class App {
     collection.find().first();
 
     client.close();
+    server.shutdownNow();
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-mongo", 2);
   }
-
-
-  private static MongoClient createClient() {
-//    if(true) {
-//      return MongoClients.create();
-//    }
-
-    final MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
-        .applyConnectionString(new ConnectionString("mongodb://localhost:27017")).build();
-
-    return MongoClients.create(mongoClientSettings);
-
-
-  }
-
-
 }

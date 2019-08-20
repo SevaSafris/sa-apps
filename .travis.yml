@@ -12,7 +12,6 @@ cache:
 
 services:
   - cassandra
-  - mongodb
   - rabbitmq
   - docker
 
