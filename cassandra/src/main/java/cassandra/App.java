@@ -3,11 +3,16 @@ package cassandra;
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
+import java.io.File;
 import org.cassandraunit.utils.EmbeddedCassandraServerHelper;
 import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    final File triggers = new File("triggers");
+    triggers.mkdirs();
+    System.setProperty("cassandra.triggers_dir", triggers.getAbsolutePath());
+
     EmbeddedCassandraServerHelper.startEmbeddedCassandra();
     EmbeddedCassandraServerHelper.getSession();
 
