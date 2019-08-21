@@ -9,6 +9,8 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    System.setProperty("java.library.path", "src/main/resources/libs");
+
     final File triggers = new File("triggers");
     triggers.mkdirs();
     System.setProperty("cassandra.triggers_dir", triggers.getAbsolutePath());
