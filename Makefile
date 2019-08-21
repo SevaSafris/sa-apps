@@ -3,7 +3,6 @@
 # specialagent_jar := opentracing-specialagent-1.3.4.jar
 specialagent_jar := opentracing-specialagent-1.3.5-SNAPSHOT.jar
 
-
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
 build_command = mvn clean package -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
@@ -25,7 +24,11 @@ build-spring-cloud-edgware:
 clean:
 	mvn clean
 
-run-mocktracer-test:
+run:
+	cd asynchttpclient && make build run-mock
+	cd aws && make build run-mock
+
+run-mock:
 	java \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) ${run_command}
@@ -40,7 +43,7 @@ run-local:
 		-Dsa.tracer=lightstep \
 		-javaagent:$(specialagent_jar_path) ${run_command}
 
-run:
+run-ls:
 	java \
 		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=collector.lightstep.com \
