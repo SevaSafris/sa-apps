@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+cd cassandra
+echo "##############################################################################################"
+echo "cassandra"
+make build run-mocktracer-test || exit $?
+cd ..
+
 cd httpclient-4.2.5
 echo "##############################################################################################"
 echo "httpclient-4.2.5"
@@ -108,12 +114,6 @@ docker pull docker.elastic.co/elasticsearch/elasticsearch:7.2.0
 docker run --name es7 -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.2.0
 make build run-mocktracer-test || exit $?
 docker stop es7
-cd ..
-
-cd cassandra
-echo "##############################################################################################"
-echo "cassandra"
-make build run-mocktracer-test || exit $?
 cd ..
 
 cd aws
