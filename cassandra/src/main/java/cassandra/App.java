@@ -15,7 +15,7 @@ public class App {
     triggers.mkdirs();
     System.setProperty("cassandra.triggers_dir", triggers.getAbsolutePath());
 
-    EmbeddedCassandraServerHelper.startEmbeddedCassandra();
+    EmbeddedCassandraServerHelper.startEmbeddedCassandra(60_000);
     EmbeddedCassandraServerHelper.getSession();
 
     Cluster cluster = Cluster.builder().addContactPoints("127.0.0.1").withPort(9142).build();
