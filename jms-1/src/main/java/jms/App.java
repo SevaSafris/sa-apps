@@ -13,34 +13,38 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    jms();
+    final ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
+        "vm://localhost?broker.persistent=false");
+    final Connection connection = connectionFactory.createConnection();
+    connection.start();
+
+    jms(connection);
 
     TimeUnit.SECONDS.sleep(10);
+    connection.close();
+    Util.checkSpan("java-jms", 4);
   }
 
-  private static void jms() {
-    thread(new HelloWorldProducer(), false);
-    thread(new HelloWorldProducer(), false);
-    thread(new HelloWorldConsumer(), false);
-    thread(new HelloWorldConsumer(), false);
+  private static void jms(Connection connection) {
+    thread(new HelloWorldProducer(connection), false);
+    thread(new HelloWorldProducer(connection), false);
+    thread(new HelloWorldConsumer(connection), false);
+    thread(new HelloWorldConsumer(connection), false);
   }
 
   public static class HelloWorldProducer implements Runnable {
+    private final Connection connection;
+
+    public HelloWorldProducer(Connection connection) {
+      this.connection = connection;
+    }
+
     public void run() {
       try {
-        // Create a ConnectionFactory
-        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
-            "tcp://localhost:61616");
-        connectionFactory.setUserName("artemis");
-        connectionFactory.setPassword("simetraehcapa");
-
-        // Create a Connection
-        Connection connection = connectionFactory.createConnection();
-        connection.start();
-
         // Create a Session
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
         System.out.println("Session: " + session);
@@ -66,7 +70,6 @@ public class App {
 
         // Clean up
         session.close();
-        connection.close();
       } catch (Exception e) {
         System.out.println("Caught: " + e);
         e.printStackTrace();
@@ -75,20 +78,14 @@ public class App {
   }
 
   public static class HelloWorldConsumer implements Runnable, ExceptionListener {
+    private final Connection connection;
+
+    public HelloWorldConsumer(Connection connection) {
+      this.connection = connection;
+    }
+
     public void run() {
       try {
-
-        // Create a ConnectionFactory
-        ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
-            "tcp://localhost:61616");
-        connectionFactory.setUserName("artemis");
-        connectionFactory.setPassword("simetraehcapa");
-
-        // Create a Connection
-        Connection connection = connectionFactory.createConnection();
-        connection.start();
-
-        connection.setExceptionListener(this);
 
         // Create a Session
         Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
@@ -113,7 +110,6 @@ public class App {
 
         consumer.close();
         session.close();
-        connection.close();
       } catch (Exception e) {
         System.out.println("Caught: " + e);
         e.printStackTrace();

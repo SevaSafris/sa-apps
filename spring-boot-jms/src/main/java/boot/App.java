@@ -11,10 +11,10 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
-import org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
 import org.springframework.jms.support.converter.MessageConverter;
 import org.springframework.jms.support.converter.MessageType;
+import util.Util;
 
 @SpringBootApplication
 @EnableJms
@@ -32,15 +32,7 @@ public class App {
 
   @Bean
   public ConnectionFactory connectionFactory() {
-    final ConnectionFactory factory = new ActiveMQConnectionFactory("tcp://localhost:61616");
-
-    final UserCredentialsConnectionFactoryAdapter adapter =
-        new UserCredentialsConnectionFactoryAdapter();
-    adapter.setTargetConnectionFactory(factory);
-    adapter.setUsername("artemis");
-    adapter.setPassword("simetraehcapa");
-
-    return adapter;
+    return new ActiveMQConnectionFactory("vm://localhost?broker.persistent=false");
   }
 
   @Bean // Serialize message content to json using TextMessage
@@ -61,8 +53,9 @@ public class App {
     System.out.println("Active span: " + GlobalTracer.get().activeSpan());
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     SpringApplication.run(App.class, args).close();
+    Util.checkSpan("java-jms", 3);
   }
 
 }

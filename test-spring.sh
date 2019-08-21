@@ -36,9 +36,6 @@ for spring_cloud in "${spring_clouds[@]}"; do
 done
 cd ..
 
-echo "run artemis"
-docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
-
 cd spring-boot-jms
 for spring_cloud in "${spring_clouds[@]}"; do
   echo "##############################################################################################"

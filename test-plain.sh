@@ -63,7 +63,6 @@ cd ..
 cd jms-1
 echo "##############################################################################################"
 echo "jms-1"
-docker run --name artemis -p 61616:61616 -d vromero/activemq-artemis
 make build run-mocktracer-test || exit $?
 cd ..
 
@@ -164,7 +163,6 @@ echo "httpclient"
 make build run-mocktracer-test || exit $?
 cd ..
 
-
 cd spymemcached/
 echo "##############################################################################################"
 echo "spymemcached/"
@@ -176,7 +174,6 @@ echo "##########################################################################
 echo "thrift"
 make build run-mocktracer-test || exit $?
 cd ..
-
 
 cd redisson
 echo "##############################################################################################"
