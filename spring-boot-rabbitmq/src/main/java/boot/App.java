@@ -15,6 +15,7 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import util.Util;
 
 @SpringBootApplication
 public class App {
@@ -58,7 +59,8 @@ public class App {
     final CachingConnectionFactory factory = new CachingConnectionFactory("localhost");
     factory.setUsername("guest");
     factory.setPassword("guest");
-    factory.setVirtualHost("/");
+    factory.setHost("localhost");
+    factory.setPort(broker.getBrokerPort());
     return factory;
   }
 
@@ -87,8 +89,15 @@ public class App {
     System.out.println("Received <" + message + ">");
   }
 
-  public static void main(String[] args) {
+  private static EmbeddedAMQPBroker broker;
+
+  public static void main(String[] args) throws Exception {
+    broker = new EmbeddedAMQPBroker();
+
     SpringApplication.run(App.class, args).close();
+
+    broker.shutdown();
+    Util.checkSpan("java-rabbitmq", 6);
   }
 
 }

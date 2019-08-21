@@ -12,7 +12,6 @@ cache:
 
 services:
   - cassandra
-  - rabbitmq
   - docker
 
 env:

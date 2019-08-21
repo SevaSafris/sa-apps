@@ -1,6 +1,8 @@
 package boot;
 
 import java.util.concurrent.TimeUnit;
+import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,8 +13,15 @@ import util.Util;
 
 @SpringBootApplication
 public class App {
-  public static void main(String[] args) {
-    SpringApplication.run(App.class, args);
+  private static EmbeddedAMQPBroker broker;
+
+  public static void main(String[] args) throws Exception {
+    broker = new EmbeddedAMQPBroker();
+
+    SpringApplication.run(App.class, args).close();
+
+    broker.shutdown();
+    System.exit(0);
   }
 
   @Autowired
@@ -20,6 +29,16 @@ public class App {
 
   @Autowired
   private Receiver receiver;
+
+  @Bean
+  public ConnectionFactory connectionFactory() {
+    final CachingConnectionFactory factory = new CachingConnectionFactory("localhost");
+    factory.setUsername("guest");
+    factory.setPassword("guest");
+    factory.setHost("localhost");
+    factory.setPort(broker.getBrokerPort());
+    return factory;
+  }
 
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
@@ -33,8 +52,6 @@ public class App {
 
       System.out.println("Received: " + receiver.getReceivedMessages());
       Util.checkSpan("spring-messaging", 5);
-      System.exit(0);
-
     };
   }
 }

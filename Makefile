@@ -8,6 +8,8 @@ specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
 build_command = mvn clean package -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
+run_command = -jar target/${component_jar}
+
 build:
 	${build_command}
 
@@ -26,7 +28,7 @@ clean:
 run-mocktracer-test:
 	java \
 		-Dsa.tracer=mock \
-		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
+		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-local:
 	java \
@@ -36,7 +38,7 @@ run-local:
 		-Dls.collectorPort=8360 \
 		-Dls.accessToken=${LS_LOCAL_TOKEN} \
 		-Dsa.tracer=lightstep \
-		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
+		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run:
 	java \
@@ -46,7 +48,7 @@ run:
 		-Dls.collectorPort=443 \
 		-Dls.accessToken=$(LS_TOKEN) \
 		-Dsa.tracer=lightstep \
-		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
+		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-solo:
 	java \
@@ -55,7 +57,7 @@ run-solo:
 		-Dsa.tracer.plugins.enable=false \
 		-Dsa.instrumentation.plugins.enable=false \
 		-Dsa.instrumentation.plugin.$(plugin_name).enable=true \
-		-javaagent:$(specialagent_jar_path) -jar target/${component_jar}
+		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-no-agent:
-	java -jar target/${component_jar}
+	java ${run_command}
