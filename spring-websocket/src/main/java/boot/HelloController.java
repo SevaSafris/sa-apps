@@ -13,7 +13,7 @@ public class HelloController {
   public String greeting(String message) {
     System.out.println("Greeting: " + message);
     if (GlobalTracer.get().activeSpan() == null) {
-      System.err.println("No active span");
+      System.err.println("ERROR: no active span");
       System.exit(-1);
     }
     System.out.println("Active span: " + GlobalTracer.get().activeSpan());

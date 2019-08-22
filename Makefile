@@ -27,6 +27,100 @@ clean:
 run:
 	cd asynchttpclient && make build run-mock
 	cd aws && make build run-mock
+	cd aws-2 && make build run-mock
+	cd cassandra && make build run-mock
+	cd concurrent && make build run-mock
+	cd elasticsearch-6 && make build run-mock
+	cd elasticsearch-7 && make build run-mock
+	cd feign && make build run-mock
+	cd grpc && make build run-mock
+	cd hazelcast && make build run-mock
+	cd httpclient && make build run-mock
+	cd httpclient-4.2.5 && make build run-mock
+	cd hystrix && make build run-mock
+	cd jax-rs && make build run-mock
+	cd jdbc && make build run-mock
+	cd jdbi && make build run-mock
+	cd jedis-2 && make build run-mock
+	cd jedis-3 && make build run-mock
+	cd jms-1 && make build run-mock
+	cd jms-2 && make build run-mock
+	cd kafka && make build run-mock
+	cd lettuce && make build run-mock
+	cd mongo && make build run-mock
+	cd mongo-async && make build run-mock
+	cd mongo-reactive && make build run-mock
+	cd okhttp && make build run-mock
+	cd rabbitmq && make build run-mock
+	cd redisson && make build run-mock
+	cd rxjava-2 && make build run-mock
+	cd spring-3 && make build run-mock
+	cd spring-3-servlet-2.5 && make build run-mock
+	cd spring-4 && make build run-mock
+	cd spring-boot-jms && make build run-mock
+	cd spring-boot-kafka && make build run-mock
+	cd spring-boot-rabbitmq && make build run-mock
+	cd spring-data-redis && make build run-mock
+	cd spring-messaging && make build run-mock
+	cd spring-messaging-rabbit && make build run-mock
+	cd spring-scheduling && make build run-mock
+	cd spring-web && make build run-mock
+	cd spring-webflux && make build run-mock
+	cd spring-webmvc && make build run-mock
+	cd spring-websocket && make build run-mock
+	cd spymemcached && make build run-mock
+	cd thrift && make build run-mock
+	cd zuul && make build run-mock
+
+run-embedded:
+	cd asynchttpclient && make build run-mock
+	cd aws && make build run-mock
+	cd aws-2 && make build run-mock
+	cd cassandra && make build run-mock
+	cd concurrent && make build run-mock
+	cd feign && make build run-mock
+	cd grpc && make build run-mock
+	cd hazelcast && make build run-mock
+	cd httpclient && make build run-mock
+	cd httpclient-4.2.5 && make build run-mock
+	cd hystrix && make build run-mock
+	cd jax-rs && make build run-mock
+	cd jdbc && make build run-mock
+	cd jdbi && make build run-mock
+	cd jedis-2 && make build run-mock
+	cd jedis-3 && make build run-mock
+	cd jms-1 && make build run-mock
+	cd jms-2 && make build run-mock
+	cd kafka && make build run-mock
+	cd lettuce && make build run-mock
+	cd mongo && make build run-mock
+	cd mongo-async && make build run-mock
+	cd mongo-reactive && make build run-mock
+	cd okhttp && make build run-mock
+	cd rabbitmq && make build run-mock
+	cd redisson && make build run-mock
+	cd rxjava-2 && make build run-mock
+	cd spring-3 && make build run-mock
+	cd spring-3-servlet-2.5 && make build run-mock
+	cd spring-4 && make build run-mock
+	cd spring-boot-jms && make build run-mock
+	cd spring-boot-kafka && make build run-mock
+	cd spring-boot-rabbitmq && make build run-mock
+	cd spring-data-redis && make build run-mock
+	cd spring-messaging && make build run-mock
+	cd spring-messaging-rabbit && make build run-mock
+	cd spring-scheduling && make build run-mock
+	cd spring-web && make build run-mock
+	cd spring-webflux && make build run-mock
+	cd spring-webmvc && make build run-mock
+	cd spring-websocket && make build run-mock
+	cd thrift && make build run-mock
+	cd zuul && make build run-mock
+
+run-integrated:
+	cd elasticsearch-6 && make build run-mock
+	cd elasticsearch-7 && make build run-mock
+	cd spymemcached && make build run-mock
 
 run-mock:
 	java \

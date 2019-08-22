@@ -23,7 +23,7 @@ public class App {
     try {
       session = cluster.connect();
     } catch (Exception e) {
-      System.err.println("Cannot connect, exiting.\n" + e.getMessage());
+      System.err.println("ERROR: Cannot connect, exiting.\n" + e.getMessage());
       System.exit(-1);
     }
 

@@ -15,7 +15,7 @@ public class AsyncComponent {
     final Span span = GlobalTracer.get().activeSpan();
     System.out.println("Active span: " + span);
     if (span == null) {
-      System.err.println("No active span");
+      System.err.println("ERROR: no active span");
       System.exit(-1);
     }
     return new AsyncResult<>("whatever");

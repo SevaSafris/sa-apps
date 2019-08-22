@@ -10,7 +10,7 @@ public class HelloController {
   @RequestMapping("/")
   public String index() {
     if (GlobalTracer.get().activeSpan() == null) {
-      System.err.println("Missing active span");
+      System.err.println("ERROR: no active span");
       System.exit(-1);
     }
     return "Greetings from Spring Boot!";

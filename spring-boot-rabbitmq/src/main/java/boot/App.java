@@ -70,7 +70,7 @@ public class App {
       @Override
       public void onMessage(Message message, Channel channel) throws Exception {
         if (GlobalTracer.get().activeSpan() == null) {
-          System.err.println("Missing active span");
+          System.err.println("ERROR: no active span");
           System.exit(-1);
         }
         System.out.println("Active span: " + GlobalTracer.get().activeSpan());
@@ -82,7 +82,7 @@ public class App {
   @RabbitListener(queues = queueName2)
   public void listen(String message) {
     if (GlobalTracer.get().activeSpan() == null) {
-      System.err.println("Missing active span");
+      System.err.println("ERROR: no active span");
       System.exit(-1);
     }
     System.out.println("Active span: " + GlobalTracer.get().activeSpan());
