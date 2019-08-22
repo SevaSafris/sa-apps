@@ -41,6 +41,8 @@ public class App {
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
     return args -> {
 
+      TimeUnit.SECONDS.sleep(10);
+
       String url = "ws://localhost:8080/test-websocket";
 
       WebSocketStompClient stompClient = new WebSocketStompClient(
