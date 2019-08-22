@@ -5,3 +5,5 @@ component_jar := elasticsearch-7-1.0-SNAPSHOT.jar
 plugin_name := elasticsearch-7-rest-client
 
 include ../Makefile
+
+run_command = -cp target/dependency/*:target/${component_jar} es7.App

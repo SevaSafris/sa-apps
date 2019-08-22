@@ -4,6 +4,8 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -21,19 +23,40 @@ import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.node.InternalSettingsPreparer;
+import org.elasticsearch.node.Node;
+import org.elasticsearch.plugins.Plugin;
+import org.elasticsearch.transport.Netty4Plugin;
 import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import util.Util;
 
 public class App {
-  public static void main(String[] args) throws Exception {
+  private static final int HTTP_PORT = 9205;
+  private static final String HTTP_TRANSPORT_PORT = "9305";
+  private static final String ES_WORKING_DIR = "target/es";
+  private static String clusterName = "cluster-name";
+  private static Node node;
 
-    try {
-      restClient();
-      transportClient();
-    } catch (Exception e) {
-      e.printStackTrace();
-      System.exit(-1);
-    }
+  public static void main(String[] args) throws Exception {
+    Settings settings = Settings.builder()
+        .put("path.home", ES_WORKING_DIR)
+        .put("path.data", ES_WORKING_DIR + "/data")
+        .put("path.logs", ES_WORKING_DIR + "/logs")
+        .put("transport.type", "netty4")
+        .put("http.type", "netty4")
+        .put("cluster.name", clusterName)
+        .put("http.port", HTTP_PORT)
+        .put("transport.tcp.port", HTTP_TRANSPORT_PORT)
+        .put("network.host", "127.0.0.1")
+        .build();
+    Collection plugins = Collections.singletonList(Netty4Plugin.class);
+    node = new PluginConfigurableNode(settings, plugins);
+    node.start();
+
+    restClient();
+    transportClient();
+
+    node.close();
 
     Util.checkSpan("java-elasticsearch", 3);
     System.exit(0);
@@ -41,7 +64,7 @@ public class App {
 
   private static void restClient() throws IOException {
     RestClient restClient = RestClient.builder(
-        new HttpHost("localhost", 9200, "http"))
+        new HttpHost("localhost", HTTP_PORT, "http"))
         .build();
 
     HttpEntity entity = new NStringEntity(
@@ -75,14 +98,12 @@ public class App {
   }
 
   private static void transportClient() throws Exception {
-
     Settings settings = Settings.builder()
-        .put("client.transport.ignore_cluster_name", true)
-        .build();
+        .put("cluster.name", clusterName).build();
 
     TransportClient client = new PreBuiltTransportClient(settings)
         .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"),
-            9300));
+            Integer.parseInt(HTTP_TRANSPORT_PORT)));
 
     IndexRequest indexRequest = new IndexRequest("twitter").type("tweet").id("1").
         source(jsonBuilder()
@@ -111,5 +132,18 @@ public class App {
 
     latch.await(30, TimeUnit.SECONDS);
     client.close();
+  }
+
+  private static class PluginConfigurableNode extends Node {
+
+    public PluginConfigurableNode(Settings settings,
+        Collection<Class<? extends Plugin>> classpathPlugins) {
+      super(InternalSettingsPreparer.prepareEnvironment(settings, null), classpathPlugins, false);
+    }
+
+    @Override
+    protected void registerDerivedNodeNameWithLogger(String s) {
+
+    }
   }
 }

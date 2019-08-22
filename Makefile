@@ -78,6 +78,8 @@ run-embedded:
 	cd aws-2 && make build run-mock
 	cd cassandra && make build run-mock
 	cd concurrent && make build run-mock
+	cd elasticsearch-6 && make build run-mock
+	cd elasticsearch-7 && make build run-mock
 	cd feign && make build run-mock
 	cd grpc && make build run-mock
 	cd hazelcast && make build run-mock
@@ -118,8 +120,6 @@ run-embedded:
 	cd zuul && make build run-mock
 
 run-integrated:
-	cd elasticsearch-6 && make build run-mock
-	cd elasticsearch-7 && make build run-mock
 	cd spymemcached && make build run-mock
 
 run-mock:
