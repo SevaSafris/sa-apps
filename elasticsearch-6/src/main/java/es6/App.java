@@ -58,11 +58,11 @@ public class App {
 
     node.close();
 
-    Util.checkSpan("java-elasticsearch", 3);
+    Util.checkSpan("java-elasticsearch", 4);
     System.exit(0);
   }
 
-  private static void restClient() throws IOException {
+  private static void restClient() throws IOException, InterruptedException {
     RestClient restClient = RestClient.builder(
         new HttpHost("localhost", HTTP_PORT, "http"))
         .build();
@@ -83,17 +83,21 @@ public class App {
     request = new Request("PUT", "/twitter/tweet/2");
     request.setEntity(entity);
 
+    final CountDownLatch latch = new CountDownLatch(1);
     restClient
         .performRequestAsync(request, new ResponseListener() {
           @Override
           public void onSuccess(Response response) {
+            latch.countDown();
           }
 
           @Override
           public void onFailure(Exception exception) {
+            latch.countDown();
           }
         });
 
+    latch.await(30, TimeUnit.SECONDS);
     restClient.close();
   }
 

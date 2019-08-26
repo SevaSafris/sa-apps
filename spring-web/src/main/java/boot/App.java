@@ -1,6 +1,8 @@
 package boot;
 
+import java.util.concurrent.TimeUnit;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.client.RestTemplate;
 import util.Util;
 
@@ -13,7 +15,14 @@ public class App {
 
     System.out.println(entity.getStatusCode());
 
-    Util.checkSpan("java-spring-rest-template", 1);
+    final AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
+    final ResponseEntity<String> asyncEntity = asyncRestTemplate
+        .getForEntity("http://www.google.com", String.class)
+        .get(10, TimeUnit.SECONDS);
+
+    System.out.println(asyncEntity.getStatusCode());
+
+    Util.checkSpan("java-spring-rest-template", 2);
   }
 
 
