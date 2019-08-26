@@ -1,6 +1,9 @@
 package aws;
 
 
+import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;
+import com.amazonaws.services.dynamodbv2.local.server.DynamoDBProxyServer;
+import java.io.File;
 import java.net.URI;
 import java.time.Duration;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,6 +21,15 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    final File classesFolder = new File(
+        App.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    System.getProperties().setProperty("sqlite4java.library.path",
+        new File(classesFolder, "libs").getAbsolutePath());
+
+    final String[] localArgs = {"-inMemory", "-port", "8000"};
+    DynamoDBProxyServer server = ServerRunner.createServerFromCommandLineArgs(localArgs);
+    server.start();
+
     DynamoDbClient dbClient = buildClient();
 
     try {
@@ -25,7 +37,9 @@ public class App {
     } catch (Exception e) {
       System.out.println("Exception: " + e.getMessage() + "\nIgnoring.");
     }
+    server.stop();
     Util.checkSpan("java-aws-sdk", 1);
+    System.exit(0);
   }
 
   private static DynamoDbClient buildClient() {
@@ -37,7 +51,8 @@ public class App {
     return DynamoDbClient.builder().endpointOverride(URI.create("http://localhost:8000"))
         .region(Region.US_WEST_2)
         .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
-        .overrideConfiguration(ClientOverrideConfiguration.builder().apiCallTimeout(Duration.ofSeconds(1)).build())
+        .overrideConfiguration(
+            ClientOverrideConfiguration.builder().apiCallTimeout(Duration.ofSeconds(1)).build())
         .build();
 
 //    final AwsClientBuilder.EndpointConfiguration endpointConfiguration = new AwsClientBuilder.EndpointConfiguration(
@@ -54,14 +69,17 @@ public class App {
 
   private static void createTable(final DynamoDbClient dbClient, final String tableName) {
     final String partitionKeyName = tableName + "-pk";
-    final CreateTableRequest createTableRequest =CreateTableRequest.builder()
+    final CreateTableRequest createTableRequest = CreateTableRequest.builder()
         .tableName(tableName)
         .keySchema(
-            KeySchemaElement.builder().attributeName(partitionKeyName).keyType(KeyType.HASH).build())
+            KeySchemaElement.builder().attributeName(partitionKeyName).keyType(KeyType.HASH)
+                .build())
         .attributeDefinitions(
-            AttributeDefinition.builder().attributeName(partitionKeyName).attributeType("S").build())
+            AttributeDefinition.builder().attributeName(partitionKeyName).attributeType("S")
+                .build())
         .provisionedThroughput(
-            ProvisionedThroughput.builder().readCapacityUnits(10L).writeCapacityUnits(5L).build()).build();
+            ProvisionedThroughput.builder().readCapacityUnits(10L).writeCapacityUnits(5L).build())
+        .build();
 
     dbClient.createTable(createTableRequest);
     System.out.println("Table " + tableName + " created");

@@ -6,16 +6,28 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.local.main.ServerRunner;
+import com.amazonaws.services.dynamodbv2.local.server.DynamoDBProxyServer;
 import com.amazonaws.services.dynamodbv2.model.AttributeDefinition;
 import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
+import java.io.File;
 import java.util.concurrent.ThreadLocalRandom;
 import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    final File classesFolder = new File(
+        App.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    System.getProperties().setProperty("sqlite4java.library.path",
+        new File(classesFolder, "libs").getAbsolutePath());
+
+    final String[] localArgs = {"-inMemory", "-port", "8000"};
+    DynamoDBProxyServer server = ServerRunner.createServerFromCommandLineArgs(localArgs);
+    server.start();
+
     AmazonDynamoDB dbClient = buildClient();
 
     try {
@@ -23,7 +35,10 @@ public class App {
     } catch (Exception e) {
       System.out.println("Exception: " + e.getMessage() + "\nIgnoring.");
     }
+    server.stop();
+
     Util.checkSpan("java-aws-sdk", 1);
+    System.exit(0);
   }
 
   private static AmazonDynamoDB buildClient() {
