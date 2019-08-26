@@ -1,9 +1,11 @@
 package spring4;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.client.RestTemplate;
 import util.Util;
 
@@ -17,9 +19,16 @@ public class App {
 
     System.out.println(responseEntity.getStatusCode());
 
+    final AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
+    final ResponseEntity<String> asyncEntity = asyncRestTemplate
+        .getForEntity("http://localhost:8080", String.class)
+        .get(10, TimeUnit.SECONDS);
+
+    System.out.println(asyncEntity.getStatusCode());
+
     server.stop();
 
-    Util.checkSpan("java-web-servlet", 2);
+    Util.checkSpan("java-web-servlet", 3); // TODO: should be 4
   }
 
   private static Server startServer() {
