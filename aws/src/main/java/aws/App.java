@@ -13,16 +13,17 @@ import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
 import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
-import java.io.File;
 import java.util.concurrent.ThreadLocalRandom;
 import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    final File classesFolder = new File(
-        App.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-    System.getProperties().setProperty("sqlite4java.library.path",
-        new File(classesFolder, "libs").getAbsolutePath());
+
+    if (System.getProperty("user.dir").contains("aws")) {
+      System.getProperties().setProperty("sqlite4java.library.path", "src/main/resources/libs");
+    } else {
+      System.getProperties().setProperty("sqlite4java.library.path", "aws/src/main/resources/libs");
+    }
 
     final String[] localArgs = {"-inMemory", "-port", "8000"};
     DynamoDBProxyServer server = ServerRunner.createServerFromCommandLineArgs(localArgs);
