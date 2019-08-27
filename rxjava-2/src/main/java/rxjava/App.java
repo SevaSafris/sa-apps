@@ -3,11 +3,11 @@ package rxjava;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import java.util.concurrent.TimeUnit;
+import util.Util;
 
 public class App {
 
-  public static void main(String[] args) throws InterruptedException {
+  public static void main(String[] args) throws Exception {
 
     Observable.range(1, 5)
         .subscribe(new Observer<Integer>() {
@@ -39,7 +39,7 @@ public class App {
     Observable.just("Hello", "World")
         .subscribe(System.out::println);
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("rxjava-2", 2);
 
   }
 
