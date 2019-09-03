@@ -9,6 +9,10 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
+    if(!System.getProperty("java.version").startsWith("1.8.")) {
+      System.exit(0);
+    }
+
     if (System.getProperty("user.dir").contains("cassandra")) {
       System.getProperties().setProperty("java.library.path", "src/main/resources/libs");
     } else {
