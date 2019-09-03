@@ -142,12 +142,8 @@ public class App {
 
     public PluginConfigurableNode(Settings settings,
         Collection<Class<? extends Plugin>> classpathPlugins) {
-      super(InternalSettingsPreparer.prepareEnvironment(settings, null), classpathPlugins, false);
+      super(InternalSettingsPreparer.prepareEnvironment(settings, null), classpathPlugins);
     }
 
-    @Override
-    protected void registerDerivedNodeNameWithLogger(String s) {
-
-    }
   }
 }

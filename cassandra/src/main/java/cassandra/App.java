@@ -20,7 +20,7 @@ public class App {
     System.setProperty("cassandra.triggers_dir", triggers.getAbsolutePath());
 
     EmbeddedCassandraServerHelper.startEmbeddedCassandra(60_000);
-    EmbeddedCassandraServerHelper.getSession();
+    // EmbeddedCassandraServerHelper.getSession();
 
     Cluster cluster = Cluster.builder().addContactPoints("127.0.0.1").withPort(9142).build();
     Session session = null;
@@ -37,10 +37,9 @@ public class App {
     session.close();
     cluster.close();
 
-    EmbeddedCassandraServerHelper.cleanEmbeddedCassandra();
-
     Util.checkSpan("java-cassandra", 1);
 
+    EmbeddedCassandraServerHelper.cleanEmbeddedCassandra();
     System.exit(0);
   }
 

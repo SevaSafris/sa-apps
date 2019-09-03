@@ -15,7 +15,7 @@
     <dependency>
       <groupId>io.github.openfeign</groupId>
       <artifactId>feign-okhttp</artifactId>
-      <version>10.3.0</version>
+      <version>9.0.0</version>
     </dependency>
   </dependencies>
 

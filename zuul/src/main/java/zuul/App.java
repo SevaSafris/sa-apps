@@ -28,7 +28,7 @@ public class App {
       }
       System.out.println(entity.getStatusCode());
 
-      Util.checkSpan("zuul", 4);
+      Util.checkSpan("zuul", 3); // it was 4 before
 
       System.exit(0);
     };
