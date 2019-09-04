@@ -70,6 +70,7 @@ run:
 	cd spring-websocket && make build run-mock
 	cd spymemcached && make build run-mock
 	cd thrift && make build run-mock
+	cd tomcat && make build run-mock
 	cd zuul && make build run-mock
 
 run-embedded:
@@ -117,6 +118,7 @@ run-embedded:
 	cd spring-webmvc && make build run-mock
 	cd spring-websocket && make build run-mock
 	cd thrift && make build run-mock
+	cd tomcat && make build run-mock
 	cd zuul && make build run-mock
 
 run-integrated:

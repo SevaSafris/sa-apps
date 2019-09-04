@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <modules>
+    <module>tomcat</module>
     <module>jms-1</module>
     <module>jms-2</module>
     <module>aws</module>

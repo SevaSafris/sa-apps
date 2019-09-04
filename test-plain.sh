@@ -162,6 +162,12 @@ echo "thrift"
 make build run-mock || exit $?
 cd ..
 
+cd tomcat
+echo "##############################################################################################"
+echo "tomcat"
+make build run-mock || exit $?
+cd ..
+
 cd redisson
 echo "##############################################################################################"
 echo "redisson"
