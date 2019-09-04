@@ -28,7 +28,7 @@ public class App {
 
     server.stop();
 
-    Util.checkSpan("java-web-servlet", 3); // TODO: should be 4
+    Util.checkSpan("java-web-servlet", 4);
   }
 
   private static Server startServer() {
