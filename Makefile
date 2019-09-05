@@ -25,7 +25,8 @@ clean:
 	mvn clean
 
 run:
-	cd asynchttpclient && make build run-mock
+	cd asynchttpclient//asynchttpclient-2.7.0 && make build run-mock
+	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
 	cd aws && make build run-mock
 	cd aws-2 && make build run-mock
 	cd cassandra && make build run-mock
@@ -74,7 +75,8 @@ run:
 	cd zuul && make build run-mock
 
 run-embedded:
-	cd asynchttpclient && make build run-mock
+	cd asynchttpclient//asynchttpclient-2.7.0 && make build run-mock
+	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
 	cd aws && make build run-mock
 	cd aws-2 && make build run-mock
 	cd cassandra && make build run-mock

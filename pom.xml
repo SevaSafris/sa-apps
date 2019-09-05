@@ -20,7 +20,8 @@
     <module>elasticsearch-7</module>
     <module>rxjava-2</module>
     <module>kafka</module>
-    <module>asynchttpclient</module>
+    <module>asynchttpclient/asynchttpclient-2.7.0</module>
+    <module>asynchttpclient/asynchttpclient-2.10.1</module>
     <module>spring-boot-kafka</module>
     <module>jdbc</module>
     <module>okhttp</module>

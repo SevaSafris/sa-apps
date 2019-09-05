@@ -132,11 +132,17 @@ echo "lettuce"
 make build run-mock || exit $?
 cd ..
 
-cd asynchttpclient
+cd asynchttpclient/asynchttpclient-2.7.0
 echo "##############################################################################################"
-echo "asynchttpclient"
+echo "/asynchttpclient-2.7.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd asynchttpclient/asynchttpclient-2.10.1
+echo "##############################################################################################"
+echo "/asynchttpclient-2.10.1"
+make build run-mock || exit $?
+cd ../..
 
 cd okhttp
 echo "##############################################################################################"
