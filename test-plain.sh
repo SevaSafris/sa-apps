@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
-cd cassandra
+cd cassandra/cassandra-3.0.0
 echo "##############################################################################################"
-echo "cassandra"
+echo "cassandra-3.0.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd cassandra/cassandra-3.7.2
+echo "##############################################################################################"
+echo "cassandra-3.7.2"
+make build run-mock || exit $?
+cd ../..
 
 cd httpclient-4.2.5
 echo "##############################################################################################"

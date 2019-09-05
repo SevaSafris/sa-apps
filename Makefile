@@ -29,7 +29,8 @@ run:
 	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
 	cd aws/aws-2 && make build run-mock
-	cd cassandra && make build run-mock
+	cd cassandra/cassandra-3.0.0 && make build run-mock
+	cd cassandra/cassandra-3.7.2 && make build run-mock
 	cd concurrent && make build run-mock
 	cd elasticsearch-6 && make build run-mock
 	cd elasticsearch-7 && make build run-mock
@@ -79,7 +80,8 @@ run-embedded:
 	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
 	cd aws/aws-2 && make build run-mock
-	cd cassandra && make build run-mock
+	cd cassandra/cassandra-3.0.0 && make build run-mock
+	cd cassandra/cassandra-3.7.2 && make build run-mock
 	cd concurrent && make build run-mock
 	cd elasticsearch-6 && make build run-mock
 	cd elasticsearch-7 && make build run-mock

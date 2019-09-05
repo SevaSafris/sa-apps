@@ -15,7 +15,8 @@
     <module>jms-2</module>
     <module>aws/aws-1</module>
     <module>aws/aws-2</module>
-    <module>cassandra</module>
+    <module>cassandra/cassandra-3.0.0</module>
+    <module>cassandra/cassandra-3.7.2</module>
     <module>elasticsearch-6</module>
     <module>elasticsearch-7</module>
     <module>rxjava-2</module>
