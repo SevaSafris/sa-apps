@@ -9,7 +9,7 @@ import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    if(!System.getProperty("java.version").startsWith("1.8.")) {
+    if (!System.getProperty("java.version").startsWith("1.8.")) {
       System.exit(0);
     }
 
@@ -19,7 +19,7 @@ public class App {
       System.getProperties().setProperty("java.library.path", "cassandra/src/main/resources/libs");
     }
 
-    final File triggers = new File("triggers");
+    final File triggers = new File("target/triggers");
     triggers.mkdirs();
     System.setProperty("cassandra.triggers_dir", triggers.getAbsolutePath());
 

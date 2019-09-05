@@ -26,7 +26,7 @@ public class App {
     final Tomcat tomcatServer = new Tomcat();
     tomcatServer.setPort(serverPort);
 
-    final File baseDir = new File("tomcat");
+    final File baseDir = new File("target/tomcat");
     tomcatServer.setBaseDir(baseDir.getAbsolutePath());
 
     final File applicationDir = new File(new File(baseDir, "webapps"), "ROOT");
@@ -58,7 +58,7 @@ public class App {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
       }
     });
-    appContext.addServletMappingDecoded("/hello", "helloWorldServlet");
+    appContext.addServletMapping("/hello", "helloWorldServlet");
 
     tomcatServer.start();
     logger
