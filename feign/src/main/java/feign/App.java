@@ -16,7 +16,7 @@ public class App {
     final String res = entity.get();
     System.out.println(res == null);
 
-    Util.checkSpan("feign", 3);
+    Util.checkSpan("feign", 1); // Internal OkHttpClient is not instrumented because it's too old.
   }
 
   private static Feign getClient() {
