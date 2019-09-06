@@ -59,6 +59,7 @@
     <module>spring-3-servlet-2.5</module>
     <module>spring-4</module>
     <module>jax-rs</module>
+    <module>common</module>
   </modules>
 
   <name>java-specialagent-apps</name>

@@ -9,3 +9,7 @@ include ../../Makefile
 run_command = -cp target/dependency/*:target/${component_jar} aws.App
 
 specialagent_jar_path := ${CURDIR}/../../$(specialagent_jar)
+
+build_command_module = -am -pl aws/aws-1
+
+build_command_start = cd ../.. &&
