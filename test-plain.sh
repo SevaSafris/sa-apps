@@ -90,11 +90,17 @@ echo "hazelcast"
 make build run-mock || exit $?
 cd ..
 
-cd grpc
+cd grpc/grpc-1.6.0
 echo "##############################################################################################"
-echo "grpc"
+echo "grpc-1.6.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd grpc/grpc-1.23.0
+echo "##############################################################################################"
+echo "grpc-1.23.0"
+make build run-mock || exit $?
+cd ../..
 
 cd elasticsearch/elasticsearch-6.4.0
 echo "##############################################################################################"

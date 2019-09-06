@@ -41,7 +41,8 @@ run:
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign/feign-9.0.0 && make build run-mock
 	cd feign/feign-10.4.0 && make build run-mock
-	cd grpc && make build run-mock
+	cd grpc/grpc-1.6.0 && make build run-mock
+	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast && make build run-mock
 	cd httpclient && make build run-mock
 	cd httpclient-4.2.5 && make build run-mock
@@ -93,7 +94,8 @@ run-embedded:
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign/feign-9.0.0 && make build run-mock
 	cd feign/feign-10.4.0 && make build run-mock
-	cd grpc && make build run-mock
+	cd grpc/grpc-1.6.0 && make build run-mock
+	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast && make build run-mock
 	cd httpclient && make build run-mock
 	cd httpclient-4.2.5 && make build run-mock
