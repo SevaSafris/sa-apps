@@ -46,7 +46,8 @@
     <module>hazelcast</module>
     <module>spymemcached</module>
     <module>jdbi</module>
-    <module>feign</module>
+    <module>feign/feign-9.0.0</module>
+    <module>feign/feign-10.4.0</module>
     <module>hystrix</module>
     <module>zuul</module>
     <module>spring-websocket</module>

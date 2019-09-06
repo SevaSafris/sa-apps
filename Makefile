@@ -39,7 +39,8 @@ run:
 	cd concurrent && make build run-mock
 	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
-	cd feign && make build run-mock
+	cd feign/feign-9.0.0 && make build run-mock
+	cd feign/feign-10.4.0 && make build run-mock
 	cd grpc && make build run-mock
 	cd hazelcast && make build run-mock
 	cd httpclient && make build run-mock
@@ -90,7 +91,8 @@ run-embedded:
 	cd concurrent && make build run-mock
 	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
-	cd feign && make build run-mock
+	cd feign/feign-9.0.0 && make build run-mock
+	cd feign/feign-10.4.0 && make build run-mock
 	cd grpc && make build run-mock
 	cd hazelcast && make build run-mock
 	cd httpclient && make build run-mock
