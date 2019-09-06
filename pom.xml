@@ -17,8 +17,8 @@
     <module>aws/aws-2</module>
     <module>cassandra/cassandra-3.0.0</module>
     <module>cassandra/cassandra-3.7.2</module>
-    <module>elasticsearch-6</module>
-    <module>elasticsearch-7</module>
+    <module>elasticsearch/elasticsearch-6.4.0</module>
+    <module>elasticsearch/elasticsearch-7.3.1</module>
     <module>rxjava-2</module>
     <module>kafka</module>
     <module>asynchttpclient/asynchttpclient-2.7.0</module>

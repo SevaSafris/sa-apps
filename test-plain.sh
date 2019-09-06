@@ -96,17 +96,17 @@ echo "grpc"
 make build run-mock || exit $?
 cd ..
 
-cd elasticsearch-6
+cd elasticsearch/elasticsearch-6.4.0
 echo "##############################################################################################"
-echo "elasticsearch-6"
+echo "elasticsearch-6.4.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
-cd elasticsearch-7
+cd elasticsearch/elasticsearch-7.3.1
 echo "##############################################################################################"
-echo "elasticsearch-7"
+echo "elasticsearch-7.3.1"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
 cd aws/aws-1
 echo "##############################################################################################"

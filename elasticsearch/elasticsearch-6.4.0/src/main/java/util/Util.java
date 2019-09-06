@@ -36,7 +36,8 @@ public class Util {
     }
 
     if (tracer.finishedSpans().size() != spanCount) {
-      System.err.println("ERROR: " + tracer.finishedSpans().size() + " spans instead of " + spanCount);
+      System.err
+          .println("ERROR: " + tracer.finishedSpans().size() + " spans instead of " + spanCount);
       System.exit(-1);
     }
   }

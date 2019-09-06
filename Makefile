@@ -37,8 +37,8 @@ run:
 	cd cassandra/cassandra-3.0.0 && make build run-mock
 	cd cassandra/cassandra-3.7.2 && make build run-mock
 	cd concurrent && make build run-mock
-	cd elasticsearch-6 && make build run-mock
-	cd elasticsearch-7 && make build run-mock
+	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
+	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign && make build run-mock
 	cd grpc && make build run-mock
 	cd hazelcast && make build run-mock
@@ -88,8 +88,8 @@ run-embedded:
 	cd cassandra/cassandra-3.0.0 && make build run-mock
 	cd cassandra/cassandra-3.7.2 && make build run-mock
 	cd concurrent && make build run-mock
-	cd elasticsearch-6 && make build run-mock
-	cd elasticsearch-7 && make build run-mock
+	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
+	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign && make build run-mock
 	cd grpc && make build run-mock
 	cd hazelcast && make build run-mock
