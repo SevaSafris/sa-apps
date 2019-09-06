@@ -60,6 +60,7 @@
     <module>spring-4</module>
     <module>jax-rs</module>
     <module>common</module>
+    <module>servlet</module>
   </modules>
 
   <name>java-specialagent-apps</name>
