@@ -47,7 +47,7 @@ run:
 	cd hazelcast/hazelcast-3.12.2 && make build run-mock
 	cd httpclient/httpclient-4.4 && make build run-mock
 	cd httpclient/httpclient-4.5.9 && make build run-mock
-	cd hystrix && make build run-mock
+	cd hystrix/hystrix-1.5.18 && make build run-mock
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock
 	cd jdbi && make build run-mock
@@ -101,7 +101,7 @@ run-embedded:
 	cd hazelcast/hazelcast-3.12.2 && make build run-mock
 	cd httpclient/httpclient-4.4 && make build run-mock
 	cd httpclient/httpclient-4.5.9 && make build run-mock
-	cd hystrix && make build run-mock
+	cd hystrix/hystrix-1.5.18 && make build run-mock
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock
 	cd jdbi && make build run-mock

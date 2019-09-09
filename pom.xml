@@ -50,7 +50,7 @@
     <module>jdbi</module>
     <module>feign/feign-9.0.0</module>
     <module>feign/feign-10.4.0</module>
-    <module>hystrix</module>
+    <module>hystrix/hystrix-1.5.18</module>
     <module>zuul</module>
     <module>spring-websocket</module>
     <module>spring-messaging</module>

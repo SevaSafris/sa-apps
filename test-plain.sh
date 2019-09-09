@@ -210,8 +210,8 @@ echo "feign-10.4.0"
 make build run-mock || exit $?
 cd ../..
 
-cd hystrix
+cd hystrix/hystrix-1.5.18
 echo "##############################################################################################"
-echo "hystrix"
+echo "hystrix-1.5.18"
 make build run-mock || exit $?
-cd ..
+cd ../..
