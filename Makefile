@@ -53,8 +53,8 @@ run:
 	cd jdbi && make build run-mock
 	cd jedis/jedis-2.7.0 && make build run-mock
 	cd jedis/jedis-3.1.0 && make build run-mock
-	cd jms-1 && make build run-mock
-	cd jms-2 && make build run-mock
+	cd jms/jms-1 && make build run-mock
+	cd jms/jms-2 && make build run-mock
 	cd kafka && make build run-mock
 	cd lettuce && make build run-mock
 	cd mongo && make build run-mock
@@ -107,8 +107,8 @@ run-embedded:
 	cd jdbi && make build run-mock
 	cd jedis/jedis-2.7.0 && make build run-mock
 	cd jedis/jedis-3.1.0 && make build run-mock
-	cd jms-1 && make build run-mock
-	cd jms-2 && make build run-mock
+	cd jms/jms-1 && make build run-mock
+	cd jms/jms-2 && make build run-mock
 	cd kafka && make build run-mock
 	cd lettuce && make build run-mock
 	cd mongo && make build run-mock

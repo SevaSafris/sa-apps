@@ -11,8 +11,8 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>tomcat</module>
-    <module>jms-1</module>
-    <module>jms-2</module>
+    <module>jms/jms-1</module>
+    <module>jms/jms-2</module>
     <module>aws/aws-1</module>
     <module>aws/aws-2</module>
     <module>cassandra/cassandra-3.0.0</module>
