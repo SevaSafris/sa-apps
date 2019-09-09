@@ -29,7 +29,8 @@
     <module>okhttp/okhttp-3.5.0</module>
     <module>okhttp/okhttp-3.14.2</module>
     <module>mongo</module>
-    <module>rabbitmq</module>
+    <module>rabbitmq/rabbitmq-5.0.0</module>
+    <module>rabbitmq/rabbitmq-5.7.3</module>
     <module>thrift</module>
     <module>grpc/grpc-1.6.0</module>
     <module>grpc/grpc-1.23.0</module>

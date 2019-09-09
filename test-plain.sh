@@ -24,11 +24,17 @@ echo "rxjava-2"
 make build run-mock || exit $?
 cd ..
 
-cd rabbitmq
+cd rabbitmq/rabbitmq-5.0.0
 echo "##############################################################################################"
-echo "rabbitmq"
+echo "rabbitmq-5.0.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd rabbitmq/rabbitmq-5.7.3
+echo "##############################################################################################"
+echo "rabbitmq-5.7.3"
+make build run-mock || exit $?
+cd ../..
 
 cd mongo
 echo "##############################################################################################"
