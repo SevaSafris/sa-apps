@@ -144,11 +144,17 @@ echo "jedis-3.1.0"
 make build run-mock || exit $?
 cd ../..
 
-cd lettuce
+cd lettuce/lettuce-5.0.0
 echo "##############################################################################################"
-echo "lettuce"
+echo "lettuce-5.0.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd lettuce/lettuce-5.1.8
+echo "##############################################################################################"
+echo "lettuce-5.1.8"
+make build run-mock || exit $?
+cd ../..
 
 cd asynchttpclient/asynchttpclient-2.7.0
 echo "##############################################################################################"

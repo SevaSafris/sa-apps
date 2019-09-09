@@ -39,7 +39,8 @@
     <module>mongo-reactive</module>
     <module>httpclient/httpclient-4.4</module>
     <module>httpclient/httpclient-4.5.9</module>
-    <module>lettuce</module>
+    <module>lettuce/lettuce-5.0.0</module>
+    <module>lettuce/lettuce-5.1.8</module>
     <module>spring-data-redis</module>
     <module>spring-web</module>
     <module>spring-webmvc</module>

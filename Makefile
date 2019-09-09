@@ -57,7 +57,8 @@ run:
 	cd jms/jms-2 && make build run-mock
 	cd kafka/kafka-1.1.0 && make build run-mock
 	cd kafka/kafka-2.3.0 && make build run-mock
-	cd lettuce && make build run-mock
+	cd lettuce/lettuce-5.0.0 && make build run-mock
+	cd lettuce/lettuce-5.1.8 && make build run-mock
 	cd mongo && make build run-mock
 	cd mongo-async && make build run-mock
 	cd mongo-reactive && make build run-mock
@@ -112,7 +113,8 @@ run-embedded:
 	cd jms/jms-2 && make build run-mock
 	cd kafka/kafka-1.1.0 && make build run-mock
 	cd kafka/kafka-2.3.0 && make build run-mock
-	cd lettuce && make build run-mock
+	cd lettuce/lettuce-5.0.0 && make build run-mock
+	cd lettuce/lettuce-5.1.8 && make build run-mock
 	cd mongo && make build run-mock
 	cd mongo-async && make build run-mock
 	cd mongo-reactive && make build run-mock
