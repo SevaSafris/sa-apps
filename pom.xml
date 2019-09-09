@@ -26,7 +26,8 @@
     <module>asynchttpclient/asynchttpclient-2.10.1</module>
     <module>spring-boot-kafka</module>
     <module>jdbc</module>
-    <module>okhttp</module>
+    <module>okhttp/okhttp-3.5.0</module>
+    <module>okhttp/okhttp-3.14.2</module>
     <module>mongo</module>
     <module>rabbitmq</module>
     <module>thrift</module>

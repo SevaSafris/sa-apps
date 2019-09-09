@@ -168,11 +168,17 @@ echo "/asynchttpclient-2.10.1"
 make build run-mock || exit $?
 cd ../..
 
-cd okhttp
+cd okhttp/okhttp-3.5.0
 echo "##############################################################################################"
-echo "okhttp"
+echo "okhttp-3.5.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd okhttp/okhttp-3.14.2
+echo "##############################################################################################"
+echo "okhttp-3.14.2"
+make build run-mock || exit $?
+cd ../..
 
 cd httpclient/httpclient-4.4
 echo "##############################################################################################"

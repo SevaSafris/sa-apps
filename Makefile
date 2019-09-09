@@ -1,7 +1,7 @@
 
 # Modify 'specialagent_jar' variable to point to correct specialagent jar:
 # specialagent_jar := opentracing-specialagent-1.3.4.jar
-specialagent_jar := opentracing-specialagent-1.3.6-SNAPSHOT.jar
+specialagent_jar := opentracing-specialagent-1.3.7-SNAPSHOT.jar
 
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
@@ -62,7 +62,8 @@ run:
 	cd mongo && make build run-mock
 	cd mongo-async && make build run-mock
 	cd mongo-reactive && make build run-mock
-	cd okhttp && make build run-mock
+	cd okhttp/okhttp-3.5.0 && make build run-mock
+	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq && make build run-mock
 	cd redisson && make build run-mock
 	cd rxjava-2 && make build run-mock
@@ -118,7 +119,8 @@ run-embedded:
 	cd mongo && make build run-mock
 	cd mongo-async && make build run-mock
 	cd mongo-reactive && make build run-mock
-	cd okhttp && make build run-mock
+	cd okhttp/okhttp-3.5.0 && make build run-mock
+	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq && make build run-mock
 	cd redisson && make build run-mock
 	cd rxjava-2 && make build run-mock
