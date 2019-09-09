@@ -1,6 +1,5 @@
 package kafka;
 
-import java.time.Duration;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -69,7 +68,7 @@ public class App {
 
       int count = 0;
       while (count < MESSAGE_COUNT) {
-        ConsumerRecords<Long, String> records = consumer.poll(Duration.ofMillis(100));
+        ConsumerRecords<Long, String> records = consumer.poll(100);
         for (ConsumerRecord<Long, String> record : records) {
           System.out.println(record);
           consumer.commitSync();
