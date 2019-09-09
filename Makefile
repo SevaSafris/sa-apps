@@ -51,8 +51,8 @@ run:
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock
 	cd jdbi && make build run-mock
-	cd jedis-2 && make build run-mock
-	cd jedis-3 && make build run-mock
+	cd jedis/jedis-2.7.0 && make build run-mock
+	cd jedis/jedis-3.1.0 && make build run-mock
 	cd jms-1 && make build run-mock
 	cd jms-2 && make build run-mock
 	cd kafka && make build run-mock
@@ -105,8 +105,8 @@ run-embedded:
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock
 	cd jdbi && make build run-mock
-	cd jedis-2 && make build run-mock
-	cd jedis-3 && make build run-mock
+	cd jedis/jedis-2.7.0 && make build run-mock
+	cd jedis/jedis-3.1.0 && make build run-mock
 	cd jms-1 && make build run-mock
 	cd jms-2 && make build run-mock
 	cd kafka && make build run-mock

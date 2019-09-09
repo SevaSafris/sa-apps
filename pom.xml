@@ -31,9 +31,9 @@
     <module>thrift</module>
     <module>grpc/grpc-1.6.0</module>
     <module>grpc/grpc-1.23.0</module>
-    <module>jedis-2</module>
+    <module>jedis/jedis-2.7.0</module>
+    <module>jedis/jedis-3.1.0</module>
     <module>spring-boot-rabbitmq</module>
-    <module>jedis-3</module>
     <module>mongo-async</module>
     <module>mongo-reactive</module>
     <module>httpclient/httpclient-4.4</module>

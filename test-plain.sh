@@ -126,17 +126,17 @@ echo "aws-2"
 make build run-mock || exit $?
 cd ../..
 
-cd jedis-2
+cd jedis/jedis-2.7.0
 echo "##############################################################################################"
-echo "jedis-2"
+echo "jedis-2.7.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
-cd jedis-3
+cd jedis/jedis-3.1.0
 echo "##############################################################################################"
-echo "jedis-3"
+echo "jedis-3.1.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
 cd lettuce
 echo "##############################################################################################"
