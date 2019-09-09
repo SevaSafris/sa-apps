@@ -84,11 +84,17 @@ echo "jdbc"
 make build run-mock || exit $?
 cd ..
 
-cd hazelcast
+cd hazelcast/hazelcast-3.7
 echo "##############################################################################################"
-echo "hazelcast"
+echo "hazelcast-3.7"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd hazelcast/hazelcast-3.12.2
+echo "##############################################################################################"
+echo "hazelcast-3.12.2"
+make build run-mock || exit $?
+cd ../..
 
 cd grpc/grpc-1.6.0
 echo "##############################################################################################"

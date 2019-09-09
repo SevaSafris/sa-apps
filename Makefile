@@ -43,7 +43,8 @@ run:
 	cd feign/feign-10.4.0 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
-	cd hazelcast && make build run-mock
+	cd hazelcast/hazelcast-3.7 && make build run-mock
+	cd hazelcast/hazelcast-3.12.2 && make build run-mock
 	cd httpclient && make build run-mock
 	cd httpclient-4.2.5 && make build run-mock
 	cd hystrix && make build run-mock
@@ -96,7 +97,8 @@ run-embedded:
 	cd feign/feign-10.4.0 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
-	cd hazelcast && make build run-mock
+	cd hazelcast/hazelcast-3.7 && make build run-mock
+	cd hazelcast/hazelcast-3.12.2 && make build run-mock
 	cd httpclient && make build run-mock
 	cd httpclient-4.2.5 && make build run-mock
 	cd hystrix && make build run-mock

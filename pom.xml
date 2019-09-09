@@ -44,7 +44,8 @@
     <module>spring-webmvc</module>
     <module>spring-webflux</module>
     <module>redisson</module>
-    <module>hazelcast</module>
+    <module>hazelcast/hazelcast-3.7</module>
+    <module>hazelcast/hazelcast-3.12.2</module>
     <module>spymemcached</module>
     <module>jdbi</module>
     <module>feign/feign-9.0.0</module>
