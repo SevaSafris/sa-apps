@@ -45,8 +45,8 @@ run:
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock
 	cd hazelcast/hazelcast-3.12.2 && make build run-mock
-	cd httpclient && make build run-mock
-	cd httpclient-4.2.5 && make build run-mock
+	cd httpclient/httpclient-4.4 && make build run-mock
+	cd httpclient/httpclient-4.5.9 && make build run-mock
 	cd hystrix && make build run-mock
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock
@@ -99,8 +99,8 @@ run-embedded:
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock
 	cd hazelcast/hazelcast-3.12.2 && make build run-mock
-	cd httpclient && make build run-mock
-	cd httpclient-4.2.5 && make build run-mock
+	cd httpclient/httpclient-4.4 && make build run-mock
+	cd httpclient/httpclient-4.5.9 && make build run-mock
 	cd hystrix && make build run-mock
 	cd jax-rs && make build run-mock
 	cd jdbc && make build run-mock

@@ -12,12 +12,6 @@ echo "cassandra-3.7.2"
 make build run-mock || exit $?
 cd ../..
 
-cd httpclient-4.2.5
-echo "##############################################################################################"
-echo "httpclient-4.2.5"
-make build run-mock || exit $?
-cd ..
-
 cd concurrent
 echo "##############################################################################################"
 echo "concurrent"
@@ -168,11 +162,17 @@ echo "okhttp"
 make build run-mock || exit $?
 cd ..
 
-cd httpclient
+cd httpclient/httpclient-4.4
 echo "##############################################################################################"
-echo "httpclient"
+echo "httpclient-4.4"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd httpclient/httpclient-4.5.9
+echo "##############################################################################################"
+echo "httpclient-4.5.9"
+make build run-mock || exit $?
+cd ../..
 
 cd spymemcached/
 echo "##############################################################################################"
