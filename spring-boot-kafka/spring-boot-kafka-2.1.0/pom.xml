@@ -10,12 +10,12 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-boot-kafka-1.5.22</artifactId>
+  <artifactId>spring-boot-kafka-2.1.0</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>
     <kafka.version>2.0.1</kafka.version>
-    <spring.boot.version>1.5.22.RELEASE</spring.boot.version>
+    <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
   </properties>
 
   <dependencies>

@@ -25,7 +25,7 @@
     <module>kafka/kafka-2.3.0</module>
     <module>asynchttpclient/asynchttpclient-2.7.0</module>
     <module>asynchttpclient/asynchttpclient-2.10.1</module>
-    <module>spring-boot-kafka/spring-boot-kafka-1.5.22</module>
+    <module>spring-boot-kafka/spring-boot-kafka-2.1.0</module>
     <module>spring-boot-kafka/spring-boot-kafka-2.1.8</module>
     <module>jdbc</module>
     <module>okhttp/okhttp-3.5.0</module>
@@ -43,7 +43,8 @@
     <module>grpc/grpc-1.23.0</module>
     <module>jedis/jedis-2.7.0</module>
     <module>jedis/jedis-3.1.0</module>
-    <module>spring-boot-rabbitmq</module>
+    <module>spring-boot-rabbitmq/spring-boot-rabbitmq-2.0.0</module>
+    <module>spring-boot-rabbitmq/spring-boot-rabbitmq-2.1.8</module>
     <module>httpclient/httpclient-4.4</module>
     <module>httpclient/httpclient-4.5.9</module>
     <module>lettuce/lettuce-5.0.0</module>

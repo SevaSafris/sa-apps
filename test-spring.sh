@@ -12,17 +12,21 @@ for spring_cloud in "${spring_clouds[@]}"; do
 done
 cd ..
 
-cd spring-boot-rabbitmq
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-boot-rabbitmq-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
-
-cd spring-boot-kafka/spring-boot-kafka-1.5.22
+cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.0.0
 echo "##############################################################################################"
-echo "spring-boot-kafka-1.5.22"
+echo "spring-boot-rabbitmq-2.0.0"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.1.8
+echo "##############################################################################################"
+echo "spring-boot-rabbitmq-2.1.8"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-boot-kafka/spring-boot-kafka-2.1.0
+echo "##############################################################################################"
+echo "spring-boot-kafka-2.1.0"
 make build run-mock || exit $?
 cd ../..
 

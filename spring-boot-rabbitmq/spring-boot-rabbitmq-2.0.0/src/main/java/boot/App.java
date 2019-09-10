@@ -97,7 +97,7 @@ public class App {
     SpringApplication.run(App.class, args).close();
 
     broker.shutdown();
-    Util.checkSpan("java-rabbitmq", 6);
+    Util.checkSpan("spring-rabbitmq", 6);
   }
 
 }
