@@ -42,23 +42,41 @@ echo "rabbitmq-5.7.3"
 make build run-mock || exit $?
 cd ../..
 
-cd mongo
+cd mongo/mongo-3.9.0
 echo "##############################################################################################"
-echo "mongo"
+echo "mongo-3.9.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
-cd mongo-async
+cd mongo/mongo-3.11.0
 echo "##############################################################################################"
-echo "mongo-async"
+echo "mongo-3.11.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
-cd mongo-reactive
+cd mongo/mongo-async-3.9.0
 echo "##############################################################################################"
-echo "mongo-reactive"
+echo "mongo-async-3.9.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd mongo/mongo-async-3.11.0
+echo "##############################################################################################"
+echo "mongo-async-3.11.0"
+make build run-mock || exit $?
+cd ../..
+
+cd mongo/mongo-reactive-1.8.0
+echo "##############################################################################################"
+echo "mongo-reactive-1.8.0"
+make build run-mock || exit $?
+cd ../..
+
+cd mongo/mongo-reactive-1.12.0
+echo "##############################################################################################"
+echo "mongo-reactive-1.12.0"
+make build run-mock || exit $?
+cd ../..
 
 cd kafka/kafka-1.1.0
 echo "##############################################################################################"

@@ -59,9 +59,12 @@ run:
 	cd kafka/kafka-2.3.0 && make build run-mock
 	cd lettuce/lettuce-5.0.0 && make build run-mock
 	cd lettuce/lettuce-5.1.8 && make build run-mock
-	cd mongo && make build run-mock
-	cd mongo-async && make build run-mock
-	cd mongo-reactive && make build run-mock
+	cd mongo/mongo-3.9.0 && make build run-mock
+	cd mongo/mongo-3.11.0 && make build run-mock
+	cd mongo/mongo-async-3.9.0 && make build run-mock
+	cd mongo/mongo-async-3.11.0 && make build run-mock
+	cd mongo/mongo-reactive-1.8.0 && make build run-mock
+	cd mongo/mongo-reactive-1.12.0 && make build run-mock
 	cd okhttp/okhttp-3.5.0 && make build run-mock
 	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq/rabbitmq-5.0.0 && make build run-mock
@@ -119,9 +122,12 @@ run-embedded:
 	cd kafka/kafka-2.3.0 && make build run-mock
 	cd lettuce/lettuce-5.0.0 && make build run-mock
 	cd lettuce/lettuce-5.1.8 && make build run-mock
-	cd mongo && make build run-mock
-	cd mongo-async && make build run-mock
-	cd mongo-reactive && make build run-mock
+	cd mongo/mongo-3.9.0 && make build run-mock
+	cd mongo/mongo-3.11.0 && make build run-mock
+	cd mongo/mongo-async-3.9.0 && make build run-mock
+	cd mongo/mongo-async-3.11.0 && make build run-mock
+	cd mongo/mongo-reactive-1.8.0 && make build run-mock
+	cd mongo/mongo-reactive-1.12.0 && make build run-mock
 	cd okhttp/okhttp-3.5.0 && make build run-mock
 	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq/rabbitmq-5.0.0 && make build run-mock
