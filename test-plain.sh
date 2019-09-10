@@ -216,11 +216,17 @@ echo "tomcat"
 make build run-mock || exit $?
 cd ..
 
-cd redisson
+cd redisson/redisson-3.6.0
 echo "##############################################################################################"
-echo "redisson"
+echo "redisson-3.6.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd redisson/redisson-3.11.3
+echo "##############################################################################################"
+echo "redisson-3.11.3"
+make build run-mock || exit $?
+cd ../..
 
 cd feign/feign-9.0.0
 echo "##############################################################################################"
