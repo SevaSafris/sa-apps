@@ -64,7 +64,8 @@
     <module>spring-websocket</module>
     <module>spring-messaging</module>
     <module>spring-messaging-rabbit</module>
-    <module>spring-boot-jms</module>
+    <module>spring-boot-jms/spring-boot-jms-1.5.22</module>
+    <module>spring-boot-jms/spring-boot-jms-2.1.8</module>
     <module>spring-scheduling</module>
     <module>concurrent</module>
     <module>spring-3</module>
