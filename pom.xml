@@ -19,7 +19,8 @@
     <module>cassandra/cassandra-3.7.2</module>
     <module>elasticsearch/elasticsearch-6.4.0</module>
     <module>elasticsearch/elasticsearch-7.3.1</module>
-    <module>rxjava-2</module>
+    <module>rxjava/rxjava-2.1.0</module>
+    <module>rxjava/rxjava-2.2.12</module>
     <module>kafka/kafka-1.1.0</module>
     <module>kafka/kafka-2.3.0</module>
     <module>asynchttpclient/asynchttpclient-2.7.0</module>

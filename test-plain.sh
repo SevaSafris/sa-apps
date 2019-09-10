@@ -18,11 +18,17 @@ echo "concurrent"
 make build run-mock || exit $?
 cd ..
 
-cd rxjava-2
+cd rxjava/rxjava-2.1.0
 echo "##############################################################################################"
-echo "rxjava-2"
+echo "rxjava-2.1.0"
 make build run-mock || exit $?
-cd ..
+cd ../..
+
+cd rxjava/rxjava-2.2.12
+echo "##############################################################################################"
+echo "rxjava-2.2.12"
+make build run-mock || exit $?
+cd ../..
 
 cd rabbitmq/rabbitmq-5.0.0
 echo "##############################################################################################"
