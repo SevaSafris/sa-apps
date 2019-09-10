@@ -78,7 +78,8 @@ run:
 	cd spring-4 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
-	cd spring-boot-kafka && make build run-mock
+	cd spring-boot-kafka/spring-boot-kafka-1.5.22 && make build run-mock
+	cd spring-boot-kafka/spring-boot-kafka-2.1.8 && make build run-mock
 	cd spring-boot-rabbitmq && make build run-mock
 	cd spring-data-redis && make build run-mock
 	cd spring-messaging && make build run-mock
@@ -142,7 +143,8 @@ run-embedded:
 	cd spring-4 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
-	cd spring-boot-kafka && make build run-mock
+	cd spring-boot-kafka/spring-boot-kafka-1.5.22 && make build run-mock
+	cd spring-boot-kafka/spring-boot-kafka-2.1.8 && make build run-mock
 	cd spring-boot-rabbitmq && make build run-mock
 	cd spring-data-redis && make build run-mock
 	cd spring-messaging && make build run-mock
