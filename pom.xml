@@ -53,7 +53,8 @@
     <module>spring-boot-data-redis/spring-boot-data-redis-2.1.8</module>
     <module>spring-web/spring-web-1.5.22</module>
     <module>spring-web/spring-web-2.1.8</module>
-    <module>spring-webmvc</module>
+    <module>spring-webmvc/spring-webmvc-1.5.22</module>
+    <module>spring-webmvc/spring-webmvc-2.1.8</module>
     <module>spring-webflux/spring-webflux-2.1.0</module>
     <module>spring-webflux/spring-webflux-2.1.8</module>
     <module>redisson/redisson-3.6.0</module>

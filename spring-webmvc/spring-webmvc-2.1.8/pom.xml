@@ -6,19 +6,26 @@
     <groupId>io.opentracing.contrib</groupId>
     <artifactId>java-specialagent-apps</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath>../..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-webmvc</artifactId>
+  <artifactId>spring-webmvc-2.1.8</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>
+    <spring.boot.version>2.1.8.RELEASE</spring.boot.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentracing.contrib</groupId>
+      <artifactId>common</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
@@ -27,7 +34,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <version>${spring.boot.version}</version>
         <executions>
           <execution>
             <goals>
@@ -44,7 +51,7 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <version>${spring.boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
