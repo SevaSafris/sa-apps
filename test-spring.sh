@@ -102,13 +102,17 @@ echo "spring-4"
 make build run-mock || exit $?
 cd ..
 
-cd spring-scheduling
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-scheduling-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
+cd spring-scheduling/spring-scheduling-1.5.22
+echo "##############################################################################################"
+echo "spring-scheduling-1.5.22"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-scheduling/spring-scheduling-2.1.8
+echo "##############################################################################################"
+echo "spring-scheduling-2.1.8"
+make build run-mock || exit $?
+cd ../..
 
 cd zuul
 for spring_cloud in "${spring_clouds[@]}"; do

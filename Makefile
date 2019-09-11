@@ -86,7 +86,8 @@ run:
 	cd spring-boot-data-redis/spring-boot-data-redis-2.1.8 && make build run-mock
 	cd spring-messaging && make build run-mock
 	cd spring-messaging-rabbit && make build run-mock
-	cd spring-scheduling && make build run-mock
+	cd spring-scheduling/spring-scheduling-1.5.22 && make build run-mock
+	cd spring-scheduling/spring-scheduling-2.1.8 && make build run-mock
 	cd spring-web && make build run-mock
 	cd spring-webflux && make build run-mock
 	cd spring-webmvc && make build run-mock
@@ -153,7 +154,8 @@ run-embedded:
 	cd spring-boot-data-redis/spring-boot-data-redis-2.1.8 && make build run-mock
 	cd spring-messaging && make build run-mock
 	cd spring-messaging-rabbit && make build run-mock
-	cd spring-scheduling && make build run-mock
+	cd spring-scheduling/spring-scheduling-1.5.22 && make build run-mock
+	cd spring-scheduling/spring-scheduling-2.1.8 && make build run-mock
 	cd spring-web && make build run-mock
 	cd spring-webflux && make build run-mock
 	cd spring-webmvc && make build run-mock

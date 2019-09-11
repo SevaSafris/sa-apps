@@ -6,19 +6,26 @@
     <groupId>io.opentracing.contrib</groupId>
     <artifactId>java-specialagent-apps</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath>../..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-scheduling</artifactId>
+  <artifactId>spring-scheduling-1.5.22</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>
+    <spring.boot.version>1.5.22.RELEASE</spring.boot.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentracing.contrib</groupId>
+      <artifactId>common</artifactId>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
