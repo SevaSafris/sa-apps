@@ -50,7 +50,7 @@ public class App {
       stompClient.setMessageConverter(new MappingJackson2MessageConverter());
 
       StompSession stompSession = stompClient.connect(url, new StompSessionHandlerAdapter() {
-      }).get(1, TimeUnit.SECONDS);
+      }).get(10, TimeUnit.SECONDS);
 
       stompSession.subscribe(SUBSCRIBE_GREETINGS_ENDPOINT, new GreetingStompFrameHandler());
       stompSession.send(SEND_HELLO_MESSAGE_ENDPOINT, "Hello");
