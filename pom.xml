@@ -71,7 +71,8 @@
     <module>spring-websocket/spring-websocket-2.1.8</module>
     <module>spring-messaging/spring-messaging-2.1.0</module>
     <module>spring-messaging/spring-messaging-2.1.8</module>
-    <module>spring-messaging-rabbit</module>
+    <module>spring-messaging-rabbit/spring-messaging-rabbit-2.1.0</module>
+    <module>spring-messaging-rabbit/spring-messaging-rabbit-2.1.8</module>
     <module>spring-boot-jms/spring-boot-jms-1.5.22</module>
     <module>spring-boot-jms/spring-boot-jms-2.1.8</module>
     <module>spring-scheduling/spring-scheduling-1.5.22</module>
