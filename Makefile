@@ -82,7 +82,8 @@ run:
 	cd spring-boot-kafka/spring-boot-kafka-2.1.8 && make build run-mock
 	cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.0.0 && make build run-mock
 	cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.1.8 && make build run-mock
-	cd spring-data-redis && make build run-mock
+	cd spring-boot-data-redis/spring-boot-data-redis-1.5.22 && make build run-mock
+	cd spring-boot-data-redis/spring-boot-data-redis-2.1.8 && make build run-mock
 	cd spring-messaging && make build run-mock
 	cd spring-messaging-rabbit && make build run-mock
 	cd spring-scheduling && make build run-mock
@@ -148,7 +149,8 @@ run-embedded:
 	cd spring-boot-kafka/spring-boot-kafka-2.1.8 && make build run-mock
 	cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.0.0 && make build run-mock
 	cd spring-boot-rabbitmq/spring-boot-rabbitmq-2.1.8 && make build run-mock
-	cd spring-data-redis && make build run-mock
+	cd spring-boot-data-redis/spring-boot-data-redis-1.5.22 && make build run-mock
+	cd spring-boot-data-redis/spring-boot-data-redis-2.1.8 && make build run-mock
 	cd spring-messaging && make build run-mock
 	cd spring-messaging-rabbit && make build run-mock
 	cd spring-scheduling && make build run-mock

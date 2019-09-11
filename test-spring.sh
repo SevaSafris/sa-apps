@@ -48,13 +48,17 @@ echo "spring-boot-jms-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-data-redis
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-data-redis-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
+cd spring-boot-data-redis/spring-boot-data-redis-1.5.22
+echo "##############################################################################################"
+echo "spring-boot-data-redis-1.5.22"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-boot-data-redis/spring-boot-data-redis-2.1.8
+echo "##############################################################################################"
+echo "spring-boot-data-redis-2.1.8"
+make build run-mock || exit $?
+cd ../..
 
 cd spring-web
 for spring_cloud in "${spring_clouds[@]}"; do

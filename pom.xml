@@ -49,7 +49,8 @@
     <module>httpclient/httpclient-4.5.9</module>
     <module>lettuce/lettuce-5.0.0</module>
     <module>lettuce/lettuce-5.1.8</module>
-    <module>spring-data-redis</module>
+    <module>spring-boot-data-redis/spring-boot-data-redis-1.5.22</module>
+    <module>spring-boot-data-redis/spring-boot-data-redis-2.1.8</module>
     <module>spring-web</module>
     <module>spring-webmvc</module>
     <module>spring-webflux</module>
