@@ -138,13 +138,17 @@ for spring_cloud in "${spring_clouds[@]}"; do
 done
 cd ..
 
-cd spring-messaging
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-messaging-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
+cd spring-messaging/spring-messaging-2.1.0
+echo "##############################################################################################"
+echo "spring-messaging-2.1.0"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-messaging/spring-messaging-2.1.8
+echo "##############################################################################################"
+echo "spring-messaging-2.1.8"
+make build run-mock || exit $?
+cd ../..
 
 cd spring-messaging-rabbit
 for spring_cloud in "${spring_clouds[@]}"; do
