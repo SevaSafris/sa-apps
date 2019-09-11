@@ -54,7 +54,8 @@
     <module>spring-web/spring-web-1.5.22</module>
     <module>spring-web/spring-web-2.1.8</module>
     <module>spring-webmvc</module>
-    <module>spring-webflux</module>
+    <module>spring-webflux/spring-webflux-2.1.0</module>
+    <module>spring-webflux/spring-webflux-2.1.8</module>
     <module>redisson/redisson-3.6.0</module>
     <module>redisson/redisson-3.11.3</module>
     <module>hazelcast/hazelcast-3.7</module>
