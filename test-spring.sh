@@ -60,13 +60,17 @@ echo "spring-boot-data-redis-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-web
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "spring-web-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
+cd spring-web/spring-web-1.5.22
+echo "##############################################################################################"
+echo "spring-web-1.5.22"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-web/spring-web-2.1.8
+echo "##############################################################################################"
+echo "spring-web-2.1.8"
+make build run-mock || exit $?
+cd ../..
 
 cd spring-webmvc
 for spring_cloud in "${spring_clouds[@]}"; do

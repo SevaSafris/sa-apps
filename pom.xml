@@ -51,7 +51,8 @@
     <module>lettuce/lettuce-5.1.8</module>
     <module>spring-boot-data-redis/spring-boot-data-redis-1.5.22</module>
     <module>spring-boot-data-redis/spring-boot-data-redis-2.1.8</module>
-    <module>spring-web</module>
+    <module>spring-web/spring-web-1.5.22</module>
+    <module>spring-web/spring-web-2.1.8</module>
     <module>spring-webmvc</module>
     <module>spring-webflux</module>
     <module>redisson/redisson-3.6.0</module>
