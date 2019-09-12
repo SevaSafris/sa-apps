@@ -100,11 +100,11 @@ echo "spring-webflux-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-3
+cd spring/spring-3
 echo "##############################################################################################"
 echo "spring-3"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
 cd spring-3-servlet-2.5
 echo "##############################################################################################"
@@ -136,9 +136,9 @@ echo "zuul-2.1.0"
 make build run-mock || exit $?
 cd ../..
 
-cd zuul/zuul-2.8.0
+cd zuul/zuul-2.1.8
 echo "##############################################################################################"
-echo "zuul-2.8.0"
+echo "zuul-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
