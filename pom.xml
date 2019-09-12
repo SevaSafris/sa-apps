@@ -66,7 +66,7 @@
     <module>feign/feign-9.0.0</module>
     <module>feign/feign-10.4.0</module>
     <module>hystrix/hystrix-1.5.18</module>
-    <module>zuul</module>
+    <module>zuul/zuul-2.1.0</module>
     <module>spring-websocket/spring-websocket-2.1.0</module>
     <module>spring-websocket/spring-websocket-2.1.8</module>
     <module>spring-messaging/spring-messaging-2.1.0</module>

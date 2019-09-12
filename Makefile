@@ -101,7 +101,8 @@ run:
 	cd spymemcached && make build run-mock
 	cd thrift && make build run-mock
 	cd tomcat && make build run-mock
-	cd zuul && make build run-mock
+	cd zuul/zuul-2.1.0 && make build run-mock
+	cd zuul/zuul-2.8.0 && make build run-mock
 
 run-embedded:
 	cd asynchttpclient//asynchttpclient-2.7.0 && make build run-mock
@@ -174,7 +175,8 @@ run-embedded:
 	cd spring-websocket/spring-websocket-2.1.8 && make build run-mock
 	cd thrift && make build run-mock
 	cd tomcat && make build run-mock
-	cd zuul && make build run-mock
+	cd zuul/zuul-2.1.0 && make build run-mock
+	cd zuul/zuul-2.8.0 && make build run-mock
 
 run-integrated:
 	cd spymemcached && make build run-mock

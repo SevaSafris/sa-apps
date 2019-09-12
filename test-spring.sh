@@ -130,13 +130,17 @@ echo "spring-scheduling-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd zuul
-for spring_cloud in "${spring_clouds[@]}"; do
-  echo "##############################################################################################"
-  echo "zuul-${spring_cloud}"
-  make build-${spring_cloud} run-mock || exit $?
-done
-cd ..
+cd zuul/zuul-2.1.0
+echo "##############################################################################################"
+echo "zuul-2.1.0"
+make build run-mock || exit $?
+cd ../..
+
+cd zuul/zuul-2.8.0
+echo "##############################################################################################"
+echo "zuul-2.8.0"
+make build run-mock || exit $?
+cd ../..
 
 cd spring-messaging/spring-messaging-2.1.0
 echo "##############################################################################################"
