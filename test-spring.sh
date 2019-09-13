@@ -106,11 +106,11 @@ echo "spring-3"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-3-servlet-2.5
+cd spring/spring-3-servlet-2.5
 echo "##############################################################################################"
 echo "spring-3-servlet-2.5"
 make build run-mock || exit $?
-cd ..
+cd ../..
 
 cd spring/spring-4
 echo "##############################################################################################"
