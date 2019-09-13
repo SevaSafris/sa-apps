@@ -5,9 +5,15 @@ specialagent_jar := opentracing-specialagent-1.3.7-SNAPSHOT.jar
 
 specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
 
-ifdef build_command_module
-build_command_start = cd ../.. &&
-specialagent_jar_path := ${CURDIR}/../../$(specialagent_jar)
+ifdef build_command_module_first
+  build_command_module = ${build_command_module_first}
+  build_command_start = cd .. &&
+  specialagent_jar_path := ${CURDIR}/../$(specialagent_jar)
+else
+  ifdef build_command_module
+    build_command_start = cd ../.. &&
+    specialagent_jar_path := ${CURDIR}/../../$(specialagent_jar)
+  endif
 endif
 
 build_command = ${build_command_start} mvn clean package ${build_command_module} -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
