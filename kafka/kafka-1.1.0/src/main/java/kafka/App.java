@@ -23,7 +23,7 @@ public class App {
   private static String TOPIC_NAME = "demo";
 
   public static void main(String[] args) throws Exception {
-    final EmbeddedKafkaRule embeddedKafkaRule = new EmbeddedKafkaRule(2, true, 2, "messages");
+    final EmbeddedKafkaRule embeddedKafkaRule = new EmbeddedKafkaRule(1, true, 2, "messages");
     embeddedKafkaRule.before();
 
     final Producer<Long, String> producer = createProducer(embeddedKafkaRule);
