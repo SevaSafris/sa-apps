@@ -42,6 +42,8 @@ run:
 	cd aws/aws-2 && make build run-mock
 	cd cassandra/cassandra-3.0.0 && make build run-mock
 	cd cassandra/cassandra-3.7.2 && make build run-mock
+	cd cassandra/cassandra-4.0.0 && make build run-mock
+	cd cassandra/cassandra-4.2.0 && make build run-mock
 	cd concurrent && make build run-mock
 	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
@@ -117,6 +119,8 @@ run-embedded:
 	cd aws/aws-2 && make build run-mock
 	cd cassandra/cassandra-3.0.0 && make build run-mock
 	cd cassandra/cassandra-3.7.2 && make build run-mock
+	cd cassandra/cassandra-4.0.0 && make build run-mock
+	cd cassandra/cassandra-4.2.0 && make build run-mock
 	cd concurrent && make build run-mock
 	cd elasticsearch/elasticsearch-6.4.0 && make build run-mock
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock

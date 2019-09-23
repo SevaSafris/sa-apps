@@ -12,6 +12,18 @@ echo "cassandra-3.7.2"
 make build run-mock || exit $?
 cd ../..
 
+cd cassandra/cassandra-4.0.0
+echo "##############################################################################################"
+echo "cassandra-4.0.0"
+make build run-mock || exit $?
+cd ../..
+
+cd cassandra/cassandra-4.2.0
+echo "##############################################################################################"
+echo "cassandra-4.2.0"
+make build run-mock || exit $?
+cd ../..
+
 cd concurrent
 echo "##############################################################################################"
 echo "concurrent"
