@@ -16,6 +16,12 @@ else
   endif
 endif
 
+ifeq ($(shell java -version 2>&1 | grep '"1\.' >/dev/null; printf $$?),0)
+	java_opts =
+else
+	java_opts = --add-reads java.sql=ALL-UNNAMED
+endif
+
 build_command = ${build_command_start} mvn clean package ${build_command_module} -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
 run_command = -jar target/${component_jar}
@@ -36,8 +42,8 @@ clean:
 	mvn clean
 
 run:
-	cd asynchttpclient//asynchttpclient-2.7.0 && make build run-mock
-	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
+	cd asynchttpclient/asynchttpclient-2.7.0 && make build run-mock
+	cd asynchttpclient/asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
 	cd aws/aws-2 && make build run-mock
 	cd cassandra/cassandra-3.0.0 && make build run-mock
@@ -113,8 +119,8 @@ run:
 	cd zuul/zuul-2.1.8 && make build run-mock
 
 run-embedded:
-	cd asynchttpclient//asynchttpclient-2.7.0 && make build run-mock
-	cd asynchttpclient//asynchttpclient-2.10.1 && make build run-mock
+	cd asynchttpclient/asynchttpclient-2.7.0 && make build run-mock
+	cd asynchttpclient/asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
 	cd aws/aws-2 && make build run-mock
 	cd cassandra/cassandra-3.0.0 && make build run-mock
@@ -193,11 +199,13 @@ run-integrated:
 
 run-mock:
 	java \
+		${java_opts} \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-local:
 	java \
+		${java_opts} \
 		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=localhost \
 		-Dls.collectorProtocol=http \
@@ -208,6 +216,7 @@ run-local:
 
 run-ls:
 	java \
+		${java_opts} \
 		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=collector.lightstep.com \
 		-Dls.collectorProtocol=https \
@@ -218,6 +227,7 @@ run-ls:
 
 run-solo:
 	java \
+		${java_opts} \
 		-Dsa.tracer=mock \
 		-Dsa.log.level=FINER \
 		-Dsa.tracer.plugins.enable=false \
@@ -226,4 +236,6 @@ run-solo:
 		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-no-agent:
-	java ${run_command}
+	java \
+		${java_opts} \
+		${run_command}
