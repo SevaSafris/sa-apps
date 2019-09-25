@@ -16,12 +16,6 @@ else
   endif
 endif
 
-ifeq ($(shell java -version 2>&1 | grep '"1\.' >/dev/null; printf $$?),0)
-	java_opts =
-else
-	java_opts = --add-reads java.sql=ALL-UNNAMED
-endif
-
 build_command = ${build_command_start} mvn clean package ${build_command_module} -DskipTests -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
 run_command = -jar target/${component_jar}
@@ -199,13 +193,11 @@ run-integrated:
 
 run-mock:
 	java \
-		${java_opts} \
 		-Dsa.tracer=mock \
 		-javaagent:$(specialagent_jar_path) ${run_command}
 
 run-local:
 	java \
-		${java_opts} \
 		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=localhost \
 		-Dls.collectorProtocol=http \
@@ -216,7 +208,6 @@ run-local:
 
 run-ls:
 	java \
-		${java_opts} \
 		-Dls.componentName=${component_name} \
 		-Dls.collectorHost=collector.lightstep.com \
 		-Dls.collectorProtocol=https \
@@ -227,7 +218,6 @@ run-ls:
 
 run-solo:
 	java \
-		${java_opts} \
 		-Dsa.tracer=mock \
 		-Dsa.log.level=FINER \
 		-Dsa.tracer.plugins.enable=false \
@@ -237,5 +227,4 @@ run-solo:
 
 run-no-agent:
 	java \
-		${java_opts} \
 		${run_command}
