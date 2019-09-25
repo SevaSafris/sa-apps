@@ -10,6 +10,7 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <modules>
+    <module>akka/akka-2.5.0</module>
     <module>akka/akka-2.5.25</module>
     <module>tomcat</module>
     <module>jms/jms-1</module>

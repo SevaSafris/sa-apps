@@ -21,6 +21,13 @@ public class Util {
       TimeUnit.SECONDS.sleep(10);
       return;
     }
+
+    int i = 0;
+    while (tracer.finishedSpans().size() < spanCount && i < 10) {
+      TimeUnit.SECONDS.sleep(1L);
+      i++;
+    }
+
     boolean found = false;
     System.out.println("Spans: " + tracer.finishedSpans());
     for (MockSpan span : tracer.finishedSpans()) {
