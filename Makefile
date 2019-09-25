@@ -36,6 +36,8 @@ clean:
 	mvn clean
 
 run:
+	cd akka/akka-2.5.0 && make build run-mock
+	cd akka/akka-2.10.25 && make build run-mock
 	cd asynchttpclient/asynchttpclient-2.7.0 && make build run-mock
 	cd asynchttpclient/asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
@@ -113,6 +115,8 @@ run:
 	cd zuul/zuul-2.1.8 && make build run-mock
 
 run-embedded:
+	cd akka/akka-2.5.0 && make build run-mock
+	cd akka/akka-2.10.25 && make build run-mock
 	cd asynchttpclient/asynchttpclient-2.7.0 && make build run-mock
 	cd asynchttpclient/asynchttpclient-2.10.1 && make build run-mock
 	cd aws/aws-1 && make build run-mock
