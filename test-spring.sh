@@ -112,9 +112,27 @@ echo "spring-3-servlet-2.5"
 make build run-mock || exit $?
 cd ../..
 
-cd spring/spring-4
+cd spring/spring-web-4.3.0
 echo "##############################################################################################"
-echo "spring-4"
+echo "spring-web-4.3.0"
+make build run-mock || exit $?
+cd ../..
+
+cd spring/spring-web-4.3.24
+echo "##############################################################################################"
+echo "spring-web-4.3.24"
+make build run-mock || exit $?
+cd ../..
+
+cd spring/spring-webmvc-4.0.0
+echo "##############################################################################################"
+echo "spring-webmvc-4.0.0"
+make build run-mock || exit $?
+cd ../..
+
+cd spring/spring-webmvc-4.3.24
+echo "##############################################################################################"
+echo "spring-webmvc-4.3.24"
 make build run-mock || exit $?
 cd ../..
 

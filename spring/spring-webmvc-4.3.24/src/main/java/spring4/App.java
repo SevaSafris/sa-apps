@@ -39,7 +39,7 @@ public class App {
     ctx.setContextPath("/");
     try {
       if (new File(".").getCanonicalFile().getName().equals("malafeev-sa-apps")) {
-        ctx.setWar("/projects/malafeev-sa-apps/spring-4/src/main/webapp");
+        ctx.setWar("/projects/malafeev-sa-apps/spring-webmvc-4.3.24/src/main/webapp");
       } else {
         ctx.setWar("src/main/webapp");
       }

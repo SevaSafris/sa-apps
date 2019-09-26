@@ -85,7 +85,10 @@ run:
 	cd rxjava/rxjava-2.2.12 && make build run-mock
 	cd spring/spring-3 && make build run-mock
 	cd spring/spring-3-servlet-2.5 && make build run-mock
-	cd spring/spring-4 && make build run-mock
+	cd spring/spring-web-4.3.0 && make build run-mock
+	cd spring/spring-web-4.3.24 && make build run-mock
+	cd spring/spring-webmvc-4.0.0 && make build run-mock
+	cd spring/spring-webmvc-4.3.24 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
 	cd spring-boot-kafka/spring-boot-kafka-2.1.0 && make build run-mock
@@ -164,7 +167,10 @@ run-embedded:
 	cd rxjava/rxjava-2.2.12 && make build run-mock
 	cd spring/spring-3 && make build run-mock
 	cd spring/spring-3-servlet-2.5 && make build run-mock
-	cd spring/spring-4 && make build run-mock
+	cd spring/spring-web-4.3.0 && make build run-mock
+	cd spring/spring-web-4.3.24 && make build run-mock
+	cd spring/spring-webmvc-4.0.0 && make build run-mock
+	cd spring/spring-webmvc-4.3.24 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
 	cd spring-boot-kafka/spring-boot-kafka-2.1.0 && make build run-mock

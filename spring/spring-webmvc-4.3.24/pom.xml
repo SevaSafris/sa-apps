@@ -10,7 +10,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-4</artifactId>
+  <artifactId>spring-webmvc-4.3.24</artifactId>
 
   <properties>
     <spring.version>4.3.24.RELEASE</spring.version>
