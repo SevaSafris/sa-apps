@@ -10,7 +10,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-webmvc-2.1.8</artifactId>
+  <artifactId>spring-webmvc-5.1.9</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>
@@ -21,6 +21,10 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
     </dependency>
     <dependency>
       <groupId>io.opentracing.contrib</groupId>

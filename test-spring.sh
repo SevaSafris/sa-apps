@@ -76,9 +76,9 @@ echo "spring-web-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-webmvc/spring-webmvc-2.1.8
+cd spring-webmvc/spring-webmvc-5.1.9
 echo "##############################################################################################"
-echo "spring-webmvc-2.1.8"
+echo "spring-webmvc-5.1.9"
 make build run-mock || exit $?
 cd ../..
 

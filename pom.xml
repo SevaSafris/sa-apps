@@ -63,7 +63,7 @@
     <module>spring-web/spring-web-2.1.8</module>
     <module>spring-webmvc/spring-webmvc-4.3.24</module>
     <module>spring-webmvc/spring-webmvc-4.0.0</module>
-    <module>spring-webmvc/spring-webmvc-2.1.8</module>
+    <module>spring-webmvc/spring-webmvc-5.1.9</module>
     <module>spring-webflux/spring-webflux-2.1.0</module>
     <module>spring-webflux/spring-webflux-2.1.8</module>
     <module>redisson/redisson-3.6.0</module>

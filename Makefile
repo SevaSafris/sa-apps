@@ -107,7 +107,7 @@ run:
 	cd spring-webflux/spring-webflux-2.1.8 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.0.0 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.3.24 && make build run-mock
-	cd spring-webmvc/spring-webmvc-2.1.8 && make build run-mock
+	cd spring-webmvc/spring-webmvc-5.1.9 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.0 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.8 && make build run-mock
 	cd spymemcached && make build run-mock
@@ -188,7 +188,7 @@ run-embedded:
 	cd spring-webflux/spring-webflux-2.1.8 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.0.0 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.3.24 && make build run-mock
-	cd spring-webmvc/spring-webmvc-2.1.8 && make build run-mock
+	cd spring-webmvc/spring-webmvc-5.1.9 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.0 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.8 && make build run-mock
 	cd thrift && make build run-mock
