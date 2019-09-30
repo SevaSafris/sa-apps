@@ -112,13 +112,13 @@ echo "spring-3-servlet-2.5"
 make build run-mock || exit $?
 cd ../..
 
-cd spring/spring-web-4.3.0
+cd spring-web/spring-web-4.3.0
 echo "##############################################################################################"
 echo "spring-web-4.3.0"
 make build run-mock || exit $?
 cd ../..
 
-cd spring/spring-web-4.3.24
+cd spring-web/spring-web-4.3.24
 echo "##############################################################################################"
 echo "spring-web-4.3.24"
 make build run-mock || exit $?
