@@ -1,5 +1,6 @@
 package util;
 
+import io.opentracing.Span;
 import io.opentracing.mock.MockSpan;
 import io.opentracing.mock.MockSpan.LogEntry;
 import io.opentracing.mock.MockTracer;
@@ -56,6 +57,15 @@ public class Util {
     System.out.println("\tLogs: ");
     for (LogEntry logEntry : span.logEntries()) {
       System.out.println("\t" + logEntry.fields());
+    }
+  }
+
+  public static void checkActiveSpan() {
+    final Span span = GlobalTracer.get().activeSpan();
+    System.out.println("Active span: " + span);
+    if (span == null) {
+      System.err.println("Error: no active span");
+      System.exit(-1);
     }
   }
 }

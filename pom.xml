@@ -93,7 +93,9 @@
     <module>spring/spring-webmvc-4.0.0</module>
     <module>jax-rs</module>
     <module>common</module>
-    <module>servlet</module>
+    <module>servlet/servlet-war</module>
+    <module>servlet/servlet-sync</module>
+    <module>servlet/servlet-async</module>
   </modules>
 
   <name>java-specialagent-apps</name>

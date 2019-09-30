@@ -1,0 +1,17 @@
+<web-app>
+
+  <display-name>Servlet Application</display-name>
+
+  <servlet>
+    <servlet-name>hello-async-servlet</servlet-name>
+    <servlet-class>servlet.HelloAsyncServlet</servlet-class>
+    <async-supported>true</async-supported>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hello-async-servlet</servlet-name>
+    <url-pattern>/async</url-pattern>
+  </servlet-mapping>
+
+</web-app>

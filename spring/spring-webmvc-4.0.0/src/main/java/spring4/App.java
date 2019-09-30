@@ -38,8 +38,8 @@ public class App {
     ctx.setServer(server);
     ctx.setContextPath("/");
     try {
-      if (new File(".").getCanonicalFile().getName().equals("malafeev-sa-apps")) {
-        ctx.setWar("/projects/malafeev-sa-apps/spring-webmvc-4.3.24/src/main/webapp");
+      if (!new File(".").getCanonicalFile().getName().equals("spring-webmvc-4.0.0")) {
+        ctx.setWar("spring/spring-webmvc-4.0.0/src/main/webapp");
       } else {
         ctx.setWar("src/main/webapp");
       }
