@@ -10,7 +10,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-web-2.1.8</artifactId>
+  <artifactId>spring-web-5.1.9</artifactId>
 
   <properties>
     <start-class>boot.App</start-class>

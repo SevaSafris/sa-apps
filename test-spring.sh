@@ -64,9 +64,9 @@ echo "spring-boot-data-redis-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-web/spring-web-2.1.8
+cd spring-web/spring-web-5.1.9
 echo "##############################################################################################"
-echo "spring-web-2.1.8"
+echo "spring-web-5.1.9"
 make build run-mock || exit $?
 cd ../..
 
