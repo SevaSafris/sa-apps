@@ -149,3 +149,9 @@ echo "##########################################################################
 echo "servlet-sync"
 make build run-mock || exit $?
 cd ../..
+
+cd servlet/servlet-async
+echo "##############################################################################################"
+echo "servlet-async"
+make build run-mock || exit $?
+cd ../..
