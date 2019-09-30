@@ -1,8 +1,4 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-  version="2.5">
+<web-app>
 
   <display-name>Servlet Application</display-name>
 
@@ -14,7 +10,19 @@
 
   <servlet-mapping>
     <servlet-name>hello-servlet</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/sync</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>hello-async-servlet</servlet-name>
+    <servlet-class>servlet.HelloAsyncServlet</servlet-class>
+    <async-supported>true</async-supported>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hello-async-servlet</servlet-name>
+    <url-pattern>/async</url-pattern>
   </servlet-mapping>
 
 </web-app>

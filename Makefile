@@ -23,15 +23,6 @@ run_command = -jar target/${component_jar}
 build:
 	${build_command}
 
-build-spring-cloud-greenwich:
-	${build_command} -Dspring.boot.version=2.1.7.RELEASE -Dspring.cloud.version=Greenwich.SR2
-
-build-spring-cloud-finchley:
-	${build_command} -Dspring.boot.version=2.0.9.RELEASE -Dspring.cloud.version=Finchley.SR4
-
-build-spring-cloud-edgware:
-	${build_command} -Dspring.boot.version=1.5.21.RELEASE -Dspring.cloud.version=Edgware.SR6
-
 clean:
 	mvn clean
 
