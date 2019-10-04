@@ -14,16 +14,16 @@ public class App {
 
   public static void main(String[] args) throws Exception {
 
-    final Span parent = GlobalTracer.get().buildSpan("parent")
-        .withTag(Tags.COMPONENT, "parent").start();
+    final Span parent = GlobalTracer.get().buildSpan("concurrent")
+        .withTag(Tags.COMPONENT, "parent-concurrent").start();
 
     testExecutor(parent);
     testThread(parent);
-    //testParallelStream(parent);
+    testParallelStream(parent);
 
     parent.finish();
 
-    Util.checkSpan("parent", 1);
+    Util.checkSpan("parent-concurrent", 1);
 
     System.exit(0);
 
@@ -35,11 +35,7 @@ public class App {
       service.submit(new Runnable() {
         @Override
         public void run() {
-          System.out.println("Active span: " + GlobalTracer.get().activeSpan());
-          if (GlobalTracer.get().activeSpan() == null) {
-            System.err.println("ERROR: no active span");
-            System.exit(-1);
-          }
+          Util.checkActiveSpan();
         }
       }).get();
     }
@@ -49,11 +45,7 @@ public class App {
     Thread thread = new Thread(new Runnable() {
       @Override
       public void run() {
-        System.out.println("Active span: " + GlobalTracer.get().activeSpan());
-        if (GlobalTracer.get().activeSpan() == null) {
-          System.err.println("ERROR: no active span");
-          System.exit(-1);
-        }
+        Util.checkActiveSpan();
       }
     });
     try (Scope scope = GlobalTracer.get().activateSpan(parent)) {
@@ -67,9 +59,7 @@ public class App {
       final int sum = IntStream.range(1, 10)
           .parallel()
           .map(operand -> {
-            // TODO: here should be active span
-            System.out.println("Thread: " + Thread.currentThread().getName() +
-                " Active span: " + GlobalTracer.get().activeSpan());
+            Util.checkActiveSpan();
             return operand * 2;
           }).sum();
       System.out.println("Sum: " + sum);
