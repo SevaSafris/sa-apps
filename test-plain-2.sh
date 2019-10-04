@@ -54,6 +54,12 @@ echo "lettuce-5.1.8"
 make build run-mock || exit $?
 cd ../..
 
+cd lettuce/lettuce-5.2.0
+echo "##############################################################################################"
+echo "lettuce-5.2.0"
+make build run-mock || exit $?
+cd ../..
+
 cd asynchttpclient/asynchttpclient-2.7.0
 echo "##############################################################################################"
 echo "/asynchttpclient-2.7.0"

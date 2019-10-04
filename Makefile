@@ -60,6 +60,7 @@ run:
 	cd kafka/kafka-2.3.0 && make build run-mock
 	cd lettuce/lettuce-5.0.0 && make build run-mock
 	cd lettuce/lettuce-5.1.8 && make build run-mock
+	cd lettuce/lettuce-5.2.0 && make build run-mock
 	cd mongo/mongo-3.9.0 && make build run-mock
 	cd mongo/mongo-3.11.0 && make build run-mock
 	cd mongo/mongo-async-3.9.0 && make build run-mock
@@ -143,6 +144,7 @@ run-embedded:
 	cd kafka/kafka-2.3.0 && make build run-mock
 	cd lettuce/lettuce-5.0.0 && make build run-mock
 	cd lettuce/lettuce-5.1.8 && make build run-mock
+	cd lettuce/lettuce-5.2.0 && make build run-mock
 	cd mongo/mongo-3.9.0 && make build run-mock
 	cd mongo/mongo-3.11.0 && make build run-mock
 	cd mongo/mongo-async-3.9.0 && make build run-mock
