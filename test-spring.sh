@@ -76,18 +76,6 @@ echo "spring-web-3.2.18"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-web/spring-webmvc-3.0.2
-echo "##############################################################################################"
-echo "spring-web-3.0.2"
-make build run-mock || exit $?
-cd ../..
-
-cd spring-web/spring-webmvc-3.2.18
-echo "##############################################################################################"
-echo "spring-web-3.2.18"
-make build run-mock || exit $?
-cd ../..
-
 cd spring-web/spring-web-4.3.0
 echo "##############################################################################################"
 echo "spring-web-4.3.0"
@@ -106,12 +94,6 @@ echo "spring-web-5.1.9"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-webmvc/spring-webmvc-5.1.9
-echo "##############################################################################################"
-echo "spring-webmvc-5.1.9"
-make build run-mock || exit $?
-cd ../..
-
 cd spring-webflux/spring-webflux-2.1.0
 echo "##############################################################################################"
 echo "spring-webflux-2.1.0"
@@ -124,15 +106,21 @@ echo "spring-webflux-2.1.8"
 make build run-mock || exit $?
 cd ../..
 
-cd spring/spring-3
+cd spring-webmvc/spring-webmvc-3.0.2-servlet-2.5
 echo "##############################################################################################"
-echo "spring-3"
+echo "spring-webmvc-3.0.2-servlet-2.5"
 make build run-mock || exit $?
 cd ../..
 
-cd spring/spring-3-servlet-2.5
+cd spring-web/spring-webmvc-3.0.2
 echo "##############################################################################################"
-echo "spring-3-servlet-2.5"
+echo "spring-web-3.0.2"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-web/spring-webmvc-3.2.18
+echo "##############################################################################################"
+echo "spring-web-3.2.18"
 make build run-mock || exit $?
 cd ../..
 
@@ -145,6 +133,12 @@ cd ../..
 cd spring-webmvc/spring-webmvc-4.3.24
 echo "##############################################################################################"
 echo "spring-webmvc-4.3.24"
+make build run-mock || exit $?
+cd ../..
+
+cd spring-webmvc/spring-webmvc-5.1.9
+echo "##############################################################################################"
+echo "spring-webmvc-5.1.9"
 make build run-mock || exit $?
 cd ../..
 

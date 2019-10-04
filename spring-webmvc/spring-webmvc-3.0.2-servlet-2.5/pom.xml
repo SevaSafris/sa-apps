@@ -10,10 +10,10 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>spring-3-servlet-2.5</artifactId>
+  <artifactId>spring-webmvc-3.0.2-servlet-2.5</artifactId>
 
   <properties>
-    <spring.version>3.0.7.RELEASE</spring.version>
+    <spring.version>3.0.2.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
     <!--version.jetty>9.2.15.v20160210</version.jetty-->  <!--Servlet API 3.1 -->
     <!--version.jetty>8.2.0.v20160908</version.jetty--> <!-- Servlet API 3.0 -->

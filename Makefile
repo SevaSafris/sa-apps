@@ -74,7 +74,6 @@ run:
 	cd redisson/redisson-3.11.3 && make build run-mock
 	cd rxjava/rxjava-2.1.0 && make build run-mock
 	cd rxjava/rxjava-2.2.12 && make build run-mock
-	cd spring/spring-3-servlet-2.5 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
 	cd spring-boot-kafka/spring-boot-kafka-2.1.0 && make build run-mock
@@ -96,6 +95,7 @@ run:
 	cd spring-web/spring-web-3.2.18 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.0 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.8 && make build run-mock
+	cd spring-webmvc/spring-webmvc-3.0.2-servlet-2.5 && make build run-mock
 	cd spring-webmvc/spring-webmvc-3.0.2 && make build run-mock
 	cd spring-webmvc/spring-webmvc-3.2.18 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.0.0 && make build run-mock
@@ -157,7 +157,6 @@ run-embedded:
 	cd redisson/redisson-3.11.3 && make build run-mock
 	cd rxjava/rxjava-2.1.0 && make build run-mock
 	cd rxjava/rxjava-2.2.12 && make build run-mock
-	cd spring/spring-3-servlet-2.5 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-1.5.22 && make build run-mock
 	cd spring-boot-jms/spring-boot-jms-2.1.8 && make build run-mock
 	cd spring-boot-kafka/spring-boot-kafka-2.1.0 && make build run-mock
@@ -179,6 +178,7 @@ run-embedded:
 	cd spring-web/spring-web-5.1.9 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.0 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.8 && make build run-mock
+	cd spring-webmvc/spring-webmvc-3.0.2-servlet-2.5 && make build run-mock
 	cd spring-webmvc/spring-webmvc-3.0.2 && make build run-mock
 	cd spring-webmvc/spring-webmvc-3.2.18 && make build run-mock
 	cd spring-webmvc/spring-webmvc-4.0.0 && make build run-mock
