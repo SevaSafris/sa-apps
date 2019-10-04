@@ -19,6 +19,7 @@ public class App {
     RedisCommands<String, String> commands = connection.sync();
     System.out.println(commands.set("key", "value"));
     System.out.println(commands.get("key"));
+    System.out.println("memory usage: " + commands.memoryUsage("key"));
 
     StatefulRedisPubSubConnection<String, String> pubSubConnection = client.connectPubSub();
 
@@ -28,12 +29,12 @@ public class App {
     pubSubCommands.subscribe("channel");
     commands.publish("channel", "msg");
 
-    Thread.sleep(5_000); // sleep to wait for 6 spans
+    Thread.sleep(5_000); // sleep to wait for 7 spans
     client.shutdown();
 
     server.stop();
 
-    Util.checkSpan("java-redis", 6);
+    Util.checkSpan("java-redis", 7);
     System.exit(0);
   }
 }
