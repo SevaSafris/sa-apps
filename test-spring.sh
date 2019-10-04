@@ -112,13 +112,13 @@ echo "spring-webmvc-3.0.2-servlet-2.5"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-web/spring-webmvc-3.0.2
+cd spring-webmvc/spring-webmvc-3.0.2
 echo "##############################################################################################"
 echo "spring-web-3.0.2"
 make build run-mock || exit $?
 cd ../..
 
-cd spring-web/spring-webmvc-3.2.18
+cd spring-webmvc/spring-webmvc-3.2.18
 echo "##############################################################################################"
 echo "spring-web-3.2.18"
 make build run-mock || exit $?
