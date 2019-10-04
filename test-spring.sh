@@ -76,6 +76,12 @@ echo "spring-web-3.2.18"
 make build run-mock || exit $?
 cd ../..
 
+cd spring-web/spring-webmvc-3.0.2
+echo "##############################################################################################"
+echo "spring-web-3.0.2"
+make build run-mock || exit $?
+cd ../..
+
 cd spring-web/spring-web-4.3.0
 echo "##############################################################################################"
 echo "spring-web-4.3.0"

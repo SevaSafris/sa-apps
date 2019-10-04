@@ -1,12 +1,12 @@
 package boot;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import util.Util;
 
@@ -18,9 +18,6 @@ public class App {
     return new RestTemplate();
   }
 
-  @Autowired
-  private RestTemplate restTemplate;
-
   public static void main(String[] args) {
     SpringApplication.run(App.class, args);
   }
@@ -28,12 +25,13 @@ public class App {
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
     return args -> {
-      final ResponseEntity<String> entity = restTemplate
-          .getForEntity("http://localhost:8080", String.class);
+      URL obj = new URL("http://localhost:8080");
+      HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+      con.setRequestMethod("GET");
+      int responseCode = con.getResponseCode();
+      System.out.println("Response Code : " + responseCode);
 
-      System.out.println(entity);
-
-      Util.checkSpan("java-web-servlet", 2);
+      Util.checkSpan("java-web-servlet", 1);
       System.exit(0);
 
     };

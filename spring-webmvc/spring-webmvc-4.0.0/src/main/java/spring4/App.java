@@ -1,34 +1,25 @@
 package spring4;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.AsyncRestTemplate;
-import org.springframework.web.client.RestTemplate;
 import util.Util;
 
 public class App {
   public static void main(String[] args) throws Exception {
     Server server = startServer();
 
-    RestTemplate restTemplate = new RestTemplate();
-    final ResponseEntity<String> responseEntity = restTemplate
-        .getForEntity("http://localhost:8080", String.class);
-
-    System.out.println(responseEntity.getStatusCode());
-
-    final AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
-    final ResponseEntity<String> asyncEntity = asyncRestTemplate
-        .getForEntity("http://localhost:8080", String.class)
-        .get(10, TimeUnit.SECONDS);
-
-    System.out.println(asyncEntity.getStatusCode());
+    URL obj = new URL("http://localhost:8080");
+    HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+    con.setRequestMethod("GET");
+    int responseCode = con.getResponseCode();
+    System.out.println("Response Code : " + responseCode);
 
     server.stop();
 
-    Util.checkSpan("java-web-servlet", 2);
+    Util.checkSpan("java-web-servlet", 1);
   }
 
   private static Server startServer() {
