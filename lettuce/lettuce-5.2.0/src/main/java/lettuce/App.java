@@ -1,6 +1,7 @@
 package lettuce;
 
 import io.lettuce.core.RedisClient;
+import io.lettuce.core.RedisCommandExecutionException;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 import io.lettuce.core.pubsub.RedisPubSubAdapter;
@@ -19,7 +20,10 @@ public class App {
     RedisCommands<String, String> commands = connection.sync();
     System.out.println(commands.set("key", "value"));
     System.out.println(commands.get("key"));
-    System.out.println("memory usage: " + commands.memoryUsage("key"));
+    try {
+      System.out.println("memory usage: " + commands.memoryUsage("key"));
+    } catch (RedisCommandExecutionException ignore) {
+    }
 
     StatefulRedisPubSubConnection<String, String> pubSubConnection = client.connectPubSub();
 
