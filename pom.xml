@@ -60,6 +60,7 @@
     <module>spring-boot-data-redis/spring-boot-data-redis-2.1.8</module>
     <module>spring-web/spring-web-3.0.3</module>
     <module>spring-web/spring-web-3.2.18</module>
+    <module>spring-web/spring-web-4.0.0</module>
     <module>spring-web/spring-web-4.3.0</module>
     <module>spring-web/spring-web-4.3.24</module>
     <module>spring-web/spring-web-5.1.9</module>
