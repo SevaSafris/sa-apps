@@ -91,6 +91,7 @@ run:
 	cd spring-scheduling/spring-scheduling-2.1.8 && make build run-mock
 	cd spring-web/spring-web-5.0.0 && make build run-mock
 	cd spring-web/spring-web-5.1.9 && make build run-mock
+	cd spring-web/spring-web-4.0.0 && make build run-mock
 	cd spring-web/spring-web-4.3.0 && make build run-mock
 	cd spring-web/spring-web-4.3.24 && make build run-mock
 	cd spring-web/spring-web-3.0.3 && make build run-mock
@@ -176,6 +177,7 @@ run-embedded:
 	cd spring-scheduling/spring-scheduling-2.1.8 && make build run-mock
 	cd spring-web/spring-web-3.0.3 && make build run-mock
 	cd spring-web/spring-web-3.2.18 && make build run-mock
+	cd spring-web/spring-web-4.0.0 && make build run-mock
 	cd spring-web/spring-web-4.3.0 && make build run-mock
 	cd spring-web/spring-web-4.3.24 && make build run-mock
 	cd spring-web/spring-web-5.0.0 && make build run-mock
