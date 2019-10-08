@@ -89,6 +89,7 @@ run:
 	cd spring-messaging-rabbit/spring-messaging-rabbit-2.1.8 && make build run-mock
 	cd spring-scheduling/spring-scheduling-1.5.22 && make build run-mock
 	cd spring-scheduling/spring-scheduling-2.1.8 && make build run-mock
+	cd spring-web/spring-web-5.0.0 && make build run-mock
 	cd spring-web/spring-web-5.1.9 && make build run-mock
 	cd spring-web/spring-web-4.3.0 && make build run-mock
 	cd spring-web/spring-web-4.3.24 && make build run-mock
@@ -177,6 +178,7 @@ run-embedded:
 	cd spring-web/spring-web-3.2.18 && make build run-mock
 	cd spring-web/spring-web-4.3.0 && make build run-mock
 	cd spring-web/spring-web-4.3.24 && make build run-mock
+	cd spring-web/spring-web-5.0.0 && make build run-mock
 	cd spring-web/spring-web-5.1.9 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.0 && make build run-mock
 	cd spring-webflux/spring-webflux-2.1.8 && make build run-mock

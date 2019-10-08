@@ -88,6 +88,12 @@ echo "spring-web-4.3.24"
 make build run-mock || exit $?
 cd ../..
 
+cd spring-web/spring-web-5.0.0
+echo "##############################################################################################"
+echo "spring-web-5.0.0"
+make build run-mock || exit $?
+cd ../..
+
 cd spring-web/spring-web-5.1.9
 echo "##############################################################################################"
 echo "spring-web-5.1.9"
