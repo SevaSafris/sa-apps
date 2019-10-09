@@ -2,7 +2,9 @@ package boot;
 
 import java.util.concurrent.TimeUnit;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.concurrent.FailureCallback;
 import org.springframework.util.concurrent.ListenableFutureCallback;
+import org.springframework.util.concurrent.SuccessCallback;
 import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.client.RestTemplate;
 import util.Util;
@@ -36,7 +38,20 @@ public class App {
           }
         });
 
-    Util.checkSpan("java-spring-rest-template", 3);
+    asyncRestTemplate.getForEntity("http://www.google.com", String.class)
+        .addCallback(new SuccessCallback<ResponseEntity<String>>() {
+          @Override
+          public void onSuccess(ResponseEntity<String> stringResponseEntity) {
+            Util.checkActiveSpan();
+          }
+        }, new FailureCallback() {
+          @Override
+          public void onFailure(Throwable throwable) {
+            Util.checkActiveSpan();
+          }
+        });
+
+    Util.checkSpan("java-spring-rest-template", 4);
   }
 
 
