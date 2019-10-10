@@ -30,7 +30,7 @@ public class App {
     ctx.setContextPath("/");
     try {
       if (!new File(".").getCanonicalFile().getName().equals("spring-webmvc-4.3.24")) {
-        ctx.setWar("spring/spring-webmvc-4.3.24/src/main/webapp");
+        ctx.setWar("spring-webmvc/spring-webmvc-4.3.24/src/main/webapp");
       } else {
         ctx.setWar("src/main/webapp");
       }

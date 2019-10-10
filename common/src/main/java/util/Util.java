@@ -50,7 +50,7 @@ public class Util {
     }
   }
 
-  private static void printSpan(MockSpan span) {
+  public static void printSpan(MockSpan span) {
     System.out.println("Span: " + span);
     System.out.println("\tComponent: " + span.tags().get(Tags.COMPONENT.getKey()));
     System.out.println("\tTags: " + span.tags());

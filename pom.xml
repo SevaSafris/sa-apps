@@ -70,6 +70,7 @@
     <module>spring-webmvc/spring-webmvc-3.2.18</module>
     <module>spring-webmvc/spring-webmvc-4.0.0</module>
     <module>spring-webmvc/spring-webmvc-4.3.24</module>
+    <module>spring-webmvc/spring-webmvc-5.0.0</module>
     <module>spring-webmvc/spring-webmvc-5.1.9</module>
     <module>spring-webflux/spring-webflux-2.1.0</module>
     <module>spring-webflux/spring-webflux-2.1.8</module>

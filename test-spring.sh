@@ -148,6 +148,12 @@ echo "spring-webmvc-4.3.24"
 make build run-mock || exit $?
 cd ../..
 
+cd spring-webmvc/spring-webmvc-5.0.0
+echo "##############################################################################################"
+echo "spring-webmvc-5.0.0"
+make build run-mock || exit $?
+cd ../..
+
 cd spring-webmvc/spring-webmvc-5.1.9
 echo "##############################################################################################"
 echo "spring-webmvc-5.1.9"
