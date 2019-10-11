@@ -13,6 +13,7 @@
     <module>akka/akka-2.5.0</module>
     <module>akka/akka-2.5.25</module>
     <module>akka/akka-http</module>
+    <module>akka/akka-streams</module>
     <module>tomcat</module>
     <module>jms/jms-1</module>
     <module>jms/jms-2</module>
