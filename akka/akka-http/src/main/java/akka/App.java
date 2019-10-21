@@ -9,15 +9,44 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.http.javadsl.server.AllDirectives;
 import akka.http.javadsl.server.Route;
 import akka.stream.ActorMaterializer;
+import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
+import java.util.function.BiConsumer;
 import util.Util;
 
 public class App extends AllDirectives {
   public static void main(String[] args) throws Exception {
+    client();
+  }
+
+  private static void client() throws Exception {
+    final ActorSystem system = ActorSystem.create();
+    final Materializer materializer = ActorMaterializer.create(system);
+
+    final CompletionStage<HttpResponse> stage = Http.get(system)
+        .singleRequest(HttpRequest.GET("http://www.google.com"));
+
+    final HttpResponse httpResponse = stage.whenComplete(new BiConsumer<HttpResponse, Throwable>() {
+      @Override
+      public void accept(HttpResponse httpResponse, Throwable throwable) {
+        System.out.println(httpResponse.status());
+      }
+    }).toCompletableFuture().get();
+
+    httpResponse.entity().getDataBytes().runForeach(param -> {
+
+    }, materializer);
+
+    stage.thenRun(() -> {
+      system.terminate();
+    });
+  }
+
+  public static void server() throws Exception {
     // boot up server using the route as defined below
     ActorSystem system = ActorSystem.create("routes");
 
