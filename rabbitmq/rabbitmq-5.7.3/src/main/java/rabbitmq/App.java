@@ -5,7 +5,6 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.TimeUnit;
 import util.Util;
 
 public class App {
@@ -34,12 +33,11 @@ public class App {
     channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
     });
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-rabbitmq", 2);
 
     channel.close();
     connection.close();
     broker.shutdown();
 
-    Util.checkSpan("java-rabbitmq", 2);
   }
 }

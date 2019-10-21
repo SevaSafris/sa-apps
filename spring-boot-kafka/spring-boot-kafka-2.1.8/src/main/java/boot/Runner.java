@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,6 +17,5 @@ public class Runner implements CommandLineRunner {
   @Override
   public void run(String... args) throws InterruptedException {
     producer.sendMessage("Message ");
-    TimeUnit.SECONDS.sleep(10);
   }
 }

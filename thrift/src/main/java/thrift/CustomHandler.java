@@ -13,7 +13,6 @@
  */
 package thrift;
 
-import java.util.concurrent.TimeUnit;
 import thrift.generated.Address;
 import thrift.generated.CustomService;
 import thrift.generated.User;
@@ -29,11 +28,6 @@ public class CustomHandler implements CustomService.Iface {
 
   @Override
   public String withDelay(int seconds) {
-    try {
-      TimeUnit.SECONDS.sleep(seconds);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
     return "delay " + seconds;
   }
 

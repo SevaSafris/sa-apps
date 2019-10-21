@@ -60,10 +60,9 @@ public class App {
     });
     latch.await(15, TimeUnit.SECONDS);
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-mongo", 1);
+
     mongoClient.close();
     server.shutdownNow();
-
-    Util.checkSpan("java-mongo", 1);
   }
 }

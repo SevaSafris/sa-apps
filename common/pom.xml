@@ -11,5 +11,13 @@
 
   <artifactId>common</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+
+  </dependencies>
 
 </project>

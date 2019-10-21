@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -23,8 +22,6 @@ public class Runner implements CommandLineRunner {
 
     System.out.println("Sending message to Queue 2...");
     rabbitTemplate.convertAndSend(App.queueName2, "Message for Queue 2");
-
-    TimeUnit.SECONDS.sleep(10);
   }
 
 }

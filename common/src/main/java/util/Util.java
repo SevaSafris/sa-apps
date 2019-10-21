@@ -1,5 +1,8 @@
 package util;
 
+import static org.awaitility.Awaitility.await;
+import static org.hamcrest.core.IsEqual.equalTo;
+
 import io.opentracing.Span;
 import io.opentracing.mock.MockSpan;
 import io.opentracing.mock.MockSpan.LogEntry;
@@ -7,11 +10,12 @@ import io.opentracing.mock.MockTracer;
 import io.opentracing.tag.Tags;
 import io.opentracing.util.GlobalTracer;
 import java.lang.reflect.Field;
+import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 public class Util {
 
-  public static void checkSpan(String component, int spanCount) throws Exception {
+  public static void checkSpan(final String component, final int spanCount) throws Exception {
     final Field field = GlobalTracer.get().getClass().getDeclaredField("tracer");
     field.setAccessible(true);
     final Object ob = field.get(GlobalTracer.get());
@@ -19,15 +23,10 @@ public class Util {
     if (ob instanceof MockTracer) {
       tracer = (MockTracer) ob;
     } else {
-      TimeUnit.SECONDS.sleep(10);
       return;
     }
 
-    int i = 0;
-    while (tracer.finishedSpans().size() < spanCount && i < 10) {
-      TimeUnit.SECONDS.sleep(1L);
-      i++;
-    }
+    await().atMost(15, TimeUnit.SECONDS).until(reportedSpansSize(tracer), equalTo(spanCount));
 
     boolean found = false;
     System.out.println("Spans: " + tracer.finishedSpans());
@@ -50,7 +49,7 @@ public class Util {
     }
   }
 
-  public static void printSpan(MockSpan span) {
+  private static void printSpan(MockSpan span) {
     System.out.println("Span: " + span);
     System.out.println("\tComponent: " + span.tags().get(Tags.COMPONENT.getKey()));
     System.out.println("\tTags: " + span.tags());
@@ -68,4 +67,14 @@ public class Util {
       System.exit(-1);
     }
   }
+
+  private static Callable<Integer> reportedSpansSize(final MockTracer tracer) {
+    return new Callable<Integer>() {
+      @Override
+      public Integer call() {
+        return tracer.finishedSpans().size();
+      }
+    };
+  }
+
 }

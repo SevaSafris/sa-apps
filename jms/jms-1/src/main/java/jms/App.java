@@ -1,7 +1,6 @@
 package jms;
 
 
-import java.util.concurrent.TimeUnit;
 import javax.jms.Connection;
 import javax.jms.DeliveryMode;
 import javax.jms.Destination;
@@ -24,9 +23,8 @@ public class App {
 
     jms(connection);
 
-    TimeUnit.SECONDS.sleep(10);
-    connection.close();
     Util.checkSpan("java-jms", 4);
+    connection.close();
   }
 
   private static void jms(Connection connection) {

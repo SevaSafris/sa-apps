@@ -11,7 +11,6 @@ import de.bwaldvogel.mongo.MongoServer;
 import de.bwaldvogel.mongo.backend.memory.MemoryBackend;
 import java.net.InetSocketAddress;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 import org.bson.Document;
 import util.Util;
 
@@ -34,12 +33,10 @@ public class App {
     document.put("company", "Company");
     collection.insertOne(document, (result, t) -> System.out.println("result"));
 
-    TimeUnit.SECONDS.sleep(10);
+    Util.checkSpan("java-mongo", 1);
 
     client.close();
     server.shutdownNow();
-
-    Util.checkSpan("java-mongo", 1);
   }
 
 

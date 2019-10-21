@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -43,9 +42,8 @@ public class App {
     createConsumer(embeddedKafkaRule);
     producer.close();
 
-    TimeUnit.SECONDS.sleep(10);
-    embeddedKafkaRule.after();
     Util.checkSpan("java-kafka", 10);
+    embeddedKafkaRule.after();
 
     System.exit(0);
   }

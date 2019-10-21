@@ -33,12 +33,11 @@ public class App {
     pubSubCommands.subscribe("channel");
     commands.publish("channel", "msg");
 
-    Thread.sleep(5_000); // sleep to wait for 7 spans
-    client.shutdown();
+    Util.checkSpan("java-redis", 7);
 
+    client.shutdown();
     server.stop();
 
-    Util.checkSpan("java-redis", 7);
     System.exit(0);
   }
 }

@@ -1,6 +1,5 @@
 package boot;
 
-import java.util.concurrent.TimeUnit;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +45,6 @@ public class App {
       sender.send("Ping");
       int counter = 0;
       while (receiver.getReceivedMessages().size() == 0 && counter < 10) {
-        TimeUnit.SECONDS.sleep(1);
         counter++;
       }
 

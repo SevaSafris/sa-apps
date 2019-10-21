@@ -1,7 +1,6 @@
 package boot;
 
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -71,7 +70,6 @@ public class App {
       sender.send("Ping");
       int counter = 0;
       while (receiver.getReceivedMessages().size() == 0 && counter < 10) {
-        TimeUnit.SECONDS.sleep(1);
         counter++;
       }
 

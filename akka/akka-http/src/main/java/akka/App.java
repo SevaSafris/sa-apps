@@ -14,7 +14,6 @@ import akka.stream.javadsl.Flow;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import util.Util;
 
@@ -62,8 +61,6 @@ public class App extends AllDirectives {
         ConnectHttp.toHost("localhost", 8080), materializer);
 
     System.out.println("Server online at http://localhost:8080/");
-
-    TimeUnit.SECONDS.sleep(10);
 
     URL obj = new URL("http://localhost:8080/hello");
     HttpURLConnection con = (HttpURLConnection) obj.openConnection();

@@ -41,8 +41,6 @@ public class App {
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
     return args -> {
 
-      TimeUnit.SECONDS.sleep(10);
-
       String url = "ws://localhost:8080/test-websocket";
 
       WebSocketStompClient stompClient = new WebSocketStompClient(
@@ -55,7 +53,6 @@ public class App {
       stompSession.subscribe(SUBSCRIBE_GREETINGS_ENDPOINT, new GreetingStompFrameHandler());
       stompSession.send(SEND_HELLO_MESSAGE_ENDPOINT, "Hello");
 
-      TimeUnit.SECONDS.sleep(5); // sleep to wait for websocket span
       Util.checkSpan("websocket", 6);
 
       System.exit(0);
