@@ -6,6 +6,7 @@ import akka.stream.Materializer;
 import akka.stream.javadsl.Source;
 import io.opentracing.Scope;
 import io.opentracing.Span;
+import io.opentracing.tag.Tags;
 import io.opentracing.util.GlobalTracer;
 import java.util.concurrent.CompletionStage;
 import util.Util;
@@ -17,7 +18,9 @@ public class App {
 
     final Source<Integer, NotUsed> source = Source.range(1, 5);
 
-    Span span = GlobalTracer.get().buildSpan("parent").start();
+    final Span span = GlobalTracer.get().buildSpan("parent")
+        .withTag(Tags.COMPONENT, "streams-parent")
+        .start();
 
     try (Scope scope = GlobalTracer.get().activateSpan(span)) {
       final CompletionStage<Done> done = source.runForeach(i -> {
@@ -29,9 +32,11 @@ public class App {
         Util.checkActiveSpan();
         system.terminate();
       });
+    } finally {
+      span.finish();
     }
 
-    Util.checkSpan("parent", 1);
+    Util.checkSpan("streams-parent", 1);
   }
 
 
