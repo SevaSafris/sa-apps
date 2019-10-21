@@ -12,6 +12,7 @@ cache:
 
 env:
   - TEST_SUITE=spring
+  - TEST_SUITE=spring-2
   - TEST_SUITE=plain
   - TEST_SUITE=plain-2
 
