@@ -14,7 +14,6 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.rule.EmbeddedKafkaRule;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
-import util.Util;
 
 @SpringBootApplication
 public class App {
@@ -52,8 +51,6 @@ public class App {
     kafkaEmbedded = embeddedKafkaRule.getEmbeddedKafka();
 
     SpringApplication.run(App.class, args).close();
-    Util.checkSpan("java-kafka", 6);
-    System.exit(0);
   }
 
 }
