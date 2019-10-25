@@ -102,13 +102,13 @@ echo "spymemcached/"
 make build run-mock || exit $?
 cd ..
 
-cd cd thrift/thrift-0.10.0
+cd thrift/thrift-0.10.0
 echo "##############################################################################################"
 echo "thrift-0.10.0"
 make build run-mock || exit $?
 cd ../..
 
-cd cd thrift/thrift-0.12.0
+cd thrift/thrift-0.12.0
 echo "##############################################################################################"
 echo "thrift-0.12.0"
 make build run-mock || exit $?
