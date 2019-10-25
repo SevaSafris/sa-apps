@@ -76,6 +76,8 @@ run:
 	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq/rabbitmq-5.0.0 && make build run-mock
 	cd rabbitmq/rabbitmq-5.7.3 && make build run-mock
+	cd reactor/reactor-3.2.3 && make build run-mock
+	cd reactor/reactor-3.3.0 && make build run-mock
 	cd redisson/redisson-3.6.0 && make build run-mock
 	cd redisson/redisson-3.11.3 && make build run-mock
 	cd rxjava/rxjava-2.1.0 && make build run-mock
@@ -168,6 +170,8 @@ run-embedded:
 	cd okhttp/okhttp-3.14.2 && make build run-mock
 	cd rabbitmq/rabbitmq-5.0.0 && make build run-mock
 	cd rabbitmq/rabbitmq-5.7.3 && make build run-mock
+	cd reactor/reactor-3.2.3 && make build run-mock
+	cd reactor/reactor-3.3.0 && make build run-mock
 	cd redisson/redisson-3.6.0 && make build run-mock
 	cd redisson/redisson-3.11.3 && make build run-mock
 	cd rxjava/rxjava-2.1.0 && make build run-mock

@@ -106,6 +106,8 @@
     <module>grizzly-http-client/grizzly-http-client-1.16</module>
     <module>grizzly-http-server/grizzly-http-server-2.3.35</module>
     <module>grizzly-http-server/grizzly-http-server-2.4.4</module>
+    <module>reactor/reactor-3.2.3</module>
+    <module>reactor/reactor-3.3.0</module>
   </modules>
 
   <name>java-specialagent-apps</name>
