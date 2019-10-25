@@ -167,3 +167,15 @@ echo "##########################################################################
 echo "akka-streams"
 make build run-mock || exit $?
 cd ../..
+
+cd grizzly-http-client/grizzly-http-client-1.15
+echo "##############################################################################################"
+echo "grizzly-http-client-1.15"
+make build run-mock || exit $?
+cd ../..
+
+cd grizzly-http-client/grizzly-http-client-1.16
+echo "##############################################################################################"
+echo "grizzly-http-client-1.16"
+make build run-mock || exit $?
+cd ../..

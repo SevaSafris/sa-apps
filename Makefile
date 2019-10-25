@@ -43,6 +43,8 @@ run:
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign/feign-9.0.0 && make build run-mock
 	cd feign/feign-10.4.0 && make build run-mock
+	cd grizzly-http-client/grizzly-http-client-1.15 && make build run-mock
+	cd grizzly-http-client/grizzly-http-client-1.16 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock
@@ -131,6 +133,8 @@ run-embedded:
 	cd elasticsearch/elasticsearch-7.3.1 && make build run-mock
 	cd feign/feign-9.0.0 && make build run-mock
 	cd feign/feign-10.4.0 && make build run-mock
+	cd grizzly-http-client/grizzly-http-client-1.15 && make build run-mock
+	cd grizzly-http-client/grizzly-http-client-1.16 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock

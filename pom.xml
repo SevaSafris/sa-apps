@@ -102,6 +102,8 @@
     <module>servlet/servlet-war</module>
     <module>servlet/servlet-sync</module>
     <module>servlet/servlet-async</module>
+    <module>grizzly-http-client/grizzly-http-client-1.15</module>
+    <module>grizzly-http-client/grizzly-http-client-1.16</module>
   </modules>
 
   <name>java-specialagent-apps</name>
