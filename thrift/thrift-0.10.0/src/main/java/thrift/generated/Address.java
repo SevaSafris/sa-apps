@@ -24,14 +24,17 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new AddressStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new AddressTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable
+  public
   String line; // required
-  public @org.apache.thrift.annotation.Nullable
+  public
   String city; // required
-  public @org.apache.thrift.annotation.Nullable
+  public
   String zipCode; // required
 
-  /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  /**
+   * The set of fields this struct contains, along with convenience methods for finding and
+   * manipulating them.
+   */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     LINE((short) 1, "line"),
     CITY((short) 2, "city"),
@@ -48,7 +51,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     /**
      * Find the _Fields constant that matches fieldId, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByThriftId(int fieldId) {
       switch (fieldId) {
         case 1: // LINE
@@ -63,8 +66,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     }
 
     /**
-     * Find the _Fields constant that matches fieldId, throwing an exception
-     * if it is not found.
+     * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
@@ -77,7 +79,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     /**
      * Find the _Fields constant that matches name, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByName(String name) {
       return byName.get(name);
     }
@@ -160,12 +162,12 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     this.zipCode = null;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public String getLine() {
     return this.line;
   }
 
-  public Address setLine(@org.apache.thrift.annotation.Nullable String line) {
+  public Address setLine(String line) {
     this.line = line;
     return this;
   }
@@ -174,7 +176,9 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     this.line = null;
   }
 
-  /** Returns true if field line is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field line is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetLine() {
     return this.line != null;
   }
@@ -185,12 +189,12 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public String getCity() {
     return this.city;
   }
 
-  public Address setCity(@org.apache.thrift.annotation.Nullable String city) {
+  public Address setCity(String city) {
     this.city = city;
     return this;
   }
@@ -199,7 +203,9 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     this.city = null;
   }
 
-  /** Returns true if field city is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field city is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetCity() {
     return this.city != null;
   }
@@ -210,12 +216,12 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public String getZipCode() {
     return this.zipCode;
   }
 
-  public Address setZipCode(@org.apache.thrift.annotation.Nullable String zipCode) {
+  public Address setZipCode(String zipCode) {
     this.zipCode = zipCode;
     return this;
   }
@@ -224,7 +230,9 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     this.zipCode = null;
   }
 
-  /** Returns true if field zipCode is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field zipCode is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetZipCode() {
     return this.zipCode != null;
   }
@@ -235,7 +243,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     }
   }
 
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+  public void setFieldValue(_Fields field, Object value) {
     switch (field) {
       case LINE:
         if (value == null) {
@@ -264,7 +272,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public Object getFieldValue(_Fields field) {
     switch (field) {
       case LINE:
@@ -280,7 +288,10 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     throw new IllegalStateException();
   }
 
-  /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+   * otherwise
+   */
   public boolean isSet(_Fields field) {
     if (field == null) {
       throw new IllegalArgumentException();
@@ -415,7 +426,7 @@ public class Address implements org.apache.thrift.TBase<Address, Address._Fields
     return 0;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public _Fields fieldForId(int fieldId) {
     return _Fields.findByThriftId(fieldId);
   }

@@ -653,7 +653,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -679,7 +678,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -706,7 +704,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -733,7 +730,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -760,7 +756,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -787,7 +782,6 @@ public class CustomService {
         return true;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -813,7 +807,6 @@ public class CustomService {
         return true;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -839,7 +832,6 @@ public class CustomService {
         return false;
       }
 
-      @Override
       protected boolean rethrowUnhandledExceptions() {
         return false;
       }
@@ -1384,12 +1376,15 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new say_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new say_argsTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String text; // required
-    public @org.apache.thrift.annotation.Nullable
+    public
     String text2; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       TEXT((short) 1, "text"),
       TEXT2((short) 2, "text2");
@@ -1405,7 +1400,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 1: // TEXT
@@ -1418,8 +1413,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -1432,7 +1426,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -1505,12 +1499,12 @@ public class CustomService {
       this.text2 = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getText() {
       return this.text;
     }
 
-    public say_args setText(@org.apache.thrift.annotation.Nullable String text) {
+    public say_args setText(String text) {
       this.text = text;
       return this;
     }
@@ -1519,7 +1513,9 @@ public class CustomService {
       this.text = null;
     }
 
-    /** Returns true if field text is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field text is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetText() {
       return this.text != null;
     }
@@ -1530,12 +1526,12 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getText2() {
       return this.text2;
     }
 
-    public say_args setText2(@org.apache.thrift.annotation.Nullable String text2) {
+    public say_args setText2(String text2) {
       this.text2 = text2;
       return this;
     }
@@ -1544,7 +1540,9 @@ public class CustomService {
       this.text2 = null;
     }
 
-    /** Returns true if field text2 is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field text2 is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetText2() {
       return this.text2 != null;
     }
@@ -1555,7 +1553,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case TEXT:
           if (value == null) {
@@ -1576,7 +1574,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case TEXT:
@@ -1589,7 +1587,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -1696,7 +1697,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -1893,10 +1894,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new say_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new say_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -1911,7 +1915,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -1922,8 +1926,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -1936,7 +1939,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -1999,12 +2002,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getSuccess() {
       return this.success;
     }
 
-    public say_result setSuccess(@org.apache.thrift.annotation.Nullable String success) {
+    public say_result setSuccess(String success) {
       this.success = success;
       return this;
     }
@@ -2013,7 +2016,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -2024,7 +2029,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -2037,7 +2042,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -2047,7 +2052,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -2126,7 +2134,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -2293,7 +2301,10 @@ public class CustomService {
 
     public int delay; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       DELAY((short) 1, "delay");
 
@@ -2308,7 +2319,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 1: // DELAY
@@ -2319,8 +2330,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -2333,7 +2343,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -2415,7 +2425,9 @@ public class CustomService {
           .clearBit(__isset_bitfield, __DELAY_ISSET_ID);
     }
 
-    /** Returns true if field delay is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field delay is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetDelay() {
       return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __DELAY_ISSET_ID);
     }
@@ -2425,7 +2437,7 @@ public class CustomService {
           .setBit(__isset_bitfield, __DELAY_ISSET_ID, value);
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case DELAY:
           if (value == null) {
@@ -2438,7 +2450,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case DELAY:
@@ -2448,7 +2460,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -2524,7 +2539,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -2685,10 +2700,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new withDelay_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withDelay_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -2703,7 +2721,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -2714,8 +2732,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -2728,7 +2745,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -2792,12 +2809,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getSuccess() {
       return this.success;
     }
 
-    public withDelay_result setSuccess(@org.apache.thrift.annotation.Nullable String success) {
+    public withDelay_result setSuccess(String success) {
       this.success = success;
       return this;
     }
@@ -2806,7 +2823,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -2817,7 +2836,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -2830,7 +2849,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -2840,7 +2859,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -2919,7 +2941,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -3083,7 +3105,10 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withoutArgs_argsTupleSchemeFactory();
 
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       ;
 
@@ -3098,7 +3123,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           default:
@@ -3107,8 +3132,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -3121,7 +3145,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -3170,19 +3194,22 @@ public class CustomService {
     public void clear() {
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
       }
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -3233,7 +3260,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -3365,10 +3392,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new withoutArgs_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withoutArgs_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -3383,7 +3413,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -3394,8 +3424,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -3408,7 +3437,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -3472,12 +3501,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getSuccess() {
       return this.success;
     }
 
-    public withoutArgs_result setSuccess(@org.apache.thrift.annotation.Nullable String success) {
+    public withoutArgs_result setSuccess(String success) {
       this.success = success;
       return this;
     }
@@ -3486,7 +3515,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -3497,7 +3528,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -3510,7 +3541,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -3520,7 +3551,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -3599,7 +3633,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -3763,7 +3797,10 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withError_argsTupleSchemeFactory();
 
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       ;
 
@@ -3778,7 +3815,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           default:
@@ -3787,8 +3824,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -3801,7 +3837,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -3850,19 +3886,22 @@ public class CustomService {
     public void clear() {
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
       }
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -3913,7 +3952,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -4045,10 +4084,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new withError_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withError_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -4063,7 +4105,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -4074,8 +4116,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -4088,7 +4129,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -4152,12 +4193,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getSuccess() {
       return this.success;
     }
 
-    public withError_result setSuccess(@org.apache.thrift.annotation.Nullable String success) {
+    public withError_result setSuccess(String success) {
       this.success = success;
       return this;
     }
@@ -4166,7 +4207,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -4177,7 +4220,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -4190,7 +4233,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -4200,7 +4243,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -4279,7 +4325,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -4444,10 +4490,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new withCollision_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withCollision_argsTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String input; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       INPUT((short) 3333, "input");
 
@@ -4462,7 +4511,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 3333: // INPUT
@@ -4473,8 +4522,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -4487,7 +4535,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -4551,12 +4599,12 @@ public class CustomService {
       this.input = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getInput() {
       return this.input;
     }
 
-    public withCollision_args setInput(@org.apache.thrift.annotation.Nullable String input) {
+    public withCollision_args setInput(String input) {
       this.input = input;
       return this;
     }
@@ -4565,7 +4613,9 @@ public class CustomService {
       this.input = null;
     }
 
-    /** Returns true if field input is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field input is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetInput() {
       return this.input != null;
     }
@@ -4576,7 +4626,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case INPUT:
           if (value == null) {
@@ -4589,7 +4639,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case INPUT:
@@ -4599,7 +4649,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -4678,7 +4731,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -4843,10 +4896,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new withCollision_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new withCollision_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     String success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -4861,7 +4917,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -4872,8 +4928,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -4886,7 +4941,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -4950,12 +5005,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public String getSuccess() {
       return this.success;
     }
 
-    public withCollision_result setSuccess(@org.apache.thrift.annotation.Nullable String success) {
+    public withCollision_result setSuccess(String success) {
       this.success = success;
       return this;
     }
@@ -4964,7 +5019,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -4975,7 +5032,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -4988,7 +5045,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -4998,7 +5055,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -5077,7 +5137,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -5241,7 +5301,10 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new oneWay_argsTupleSchemeFactory();
 
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       ;
 
@@ -5256,7 +5319,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           default:
@@ -5265,8 +5328,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -5279,7 +5341,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -5328,19 +5390,22 @@ public class CustomService {
     public void clear() {
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
       }
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -5391,7 +5456,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -5522,7 +5587,10 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new oneWayWithError_argsTupleSchemeFactory();
 
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       ;
 
@@ -5537,7 +5605,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           default:
@@ -5546,8 +5614,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -5560,7 +5627,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -5609,19 +5676,22 @@ public class CustomService {
     public void clear() {
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
       }
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -5672,7 +5742,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -5805,12 +5875,15 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new save_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new save_argsTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     User user; // required
-    public @org.apache.thrift.annotation.Nullable
+    public
     Address address; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       USER((short) 1, "user"),
       ADDRESS((short) 2, "address");
@@ -5826,7 +5899,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 1: // USER
@@ -5839,8 +5912,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -5853,7 +5925,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -5926,12 +5998,12 @@ public class CustomService {
       this.address = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public User getUser() {
       return this.user;
     }
 
-    public save_args setUser(@org.apache.thrift.annotation.Nullable User user) {
+    public save_args setUser(User user) {
       this.user = user;
       return this;
     }
@@ -5940,7 +6012,9 @@ public class CustomService {
       this.user = null;
     }
 
-    /** Returns true if field user is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field user is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetUser() {
       return this.user != null;
     }
@@ -5951,12 +6025,12 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Address getAddress() {
       return this.address;
     }
 
-    public save_args setAddress(@org.apache.thrift.annotation.Nullable Address address) {
+    public save_args setAddress(Address address) {
       this.address = address;
       return this;
     }
@@ -5965,7 +6039,9 @@ public class CustomService {
       this.address = null;
     }
 
-    /** Returns true if field address is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field address is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetAddress() {
       return this.address != null;
     }
@@ -5976,7 +6052,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case USER:
           if (value == null) {
@@ -5997,7 +6073,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case USER:
@@ -6010,7 +6086,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -6117,7 +6196,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }
@@ -6325,10 +6404,13 @@ public class CustomService {
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new save_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new save_resultTupleSchemeFactory();
 
-    public @org.apache.thrift.annotation.Nullable
+    public
     UserWithAddress success; // required
 
-    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    /**
+     * The set of fields this struct contains, along with convenience methods for finding and
+     * manipulating them.
+     */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
       SUCCESS((short) 0, "success");
 
@@ -6343,7 +6425,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches fieldId, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByThriftId(int fieldId) {
         switch (fieldId) {
           case 0: // SUCCESS
@@ -6354,8 +6436,7 @@ public class CustomService {
       }
 
       /**
-       * Find the _Fields constant that matches fieldId, throwing an exception
-       * if it is not found.
+       * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
        */
       public static _Fields findByThriftIdOrThrow(int fieldId) {
         _Fields fields = findByThriftId(fieldId);
@@ -6368,7 +6449,7 @@ public class CustomService {
       /**
        * Find the _Fields constant that matches name, or null if its not found.
        */
-      @org.apache.thrift.annotation.Nullable
+
       public static _Fields findByName(String name) {
         return byName.get(name);
       }
@@ -6432,12 +6513,12 @@ public class CustomService {
       this.success = null;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public UserWithAddress getSuccess() {
       return this.success;
     }
 
-    public save_result setSuccess(@org.apache.thrift.annotation.Nullable UserWithAddress success) {
+    public save_result setSuccess(UserWithAddress success) {
       this.success = success;
       return this;
     }
@@ -6446,7 +6527,9 @@ public class CustomService {
       this.success = null;
     }
 
-    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field success is set (has been assigned a value) and false otherwise
+     */
     public boolean isSetSuccess() {
       return this.success != null;
     }
@@ -6457,7 +6540,7 @@ public class CustomService {
       }
     }
 
-    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+    public void setFieldValue(_Fields field, Object value) {
       switch (field) {
         case SUCCESS:
           if (value == null) {
@@ -6470,7 +6553,7 @@ public class CustomService {
       }
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public Object getFieldValue(_Fields field) {
       switch (field) {
         case SUCCESS:
@@ -6480,7 +6563,10 @@ public class CustomService {
       throw new IllegalStateException();
     }
 
-    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    /**
+     * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+     * otherwise
+     */
     public boolean isSet(_Fields field) {
       if (field == null) {
         throw new IllegalArgumentException();
@@ -6559,7 +6645,7 @@ public class CustomService {
       return 0;
     }
 
-    @org.apache.thrift.annotation.Nullable
+
     public _Fields fieldForId(int fieldId) {
       return _Fields.findByThriftId(fieldId);
     }

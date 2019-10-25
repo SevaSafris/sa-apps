@@ -23,12 +23,15 @@ public class UserWithAddress implements
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new UserWithAddressStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new UserWithAddressTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable
+  public
   User user; // required
-  public @org.apache.thrift.annotation.Nullable
+  public
   Address address; // required
 
-  /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  /**
+   * The set of fields this struct contains, along with convenience methods for finding and
+   * manipulating them.
+   */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     USER((short) 1, "user"),
     ADDRESS((short) 2, "address");
@@ -44,7 +47,7 @@ public class UserWithAddress implements
     /**
      * Find the _Fields constant that matches fieldId, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByThriftId(int fieldId) {
       switch (fieldId) {
         case 1: // USER
@@ -57,8 +60,7 @@ public class UserWithAddress implements
     }
 
     /**
-     * Find the _Fields constant that matches fieldId, throwing an exception
-     * if it is not found.
+     * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
@@ -71,7 +73,7 @@ public class UserWithAddress implements
     /**
      * Find the _Fields constant that matches name, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByName(String name) {
       return byName.get(name);
     }
@@ -145,12 +147,12 @@ public class UserWithAddress implements
     this.address = null;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public User getUser() {
     return this.user;
   }
 
-  public UserWithAddress setUser(@org.apache.thrift.annotation.Nullable User user) {
+  public UserWithAddress setUser(User user) {
     this.user = user;
     return this;
   }
@@ -159,7 +161,9 @@ public class UserWithAddress implements
     this.user = null;
   }
 
-  /** Returns true if field user is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field user is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetUser() {
     return this.user != null;
   }
@@ -170,12 +174,12 @@ public class UserWithAddress implements
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public Address getAddress() {
     return this.address;
   }
 
-  public UserWithAddress setAddress(@org.apache.thrift.annotation.Nullable Address address) {
+  public UserWithAddress setAddress(Address address) {
     this.address = address;
     return this;
   }
@@ -184,7 +188,9 @@ public class UserWithAddress implements
     this.address = null;
   }
 
-  /** Returns true if field address is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field address is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetAddress() {
     return this.address != null;
   }
@@ -195,7 +201,7 @@ public class UserWithAddress implements
     }
   }
 
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+  public void setFieldValue(_Fields field, Object value) {
     switch (field) {
       case USER:
         if (value == null) {
@@ -216,7 +222,7 @@ public class UserWithAddress implements
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public Object getFieldValue(_Fields field) {
     switch (field) {
       case USER:
@@ -229,7 +235,10 @@ public class UserWithAddress implements
     throw new IllegalStateException();
   }
 
-  /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+   * otherwise
+   */
   public boolean isSet(_Fields field) {
     if (field == null) {
       throw new IllegalArgumentException();
@@ -336,7 +345,7 @@ public class UserWithAddress implements
     return 0;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public _Fields fieldForId(int fieldId) {
     return _Fields.findByThriftId(fieldId);
   }

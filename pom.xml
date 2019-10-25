@@ -45,7 +45,8 @@
     <module>mongo/mongo-reactive-1.12.0</module>
     <module>rabbitmq/rabbitmq-5.0.0</module>
     <module>rabbitmq/rabbitmq-5.7.3</module>
-    <module>thrift</module>
+    <module>thrift/thrift-0.10.0</module>
+    <module>thrift/thrift-0.12.0</module>
     <module>grpc/grpc-1.6.0</module>
     <module>grpc/grpc-1.23.0</module>
     <module>jedis/jedis-2.7.0</module>

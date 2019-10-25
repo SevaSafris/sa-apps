@@ -115,7 +115,8 @@ run:
 	cd spring-websocket/spring-websocket-2.1.0 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.8 && make build run-mock
 	cd spymemcached && make build run-mock
-	cd thrift && make build run-mock
+	cd thrift/thrift-0.10.0 && make build run-mock
+	cd thrift/thrift-0.12.0 && make build run-mock
 	cd tomcat && make build run-mock
 	cd zuul/zuul-2.1.0 && make build run-mock
 	cd zuul/zuul-2.1.8 && make build run-mock
@@ -208,7 +209,8 @@ run-embedded:
 	cd spring-webmvc/spring-webmvc-5.1.9 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.0 && make build run-mock
 	cd spring-websocket/spring-websocket-2.1.8 && make build run-mock
-	cd thrift && make build run-mock
+	cd thrift/thrift-0.10.0 && make build run-mock
+	cd thrift/thrift-0.12.0 && make build run-mock
 	cd tomcat && make build run-mock
 	cd zuul/zuul-2.1.0 && make build run-mock
 	cd zuul/zuul-2.1.8 && make build run-mock

@@ -22,11 +22,14 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
   private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new UserStandardSchemeFactory();
   private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new UserTupleSchemeFactory();
 
-  public @org.apache.thrift.annotation.Nullable
+  public
   String name; // required
   public int age; // required
 
-  /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+  /**
+   * The set of fields this struct contains, along with convenience methods for finding and
+   * manipulating them.
+   */
   public enum _Fields implements org.apache.thrift.TFieldIdEnum {
     NAME((short) 1, "name"),
     AGE((short) 2, "age");
@@ -42,7 +45,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     /**
      * Find the _Fields constant that matches fieldId, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByThriftId(int fieldId) {
       switch (fieldId) {
         case 1: // NAME
@@ -55,8 +58,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     }
 
     /**
-     * Find the _Fields constant that matches fieldId, throwing an exception
-     * if it is not found.
+     * Find the _Fields constant that matches fieldId, throwing an exception if it is not found.
      */
     public static _Fields findByThriftIdOrThrow(int fieldId) {
       _Fields fields = findByThriftId(fieldId);
@@ -69,7 +71,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     /**
      * Find the _Fields constant that matches name, or null if its not found.
      */
-    @org.apache.thrift.annotation.Nullable
+
     public static _Fields findByName(String name) {
       return byName.get(name);
     }
@@ -144,12 +146,12 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     this.age = 0;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public String getName() {
     return this.name;
   }
 
-  public User setName(@org.apache.thrift.annotation.Nullable String name) {
+  public User setName(String name) {
     this.name = name;
     return this;
   }
@@ -158,7 +160,9 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     this.name = null;
   }
 
-  /** Returns true if field name is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field name is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetName() {
     return this.name != null;
   }
@@ -183,7 +187,9 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __AGE_ISSET_ID);
   }
 
-  /** Returns true if field age is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field age is set (has been assigned a value) and false otherwise
+   */
   public boolean isSetAge() {
     return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __AGE_ISSET_ID);
   }
@@ -193,7 +199,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
         .setBit(__isset_bitfield, __AGE_ISSET_ID, value);
   }
 
-  public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
+  public void setFieldValue(_Fields field, Object value) {
     switch (field) {
       case NAME:
         if (value == null) {
@@ -214,7 +220,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     }
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public Object getFieldValue(_Fields field) {
     switch (field) {
       case NAME:
@@ -227,7 +233,10 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     throw new IllegalStateException();
   }
 
-  /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+  /**
+   * Returns true if field corresponding to fieldID is set (has been assigned a value) and false
+   * otherwise
+   */
   public boolean isSet(_Fields field) {
     if (field == null) {
       throw new IllegalArgumentException();
@@ -331,7 +340,7 @@ public class User implements org.apache.thrift.TBase<User, User._Fields>, java.i
     return 0;
   }
 
-  @org.apache.thrift.annotation.Nullable
+
   public _Fields fieldForId(int fieldId) {
     return _Fields.findByThriftId(fieldId);
   }

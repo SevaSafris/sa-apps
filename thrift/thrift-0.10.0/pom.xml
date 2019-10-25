@@ -6,16 +6,17 @@
     <artifactId>java-specialagent-apps</artifactId>
     <groupId>io.opentracing.contrib</groupId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath>../..</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>thrift</artifactId>
+  <artifactId>thrift-0.10.0</artifactId>
 
   <dependencies>
     <dependency>
       <groupId>org.apache.thrift</groupId>
       <artifactId>libthrift</artifactId>
-      <version>0.12.0</version>
+      <version>0.10.0</version>
     </dependency>
     <dependency>
       <!-- in Java 9+  javax.annotation.Generated is missing -->
