@@ -179,3 +179,15 @@ echo "##########################################################################
 echo "grizzly-http-client-1.16"
 make build run-mock || exit $?
 cd ../..
+
+cd grizzly-http-server/grizzly-http-server-2.3.35
+echo "##############################################################################################"
+echo "grizzly-http-server-2.3.35"
+make build run-mock || exit $?
+cd ../..
+
+cd grizzly-http-server/grizzly-http-server-2.4.4
+echo "##############################################################################################"
+echo "grizzly-http-server-2.4.4"
+make build run-mock || exit $?
+cd ../..

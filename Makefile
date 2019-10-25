@@ -45,6 +45,8 @@ run:
 	cd feign/feign-10.4.0 && make build run-mock
 	cd grizzly-http-client/grizzly-http-client-1.15 && make build run-mock
 	cd grizzly-http-client/grizzly-http-client-1.16 && make build run-mock
+	cd grizzly-http-server/grizzly-http-server-2.3.35 && make build run-mock
+	cd grizzly-http-server/grizzly-http-server-2.4.4 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock
@@ -135,6 +137,8 @@ run-embedded:
 	cd feign/feign-10.4.0 && make build run-mock
 	cd grizzly-http-client/grizzly-http-client-1.15 && make build run-mock
 	cd grizzly-http-client/grizzly-http-client-1.16 && make build run-mock
+	cd grizzly-http-server/grizzly-http-server-2.3.35 && make build run-mock
+	cd grizzly-http-server/grizzly-http-server-2.4.4 && make build run-mock
 	cd grpc/grpc-1.6.0 && make build run-mock
 	cd grpc/grpc-1.23.0 && make build run-mock
 	cd hazelcast/hazelcast-3.7 && make build run-mock
